@@ -954,7 +954,7 @@
 "asr" = (/obj/structure/filingcabinet/chestdrawer,/obj/machinery/firealarm{dir = 1; pixel_y = -24},/turf/simulated/floor{icon_state = "cult"; dir = 2},/area/lawoffice)
 "ass" = (/obj/machinery/power/apc{dir = 2; name = "south bump"; pixel_y = -24},/obj/structure/table/reinforced,/obj/item/weapon/paper_bin{pixel_x = -3; pixel_y = 7},/obj/item/weapon/hand_labeler,/obj/item/weapon/pen,/obj/structure/cable/green,/obj/machinery/camera/network/security{c_tag = "Security - IA Office"; dir = 1},/turf/simulated/floor{icon_state = "cult"; dir = 2},/area/lawoffice)
 "ast" = (/obj/structure/disposalpipe/segment,/turf/simulated/wall/r_wall,/area/security/detectives_office)
-"asu" = (/obj/structure/disposalpipe/segment,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor{tag = "icon-rampbottom (SOUTHEAST)"; icon_state = "rampbottom"; dir = 6},/area/maintenance/dormitory)
+"asu" = (/obj/structure/disposalpipe/segment,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor{tag = "icon-ramptop"; icon_state = "ramptop"; dir = 2},/area/maintenance/dormitory)
 "asv" = (/obj/structure/grille,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/plating,/area/maintenance/dormitory)
 "asw" = (/turf/simulated/floor/wood{icon_state = "wood-broken4"},/area/maintenance/dormitory)
 "asx" = (/obj/structure/bed/chair/wood/wings{icon_state = "wooden_chair_wings"; dir = 1},/turf/simulated/floor/wood,/area/maintenance/dormitory)

@@ -140,6 +140,8 @@
 	icobase = 'icons/mob/human_races/r_grey.dmi'
 	deform = 'icons/mob/human_races/r_def_grey.dmi'
 	eyes = "grey_eyes_s"
+	brute_mod = 1.1
+	show_ssd = "ayy lmaos into the void"
 	language = "Secta"
 	total_health = 90
 	primitive_form = "Neaera"

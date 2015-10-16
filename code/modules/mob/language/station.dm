@@ -25,6 +25,11 @@
 	flags = RESTRICTED | HIVEMIND
 	syllables = list("hs","zt","kr","st","sh")
 
+/datum/language/grey/get_random_name()
+	var/new_name = "[pick(list("Roswell","Roanoke","Voynich","Rosetta","Prometheus","Tunguska","Tachyon","Ziphius","Dover","Gollop","Zeta","Reticuli","Vree","Strieber","Daniken","Solway","Levelland","Allagash","Majestic","Rendlesham","Petrozavodsk","Valentich","Zamora","Crypto","Teasdale"))]"
+	return new_name
+
+
 /datum/language/unathi
 	name = "Sinta'unathi"
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
