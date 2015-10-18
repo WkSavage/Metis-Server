@@ -728,7 +728,8 @@ var/list/be_special_flags = list(
 #define IS_VOX    2
 #define IS_SKRELL 3
 #define IS_UNATHI 4
-#define IS_XENOS  5
+#define IS_GREY 5
+#define IS_XENOS  6
 
 #define MAX_GEAR_COST 5 // Used in chargen for accessory loadout limit.
 

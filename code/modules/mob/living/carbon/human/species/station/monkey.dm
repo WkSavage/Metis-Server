@@ -93,3 +93,18 @@
 	base_color = "#066000"
 	reagent_tag = IS_UNATHI
 	holder_type = /obj/item/weapon/holder/monkey/stok
+
+/datum/species/monkey/grey
+	name = "Sectoid"
+	name_plural = "Sectoids"
+
+	icobase = 'icons/mob/human_races/monkeys/r_sectoid.dmi'
+	deform = 'icons/mob/human_races/monkeys/r_sectoid.dmi'
+
+	greater_form = "grey"
+	flesh_color = "#D3D3D3"
+	blood_color = "#FFC966"
+	base_color = "#D3D3D3"
+	reagent_tag = IS_GREY
+	holder_type = /obj/item/weapon/holder/monkey/stok
+

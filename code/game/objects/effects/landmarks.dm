@@ -240,3 +240,35 @@
 	new /obj/item/clothing/mask/gas/sexymime(src.loc)
 	new /obj/item/clothing/under/sexymime(src.loc)
 	qdel(src)
+
+	//Medskele spawners
+/obj/effect/landmark/medskele/New() // Medskele spawners
+
+	var/list/options = typesof(/obj/effect/landmark/medskele)
+	var/PICK= options[rand(1,options.len)]
+	new PICK(src.loc)
+	qdel(src)
+
+/obj/effect/landmark/medskele/human/New()
+	new /obj/structure/medskeleton(src.loc)
+	qdel(src)
+
+/obj/effect/landmark/medskele/skrell/New()
+	new /obj/structure/medskeleton/skrell(src.loc)
+	qdel(src)
+
+/obj/effect/landmark/medskele/lizard/New()
+	new /obj/structure/medskeleton/lizard(src.loc)
+	qdel(src)
+
+/obj/effect/landmark/medskele/tajaran/New()
+	new /obj/structure/medskeleton/tajaran(src.loc)
+	qdel(src)
+
+/obj/effect/landmark/medskele/vox/New()
+	new /obj/structure/medskeleton/vox(src.loc)
+	qdel(src)
+
+/obj/effect/landmark/medskele/grey/New()
+	new /obj/structure/medskeleton/grey(src.loc)
+	qdel(src)

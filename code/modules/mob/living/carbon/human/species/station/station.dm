@@ -154,7 +154,7 @@
 	blood_color = "#FFC966"
 	base_color = "#D3D3D3"
 
-	reagent_tag = IS_SKRELL
+	reagent_tag = IS_GREY
 
 /datum/species/diona
 	name = "Diona"
