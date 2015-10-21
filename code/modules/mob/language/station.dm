@@ -20,7 +20,7 @@
 	speech_verb = "murmurs"
 	ask_verb = "drones"
 	exclaim_verb = "babbles"
-	colour = "soghun"
+	colour = "grey"
 	key = "]"
 	flags = RESTRICTED | HIVEMIND
 	syllables = list("hs","zt","kr","st","sh")
