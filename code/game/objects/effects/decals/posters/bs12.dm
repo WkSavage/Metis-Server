@@ -1,4 +1,4 @@
-// baystation12 posters
+// Metis posters
 /datum/poster/bay_1
 	icon_state="bsposter1"
 	name = "Unlucky Space Explorer"
