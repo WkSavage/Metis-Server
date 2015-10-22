@@ -156,7 +156,7 @@
 	return 1
 
 
-/obj/vehicle/segwat/unload(var/mob/user, var/direction)
+/obj/vehicle/segway/unload(var/mob/user, var/direction)
 	if(!load)
 		return
 
@@ -204,7 +204,7 @@
 //-------------------------------------------------------
 // Stat update procs
 //-------------------------------------------------------
-/obj/vehicle/segwat/update_stats()
+/obj/vehicle/segway/update_stats()
 	return
 
 /obj/vehicle/segway/attack_generic(var/mob/user, var/damage, var/attack_message)
