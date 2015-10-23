@@ -94,7 +94,7 @@ h1.alert, h2.alert		{color: #000000;}
 .grey                   {color: #2F4F4F;}
 .rough					{font-family: "Trebuchet MS", cursive, sans-serif;}
 .say_quote				{font-family: Georgia, Verdana, sans-serif;}
-.machine				{font-family: Georgia, Verdana, sans-serif;
+.machine				{font-family: Georgia, Verdana, sans-serif;}
 
 .interface				{color: #330033;}
 
