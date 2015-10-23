@@ -762,6 +762,11 @@
 	desc = "A \"Space Life\" brand Security Officer action figure."
 	icon_state = "secofficer"
 
+/obj/item/toy/figure/voodosecofficer
+	name = "Security Officer Doll"
+	desc = "It looks like the other inmates found this."
+	icon_state = "voodosecofficer"
+
 /obj/item/toy/figure/warden
 	name = "Warden action figure"
 	desc = "A \"Space Life\" brand Warden action figure."

@@ -66,6 +66,18 @@
 /obj/item/weapon/material/kitchen/utensil/spoon/plastic
 	default_material = "plastic"
 
+/obj/item/weapon/material/kitchen/utensil/spork
+	name = "spork"
+	desc = "The bastard love-child of the fork and spoon.  He grew up on the streets, and taught himself how to be a useful thing to eat with, and now he works for NT."
+	icon_state = "spork"
+	attack_verb = list("attacked", "poked")
+	edge = 0
+	sharp = 0
+	force_divisor = 0.1 //2 when wielded with weight 20 (steel)
+
+/obj/item/weapon/material/kitchen/utensil/spork/plastic
+	default_material = "plastic"
+
 /*
  * Knives
  */

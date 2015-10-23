@@ -264,7 +264,7 @@
 
 	icobase = 'icons/mob/human_races/r_machine.dmi'
 	deform = 'icons/mob/human_races/r_machine.dmi'
-	language = "Tradeband"
+	language = "Encoded Audio Language"
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	rarity_value = 2
 
@@ -301,3 +301,20 @@
 		H.h_style = ""
 		spawn(100)
 			if(H) H.update_hair()
+/datum/species/kidan
+	name = "Kidan"
+	name_plural = "Kidan"
+	icobase = 'icons/mob/human_races/r_kidan.dmi'
+	deform = 'icons/mob/human_races/r_def_kidan.dmi'
+	eyes = "kidan_eyes_s"
+	language = "Chittin"
+	unarmed_types = list(/datum/unarmed_attack/claws)
+	brute_mod = 0.7
+	burn_mod = 1.6
+	darksight = 8
+	blurb = "An insectoid species, Kidan come from the star system known as Pleiades-Taurus, which translates to 'Star of the Seven Sisters'.<br/><br/>Kidan are slightly behind humans in terms of technology, and live under the Empresses, a group of powerful females within their society which control the entire Kidan empire much like a bee-queen might control her hive. Kidan are carnivores on the whole and, after being crushed in a war, are forced to cooperate with other species, though some think they may come for revenge after the deaths of all their Empresses of the time."
+	
+	flags = CAN_JOIN | IS_WHITELISTED | HAS_UNDERWEAR | HAS_LIPS 
+	
+	blood_color = "#328332"
+	flesh_color = "#8C4600" 
