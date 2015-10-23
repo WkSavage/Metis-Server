@@ -28,6 +28,28 @@
 /datum/language/grey/get_random_name()
 	var/new_name = "[pick(list("Roswell","Roanoke","Voynich","Rosetta","Prometheus","Tunguska","Tachyon","Ziphius","Dover","Gollop","Zeta","Reticuli","Vree","Strieber","Daniken","Solway","Levelland","Allagash","Majestic","Rendlesham","Petrozavodsk","Valentich","Zamora","Crypto","Teasdale"))]"
 	return new_name
+	
+/datum/language/kidan
+	name = "Chittin"
+	desc = "The Kidan language."
+	speech_verb = "chirps and hums"
+	ask_verb = "chirps and hums"
+	exclaim_verb = "chirps"
+	colour = "Chittin"
+	key = "z"
+	flags = RESTRICTED
+	syllables = list("zz", "zzz", "mm", "ti")
+
+/datum/language/machine
+	name = "Encoded Audio Language"
+	desc = "A fast paced array of beeps and buzzes, mostly used by machines."
+	speech_verb = "beeps"
+	ask_verb = "beeps"
+	exclaim_verb = "pings"
+	colour = "machine"
+	key = "-"
+	flags = RESTRICTED
+	syllables = list("beep", "boop", "buzz","beepleep","*","!")
 
 
 /datum/language/unathi
