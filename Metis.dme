@@ -1454,6 +1454,7 @@
 #include "code\modules\power\cable.dm"
 #include "code\modules\power\cable_heavyduty.dm"
 #include "code\modules\power\cell.dm"
+#include "code\modules\power\crystlepowergen.dm"
 #include "code\modules\power\engine.dm"
 #include "code\modules\power\fractal_reactor.dm"
 #include "code\modules\power\generator.dm"
@@ -1777,4 +1778,5 @@
 #include "maps\exodus-4.dmm"
 #include "maps\exodus-5.dmm"
 #include "maps\exodus-6.dmm"
+#include "maps\RandomZLevels\abanonedship.dmm"
 // END_INCLUDE
