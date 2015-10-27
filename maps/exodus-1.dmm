@@ -2454,7 +2454,7 @@
 "aVj" = (/obj/structure/grille,/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced,/turf/simulated/floor/plating,/area/crew_quarters/kitchen)
 "aVk" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor{icon_state = "cafeteria"; dir = 5},/area/crew_quarters/kitchen)
 "aVl" = (/obj/structure/sink/kitchen{pixel_y = 28},/turf/simulated/floor{icon_state = "cafeteria"; dir = 5},/area/crew_quarters/kitchen)
-"aVm" = (/obj/machinery/vending/dinnerware,/obj/item/device/radio/intercom{pixel_y = 25},/obj/machinery/camera/network/civilian_east{c_tag = "Kitchen"},/turf/simulated/floor{icon_state = "cafeteria"; dir = 2},/area/crew_quarters/kitchen)
+"aVm" = (/obj/machinery/vending/dinnerware,/obj/item/device/radio/intercom{pixel_y = 25},/turf/simulated/floor{icon_state = "cafeteria"; dir = 2},/area/crew_quarters/kitchen)
 "aVn" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor{icon_state = "cafeteria"; dir = 5},/area/crew_quarters/kitchen)
 "aVo" = (/turf/simulated/floor{icon_state = "cafeteria"; dir = 5},/area/crew_quarters/kitchen)
 "aVp" = (/obj/structure/table/standard,/obj/machinery/microwave{pixel_x = -3; pixel_y = 6},/obj/machinery/light{dir = 1},/turf/simulated/floor{icon_state = "cafeteria"; dir = 2},/area/crew_quarters/kitchen)
