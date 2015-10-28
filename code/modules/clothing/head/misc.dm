@@ -156,6 +156,18 @@
 	icon_state = "bandana"
 	item_state = "bandana"
 
+/obj/item/clothing/head/prisonbandana
+	name = "bandana"
+	desc = "Styling."
+	icon_state = "prisonbandana"
+	item_state = "prisonbandana"
+
+/obj/item/clothing/head/redbandana
+	name = "bandana"
+	desc = "Styling."
+	icon_state = "redbandana"
+	item_state = "redbandana"
+
 /obj/item/clothing/head/bowler
 	name = "bowler-hat"
 	desc = "Gentleman, elite aboard!"

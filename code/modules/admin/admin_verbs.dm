@@ -91,7 +91,9 @@ var/list/admin_verbs_admin = list(
 	/client/proc/change_human_appearance_self,	/* Allows the human-based mob itself change its basic appearance */
 	/client/proc/change_security_level,
 	/client/proc/view_chemical_reaction_logs,
-	/client/proc/makePAI
+	/client/proc/makePAI,
+	/client/proc/FRules,
+	/client/proc/forceshuttles
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -287,6 +289,8 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/show_player_panel,
 	/client/proc/check_antagonists,
 	/client/proc/jobbans,
+	/client/proc/forceshuttles,
+	/client/proc/FRules,
 	/client/proc/cmd_admin_subtle_message 	/*send an message to somebody as a 'voice in their head'*/
 )
 
@@ -298,7 +302,8 @@ var/list/admin_verbs_mentor = list(
 	/client/proc/cmd_mod_say,
 	/datum/admins/proc/show_player_info,
 //	/client/proc/dsay,
-	/client/proc/cmd_admin_subtle_message
+	/client/proc/cmd_admin_subtle_message,
+	/client/proc/sendFax //allows to send a fax to a specific fax machine.
 )
 
 /client/proc/add_admin_verbs()

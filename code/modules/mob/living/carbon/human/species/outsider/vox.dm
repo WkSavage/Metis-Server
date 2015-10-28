@@ -30,7 +30,7 @@
 	poison_type = "oxygen"
 	siemens_coefficient = 0.2
 
-	flags = CAN_JOIN | IS_WHITELISTED | NO_SCAN | HAS_EYE_COLOR
+	flags = CAN_JOIN| IS_WHITELISTED | NO_SCAN | HAS_EYE_COLOR
 
 	blood_color = "#2299FC"
 	flesh_color = "#808D11"
@@ -66,7 +66,7 @@
 		H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H.back), slot_in_backpack)
 		H.internal = H.r_hand
 	H.internals.icon_state = "internal1"
-		
+
 
 /datum/species/vox/get_station_variant()
 	return "Vox Pariah"
@@ -97,7 +97,7 @@
 		"brain" =    /obj/item/organ/pariah_brain,
 		"eyes" =     /obj/item/organ/eyes
 		)
-	flags = IS_RESTRICTED | NO_SCAN | HAS_EYE_COLOR
+	flags = CAN_JOIN | NO_SCAN | HAS_EYE_COLOR
 
 // No combat skills for you.
 /datum/species/vox/pariah/can_shred(var/mob/living/carbon/human/H, var/ignore_intent)
