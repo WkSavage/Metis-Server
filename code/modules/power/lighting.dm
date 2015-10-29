@@ -156,6 +156,31 @@
 
 // the smaller bulb light fixture
 
+/obj/machinery/light/emergency
+	name = "emergency light"
+	icon_state = "bulb1"
+	base_state = "bulb"
+	desc = "A lighting fixture."
+	anchored = 1
+	layer = 5  					// They were appearing under mobs which is a little weird - Ostaf
+	use_power = 0
+	idle_power_usage = 0
+	active_power_usage = 0
+	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
+	on = 1					// 1 if on, 0 if off
+	on_gs = 0
+	brightness_range = 4	// luminosity when on, also used in power calculation
+	brightness_power = 2
+	brightness_color = null
+	status = LIGHT_OK		// LIGHT_OK, _EMPTY, _BURNED or _BROKEN
+	flickering = 0
+	light_type = /obj/item/weapon/light/tube		// the type of light item
+	fitting = "bulb"
+	switchcount = 0			// count of number of times switched on/off
+								// this is used to calc the probability the light burns out
+
+	rigged = 0				// true if rigged to explode
+
 /obj/machinery/light/small
 	icon_state = "bulb1"
 	base_state = "bulb"
