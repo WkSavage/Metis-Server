@@ -162,6 +162,12 @@
 	icon_state = "prisonbandana"
 	item_state = "prisonbandana"
 
+/obj/item/clothing/head/aussie
+	name = "Australian Flag"
+	desc = "'Straya Pride Mate."
+	icon_state = "aussie"
+	item_state = "aussie"
+
 /obj/item/clothing/head/redbandana
 	name = "bandana"
 	desc = "Styling."
@@ -266,3 +272,11 @@
 	icon_state = "orange_bandana"
 	item_state = "orange_bandana"
 	body_parts_covered = 0
+
+/obj/item/clothing/head/fishbowl
+	name = "Fishbowl"
+	desc = "The CE's hip new pet."
+	icon_state = "fishbowl"
+	item_state = "fishbowl"
+	siemens_coefficient = 5.0 //why is it so conductive?!
+
