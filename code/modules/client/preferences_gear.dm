@@ -45,6 +45,27 @@ var/global/list/gear_datums = list()
 // This is sorted both by slot and alphabetically! Don't fuck it up!
 // Headslot items
 
+/datum/gear/flame
+	display_name = "welding mask, flame"
+	path = /obj/item/clothing/head/welding/flame
+	slot = slot_head
+	cost = 1
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
+/datum/gear/japan
+	display_name = "welding mask, japan"
+	path = /obj/item/clothing/head/welding/japan
+	slot = slot_head
+	cost = 1
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
+/datum/gear/blue
+	display_name = "welding mask, blue"
+	path = /obj/item/clothing/head/welding/blue
+	slot = slot_head
+	cost = 1
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
 /datum/gear/gbandana
 	display_name = "bandana, green"
 	path = /obj/item/clothing/head/greenbandana

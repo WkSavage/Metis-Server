@@ -54,6 +54,54 @@
 		update_clothing_icon()	//so our mob-overlays update
 
 
+/obj/item/clothing/head/welding/blue
+	name = "custom welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	icon_state = "bluewelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "bluewelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+
+/obj/item/clothing/head/welding/japan
+	name = "stylish welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	icon_state = "japanwelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "japanwelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+
+/obj/item/clothing/head/welding/flame
+	name = "firey welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	icon_state = "flamewelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "flamewelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+
 /*
  * Cakehat
  */
@@ -150,7 +198,7 @@
 
 		var/icon/earbit = new/icon("icon" = 'icons/mob/head.dmi', "icon_state" = "kittyinner")
 		ears.Blend(earbit, ICON_OVERLAY)
-		
+
 		item_icons[icon_head] = ears
 
 /obj/item/clothing/head/richard
