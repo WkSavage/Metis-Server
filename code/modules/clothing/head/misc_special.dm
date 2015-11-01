@@ -162,6 +162,145 @@
 			usr << "You push the [src] up out of your face."
 		update_clothing_icon()	//so our mob-overlays update
 
+/obj/item/clothing/head/welding/knight
+	name = "noble welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, This ones designed is based on a knights helmet."
+	icon_state = "knightwelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "knightwelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+/obj/item/clothing/head/welding/knight/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "knightwelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "knightweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
+
+/obj/item/clothing/head/welding/engie
+	name = "engineering welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, This is based on the colour of engineering."
+	icon_state = "engiewelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "engiewelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+/obj/item/clothing/head/welding/engie/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "engiewelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "engieweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
+
+/obj/item/clothing/head/welding/demon
+	name = "scary welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, This has a demons face."
+	icon_state = "demonwelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "demonwelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+/obj/item/clothing/head/welding/demon/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "demonwelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "demonweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
+
+/obj/item/clothing/head/welding/fancy
+	name = "fancy welding helmet"
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, this one has a nice black and gold design."
+	icon_state = "fancywelding"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "fancywelding"
+	matter = list(DEFAULT_WALL_MATERIAL = 3000, "glass" = 1000)
+	up = 0
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	flags_inv = (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+	body_parts_covered = HEAD|FACE|EYES
+	icon_action_button = "action_welding"
+	siemens_coefficient = 0.9
+	w_class = 3
+
+/obj/item/clothing/head/welding/fancy/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "fancywelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "fancyweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
 
 
 /*

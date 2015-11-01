@@ -49,7 +49,7 @@ var/global/list/gear_datums = list()
 	display_name = "welding mask, flame"
 	path = /obj/item/clothing/head/welding/flame
 	slot = slot_head
-	cost = 1
+	cost = 4
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
 
 /datum/gear/japan
@@ -65,6 +65,35 @@ var/global/list/gear_datums = list()
 	slot = slot_head
 	cost = 3
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
+/datum/gear/fancy
+	display_name = "welding mask, fancy"
+	path = /obj/item/clothing/head/welding/fancy
+	slot = slot_head
+	cost = 3
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
+/datum/gear/demon
+	display_name = "welding mask, scary"
+	path = /obj/item/clothing/head/welding/demon
+	slot = slot_head
+	cost = 3
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
+/datum/gear/engie
+	display_name = "welding mask, engie"
+	path = /obj/item/clothing/head/welding/engie
+	slot = slot_head
+	cost = 3
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
+/datum/gear/knight
+	display_name = "welding mask, knight"
+	path = /obj/item/clothing/head/welding/knight
+	slot = slot_head
+	cost = 3
+	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
+
 
 /datum/gear/gbandana
 	display_name = "bandana, green"
