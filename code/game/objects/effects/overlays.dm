@@ -52,3 +52,9 @@
 	..()
 	pixel_x += rand(-10, 10)
 	pixel_y += rand(-10, 10)
+
+/obj/effect/overlay/adminfreeze
+	name = "adminfreeze"
+	icon = 'icons/effects/adminfreeze.dmi'
+	icon_state = "adminfreeze"
+	layer = 4.1
