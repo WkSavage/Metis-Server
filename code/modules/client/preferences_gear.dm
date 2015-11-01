@@ -53,17 +53,17 @@ var/global/list/gear_datums = list()
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
 
 /datum/gear/japan
-	display_name = "welding mask, japan"
+	display_name = "welding mask, stylish"
 	path = /obj/item/clothing/head/welding/japan
 	slot = slot_head
-	cost = 1
+	cost = 3
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
 
 /datum/gear/blue
 	display_name = "welding mask, blue"
 	path = /obj/item/clothing/head/welding/blue
 	slot = slot_head
-	cost = 1
+	cost = 3
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
 
 /datum/gear/gbandana

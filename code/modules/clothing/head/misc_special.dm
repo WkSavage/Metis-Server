@@ -43,20 +43,20 @@
 			src.up = !src.up
 			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
 			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			icon_state = base_state
+			icon_state = "welding"
 			usr << "You flip the [src] down to protect your eyes."
 		else
 			src.up = !src.up
 			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			icon_state = "[base_state]up"
+			icon_state = "weldingup"
 			usr << "You push the [src] up out of your face."
 		update_clothing_icon()	//so our mob-overlays update
 
 
 /obj/item/clothing/head/welding/blue
 	name = "custom welding helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, This one has some custom paint work."
 	icon_state = "bluewelding"
 	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "bluewelding"
@@ -69,10 +69,30 @@
 	siemens_coefficient = 0.9
 	w_class = 3
 
+/obj/item/clothing/head/welding/blue/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "bluewelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "blueweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
+
 
 /obj/item/clothing/head/welding/japan
 	name = "stylish welding helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, This one has a stylish design."
 	icon_state = "japanwelding"
 	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "japanwelding"
@@ -85,10 +105,31 @@
 	siemens_coefficient = 0.9
 	w_class = 3
 
+/obj/item/clothing/head/welding/japan/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "japanwelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "japanweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
+
+
 
 /obj/item/clothing/head/welding/flame
 	name = "firey welding helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye, This one has a flame design."
 	icon_state = "flamewelding"
 	flags = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "flamewelding"
@@ -100,6 +141,27 @@
 	icon_action_button = "action_welding"
 	siemens_coefficient = 0.9
 	w_class = 3
+
+/obj/item/clothing/head/welding/flame/toggle()
+	set category = "Object"
+	set name = "Adjust welding mask"
+	set src in usr
+
+	if(usr.canmove && !usr.stat && !usr.restrained())
+		if(src.up)
+			src.up = !src.up
+			src.flags |= (HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "flamewelding"
+			usr << "You flip the [src] down to protect your eyes."
+		else
+			src.up = !src.up
+			src.flags &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
+			icon_state = "flameweldingup"
+			usr << "You push the [src] up out of your face."
+		update_clothing_icon()	//so our mob-overlays update
+
 
 
 /*
