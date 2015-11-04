@@ -103,20 +103,5 @@
 /datum/species/vox/pariah/can_shred(var/mob/living/carbon/human/H, var/ignore_intent)
 	return 0
 
-// Pariahs are really gross.
-/datum/species/vox/pariah/handle_environment_special(var/mob/living/carbon/human/H)
-	if(prob(5))
-		var/stink_range = rand(3,5)
-		for(var/mob/living/M in range(H,stink_range))
-			if(M.stat || M == H)
-				continue
-			var/mob/living/carbon/human/target = M
-			if(istype(target))
-				if(target.head && (target.head.flags & HEADCOVERSMOUTH) && (target.head.flags & AIRTIGHT))
-					continue
-				if(target.wear_mask && (target.wear_mask.flags & MASKCOVERSMOUTH) && (target.wear_mask.flags & BLOCK_GAS_SMOKE_EFFECT))
-					continue
-			M << "<span class='danger'>A terrible stench emanates from \the [H].</span>"
-
 /datum/species/vox/pariah/get_bodytype()
 	return "Vox"
