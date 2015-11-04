@@ -153,3 +153,25 @@
 		else
 			H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_in_backpack)
 		return 1
+
+/datum/job/prisoner
+	title = "Prisoner"
+	flag = PRISONER
+	department = "Security"
+	department_flag = ENGSEC
+	faction = "Station"
+	total_positions = 3
+	spawn_positions = 4
+	supervisors = "the wardern"
+	selection_color = "#FF7722"
+	access = list()
+	minimal_access = list()
+
+
+	equip(var/mob/living/carbon/human/H)
+		if(!H)	return 0
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset(H), slot_l_ear)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/color/orange(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/orange(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/device/pda(H), slot_belt)
+		return 1
