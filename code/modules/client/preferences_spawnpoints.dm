@@ -25,6 +25,7 @@ var/list/spawntypes = list()
 /datum/spawnpoint/arrivals
 	display_name = "Arrivals Shuttle"
 	msg = "has arrived on the station"
+	disallow_job = list("Prisoner")
 
 /datum/spawnpoint/arrivals/New()
 	..()
@@ -33,6 +34,7 @@ var/list/spawntypes = list()
 /datum/spawnpoint/gateway
 	display_name = "Gateway"
 	msg = "has completed translation from offsite gateway"
+	disallow_job = list("Prisoner")
 
 /datum/spawnpoint/gateway/New()
 	..()
@@ -41,7 +43,7 @@ var/list/spawntypes = list()
 /datum/spawnpoint/cryo
 	display_name = "Cryogenic Storage"
 	msg = "has completed cryogenic revival"
-	disallow_job = list("Cyborg")
+	disallow_job = list("Cyborg","Prisoner")
 
 /datum/spawnpoint/cryo/New()
 	..()
@@ -55,3 +57,12 @@ var/list/spawntypes = list()
 /datum/spawnpoint/cyborg/New()
 	..()
 	turfs = latejoin_cyborg
+
+/datum/spawnpoint/prison
+	display_name = "Prison Outpost"
+	msg = "has been activated from storage"
+	restrict_job = list("Prisoner")
+
+/datum/spawnpoint/prison/New()
+	..()
+	turfs = latejoin_prison

@@ -477,11 +477,6 @@
 		icon_state = "ipc_yellow"
 		species_allowed = list("Machine")
 
-	grey_tat
-		name = "Facial Tattoos"
-		icon_state = "grey_hair_tat"
-		species_allowed = list("Grey")
-
 /*
 ///////////////////////////////////
 /  =---------------------------=  /
