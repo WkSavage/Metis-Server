@@ -77,6 +77,10 @@
 			endgame_exits += loc
 			qdel(src)
 			return
+		if("JoinLatePrison")
+			latejoin_prison += loc
+			qdel(src)
+			return
 
 	landmarks_list += src
 	return 1
