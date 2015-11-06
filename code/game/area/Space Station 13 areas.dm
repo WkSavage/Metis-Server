@@ -1927,6 +1927,22 @@ area/space/atmosalert()
 	name = "\improper Strange Station"
 	icon_state = "away"
 
+/area/awaymission/abandonedship
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship/command
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship
+	name = "\improper Wild West Mines"
+	icon_state = "away"
+
 /area/awaymission/wwmines
 	name = "\improper Wild West Mines"
 	icon_state = "away1"
