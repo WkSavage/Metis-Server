@@ -7255,7 +7255,7 @@
 "cJA" = (/obj/machinery/light{dir = 4},/obj/structure/extinguisher_cabinet{pixel_x = 25; pixel_y = 0},/turf/simulated/floor,/area/engineering/engine_room)
 "cJB" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/simple/visible{dir = 4},/turf/space,/area/engineering/engine_room)
 "cJC" = (/obj/structure/grille,/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/machinery/atmospherics/pipe/simple/visible{dir = 4},/turf/simulated/floor/plating,/area/engineering/engine_room)
-"cJD" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/meter,/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (SOUTHWEST)"; icon_state = "intact"; dir = 10},/turf/simulated/floor,/area/engineering/engine_room)
+"cJD" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/meter,/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (SOUTHWEST)"; icon_state = "intact"; dir = 10},/obj/machinery/portable_atmospherics/canister/phoron,/turf/simulated/floor,/area/engineering/engine_room)
 "cJE" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/engineering/engine_room)
 "cJF" = (/obj/machinery/atmospherics/pipe/simple/visible/purple,/turf/simulated/floor,/area/engineering/engine_room)
 "cJG" = (/obj/machinery/atmospherics/pipe/simple/visible/cyan{tag = "icon-intact (SOUTHEAST)"; icon_state = "intact"; dir = 6},/turf/simulated/floor,/area/engineering/engine_room)
