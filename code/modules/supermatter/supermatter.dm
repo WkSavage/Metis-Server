@@ -1,5 +1,5 @@
 
-#define NITROGEN_RETARDATION_FACTOR 0.15	//Higher == N2 slows reaction more
+#define NITROGEN_RETARDATION_FACTOR 0.20	//Higher == N2 slows reaction more
 #define THERMAL_RELEASE_MODIFIER 10000		//Higher == more heat released during reaction
 #define PHORON_RELEASE_MODIFIER 1500		//Higher == less phoron released by reaction
 #define OXYGEN_RELEASE_MODIFIER 15000		//Higher == less oxygen released at high temperature/power
@@ -16,10 +16,10 @@
 */
 
 //Controls how much power is produced by each collector in range - this is the main parameter for tweaking SM balance, as it basically controls how the power variable relates to the rest of the game.
-#define POWER_FACTOR 1.0
-#define DECAY_FACTOR 700			//Affects how fast the supermatter power decays
-#define CRITICAL_TEMPERATURE 5000	//K
-#define CHARGING_FACTOR 0.05
+#define POWER_FACTOR 2.0
+#define DECAY_FACTOR 800			//Affects how fast the supermatter power decays
+#define CRITICAL_TEMPERATURE 7000	//K
+#define CHARGING_FACTOR 0.055
 #define DAMAGE_RATE_LIMIT 3			//damage rate cap at power = 300, scales linearly with power
 
 
@@ -39,7 +39,7 @@
 	anchored = 0
 	light_range = 4
 
-	var/gasefficency = 0.25
+	var/gasefficency = 0.30
 
 	var/base_icon_state = "darkmatter"
 
@@ -48,11 +48,11 @@
 	var/safe_alert = "Crystaline hyperstructure returning to safe operating levels."
 	var/safe_warned = 0
 	var/public_alert = 0 //Stick to Engineering frequency except for big warnings when integrity bad
-	var/warning_point = 100
+	var/warning_point = 150
 	var/warning_alert = "Danger! Crystal hyperstructure instability!"
-	var/emergency_point = 700
+	var/emergency_point = 800
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
-	var/explosion_point = 1000
+	var/explosion_point = 1250
 
 	light_color = "#8A8A00"
 	var/warning_color = "#B8B800"
@@ -126,7 +126,7 @@
 	integrity = round(100 - integrity * 100)
 	integrity = integrity < 0 ? 0 : integrity
 	var/alert_msg = " Integrity at [integrity]%"
-	
+
 	if(damage > emergency_point)
 		alert_msg = emergency_alert + alert_msg
 		lastwarning = world.timeofday - WARNING_DELAY * 4
@@ -149,7 +149,7 @@
 		else if(safe_warned && public_alert)
 			radio.autosay(alert_msg, "Supermatter Monitor")
 			public_alert = 0
-		
+
 
 /obj/machinery/power/supermatter/process()
 
@@ -183,7 +183,7 @@
 
 	//ensure that damage doesn't increase too quickly due to super high temperatures resulting from no coolant, for example. We dont want the SM exploding before anyone can react.
 	//We want the cap to scale linearly with power (and explosion_point). Let's aim for a cap of 5 at power = 300 (based on testing, equals roughly 5% per SM alert announcement).
-	var/damage_inc_limit = (power/300)*(explosion_point/1000)*DAMAGE_RATE_LIMIT
+	var/damage_inc_limit = (power/280)*(explosion_point/1100)*DAMAGE_RATE_LIMIT
 
 	if(!istype(L, /turf/space))
 		env = L.return_air()
