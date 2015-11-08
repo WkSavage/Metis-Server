@@ -201,6 +201,7 @@
 	desc = "A packet of six evil-looking cigarettes, A label on the packaging reads, \"Donk Co\""
 	icon_state = "robustpacket"
 	item_state = "cigpacket"
+	default_reagents = list("nicotine" = 25, "toxin" = 2)
 
 /obj/item/weapon/storage/fancy/cigarettes/syndicate/New()
 	..()
@@ -239,6 +240,7 @@
 	desc = "Since 2313."
 	icon_state = "carppacket"
 	item_state = "cigpacket"
+	default_reagents = list("nicotine" = 18)
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_midori
 	name = "\improper Midori Tabako packet"
@@ -252,7 +254,34 @@
 	desc = "Is your weight slowing you down? Having trouble running away from gravitational singularities? Can't stop stuffing your mouth? Smoke Shady Jim's Super Slims and watch all that fat burn away. Guaranteed results!"
 	icon_state = "shadyjimpacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 15, "leporazine" = 5)
+	default_reagents = list("nicotine" = 15, "lipolicide" = 5)
+
+/obj/item/weapon/storage/fancy/cigarettes/kanser_sticks
+	name ="\improper Kanser Sticks"
+	desc = "Kanser Sticks provide a smooth Kanser taste! Smoke your life away today!"
+	icon_state = "kancersticks"
+	item_state = "cigpacket"
+	default_reagents = list("nicotine" = 30)
+/obj/item/weapon/storage/fancy/cigarettes/holy_smokes
+	name ="\improper Holy Smokes"
+	desc = "Holy smokes! Guaranteed 100% heresy free! Say goodbye to heretical lung cancer!"
+	icon_state = "holypacket"
+	item_state = "cigpacket"
+	default_reagents = list("nicotine" = 20)
+
+/obj/item/weapon/storage/fancy/cigarettes/lho_sticks
+	name ="\improper Lho Sticks"
+	desc = "Smooth Lho taste! The best in premium space cigarettes since 2401! Now with 25% more nicotine!"
+	icon_state = "lhosticks"
+	item_state = "cigpacket"
+	default_reagents = list("nicotine" = 20, "serotrotium" = 3)
+
+/obj/item/weapon/storage/fancy/cigarettes/admum_stikz
+	name ="\improper AdmunStikz"
+	desc = "'s Little sticks of fun! I wouldnt trust these at all."
+	icon_state = "admun"
+	item_state = "cigpacket"
+	default_reagents = list("nicotine" = 5, "psilocybin" = 5, "condensedcapsaicin" = 5, "ephedrine" = 5)
 
 /////////
 //Cigar//
