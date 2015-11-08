@@ -8,13 +8,9 @@
 
 /obj/effect/landmark/hivebot/proc/createBots()
 	new/mob/living/simple_animal/hostile/hivebot(src.loc)
-		qdel(src)
 	if(prob(25))
 		new/mob/living/simple_animal/hostile/hivebot/range(src.loc)
-		qdel(src)
 	if(prob(25))
 		new/mob/living/simple_animal/hostile/hivebot/rapid(src.loc)
-		qdel(src)
 	if(prob(25))
 		new/mob/living/simple_animal/hostile/hivebot/strong(src.loc)
-		qdel(src)
