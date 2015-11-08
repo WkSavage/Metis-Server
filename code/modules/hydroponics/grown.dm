@@ -232,6 +232,32 @@
 						if(reagents_to_transfer) reagents.trans_to_obj(F,reagents_to_transfer)
 					qdel(src)
 					return
+		else if(istype(W, /obj/item/weapon/rollingpaper))
+			if(seed.kitchen_tag == "ambrosia" || seed.kitchen_tag == "ambrosiadeus" || seed.kitchen_tag == "tobacco" || seed.kitchen_tag == "stobacco")
+				user.unEquip(W)
+				if(seed.kitchen_tag == "ambrosia")
+					var/obj/item/clothing/mask/cigarette/joint/J = new /obj/item/clothing/mask/cigarette/joint(user.loc)
+					J.chem_volume = src.reagents.total_volume
+					src.reagents.trans_to(J, J.chem_volume)
+					qdel(W)
+					user.put_in_active_hand(J)
+				else if(seed.kitchen_tag == "ambrosiadeus")
+					var/obj/item/clothing/mask/cigarette/joint/deus/J = new /obj/item/clothing/mask/cigarette/joint/deus(user.loc)
+					J.chem_volume = src.reagents.total_volume
+					src.reagents.trans_to(J, J.chem_volume)
+					qdel(W)
+					user.put_in_active_hand(J)
+				else if(seed.kitchen_tag == "tobacco" || seed.kitchen_tag == "stobacco")
+					var/obj/item/clothing/mask/cigarette/handroll/J = new /obj/item/clothing/mask/cigarette/handroll(user.loc)
+					J.chem_volume = src.reagents.total_volume
+					src.reagents.trans_to(J, J.chem_volume)
+					qdel(W)
+					user.put_in_active_hand(J)
+				user << "\blue You roll the [src] into a rolling paper."
+				qdel(src)
+			else
+				user << "\red You can't roll a smokable from the [src]."
+
 	..()
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/attack(var/mob/living/carbon/M, var/mob/user, var/def_zone)

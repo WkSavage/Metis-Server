@@ -436,9 +436,51 @@
 /datum/reagent/nicotine
 	name = "Nicotine"
 	id = "nicotine"
-	description = "A highly addictive stimulant extracted from the tobacco plant."
+	description = "Slightly reduces stun times. If overdosed it will deal toxin and oxygen damage."
 	reagent_state = LIQUID
-	color = "#181818"
+	color = "#60A584" // rgb: 96, 165, 132
+	metabolism = 0.5
+	overdose = 35
+
+/datum/reagent/nicotine/affect_blood(var/mob/living/M as mob)
+	if(!M) M = holder.my_atom
+	var/smoke_message = pick("You can just feel your lungs dying!", "You feel relaxed.", "You feel calmed.", "You feel the lung cancer forming.", "You feel the money you wasted.", "You feel like a space cowboy.", "You feel rugged.")
+	if(prob(10))
+		M << "<span class='notice'>[smoke_message]</span>"
+	if(prob(50))
+		M.AdjustWeakened(-1)
+		M.make_jittery(-5)
+
+/datum/reagent/nicotine/overdose(var/mob/living/M as mob)
+	if(prob(20))
+		M << "You feel like you smoked too much."
+	M.adjustToxLoss(1*REM)
+	M.adjustOxyLoss(1*REM)
+
+/datum/reagent/lipolicide
+	name = "Lipolicide"
+	id = "lipolicide"
+	description = "A compound found in many seedy dollar stores in the form of a weight-loss tonic."
+	reagent_state = SOLID
+	color = "#D1DED1"
+
+/datum/chemical_reaction/lipolicide
+	name = "lipolicide"
+	id = "lipolicide"
+	result = "lipolicide"
+	required_reagents = list("mercury" = 1, "diethylamine" = 1, "ephedrine" = 1)
+	result_amount = 3
+
+/datum/reagent/lipolicide/affect_blood(var/mob/living/M as mob)
+	if(!M) M = holder.my_atom
+	if(!holder.has_reagent("nutriment"))
+		M.adjustToxLoss(1)
+	M.nutrition -= 10 * REM
+	M.overeatduration = 0
+	if(M.nutrition < 0)//Prevent from going into negatives.
+		M.nutrition = 0
+	..()
+	return
 
 /* Transformations */
 
