@@ -10,10 +10,10 @@
 	metabolism = 0.65
 	scannable = 1
 	overdose = 45
+	shock_reduction = 10
 
 /datum/reagent/inaprovaline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien != IS_DIONA)
-		M.add_chemical_effect(CE_STABLE)
 		M.AdjustParalysis(-0.5)
 		M.AdjustStunned(-0.5)
 		M.AdjustWeakened(-1)
@@ -26,6 +26,7 @@
 	color = "#C8A5DC"
 	metabolism = 0.85
 	overdose = 30
+	shock_reduction = 30
 
 /datum/reagent/ephedrine/affect_blood(var/mob/living/M as mob)
 	if(!M) M = holder.my_atom

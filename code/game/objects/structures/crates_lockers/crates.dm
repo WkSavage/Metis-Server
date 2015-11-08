@@ -352,6 +352,28 @@
 	new /obj/item/weapon/reagent_containers/food/snacks/liquidfood(src)
 	new /obj/item/weapon/reagent_containers/food/snacks/liquidfood(src)
 
+/obj/structure/closet/crate/freezer/prison
+	name = "cooler"
+	desc = "A crate of kitchen supplys."
+
+
+/obj/structure/closet/crate/freezer/prison/New()
+	..()
+	new /obj/item/weapon/reagent_containers/food/snacks/meat/monkey(src)
+	new /obj/item/weapon/reagent_containers/food/snacks/meat/monkey(src)
+	new /obj/item/weapon/reagent_containers/food/condiment/flour(src)
+	new /obj/item/weapon/reagent_containers/food/condiment/flour(src)
+	new /obj/item/weapon/reagent_containers/food/condiment/flour(src)
+	new /obj/item/weapon/reagent_containers/food/condiment/flour(src)
+	new /obj/item/weapon/reagent_containers/food/condiment/sugar(src)
+	new /obj/item/weapon/reagent_containers/food/drinks/milk(src)
+	new /obj/item/weapon/reagent_containers/food/drinks/milk(src)
+	new /obj/item/weapon/reagent_containers/food/drinks/soymilk(src)
+	new /obj/item/weapon/reagent_containers/food/drinks/soymilk(src)
+	new /obj/item/weapon/storage/fancy/egg_box(src)
+	new /obj/item/weapon/storage/fancy/egg_box(src)
+
+
 /obj/structure/closet/crate/bin
 	name = "large bin"
 	desc = "A large bin."
