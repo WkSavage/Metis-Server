@@ -341,9 +341,15 @@
 				character.loc = pick(S.turfs)
 				join_message = S.msg
 			else
-				character << "Your chosen spawnpoint ([S.display_name]) is unavailable for your chosen job. Spawning you at the Arrivals shuttle instead."
-				character.loc = pick(latejoin)
-				join_message = "has arrived on the station"
+				character << "Your chosen spawnpoint ([S.display_name]) is unavailable for your chosen job."
+				if(character.job == "Prisoner")
+					character << "Spawning you at prison instead."
+					character.loc = pick(latejoin_prison)
+					join_message = "has arrived on the station"
+				else
+					character << "Spawning you at the Arrivals shuttle instead."
+					character.loc = pick(latejoin)
+					join_message = "has arrived on the station"
 		else
 			character.loc = pick(latejoin)
 			join_message = "has arrived on the station"

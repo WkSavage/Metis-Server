@@ -19,7 +19,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 		var/datum/shuttle/shuttle = shuttles[shuttle_tag]
 		shuttle.init_docking_controllers()
 		shuttle.dock() //makes all shuttles docked to something at round start go into the docked state
-	
+
 	for(var/obj/machinery/embedded_controller/C in machines)
 		if(istype(C.program, /datum/computer/file/embedded_program/docking))
 			C.program.tag = null //clear the tags, 'cause we don't need 'em anymore
@@ -187,6 +187,16 @@ var/global/datum/shuttle_controller/shuttle_controller
 	shuttles["Research"] = shuttle
 	process_shuttles += shuttle
 
+	shuttle = new()
+	shuttle.warmup_time = 10
+	shuttle.area_offsite = locate(/area/shuttle/prison/prison)
+	shuttle.area_station = locate(/area/shuttle/prison/station)
+	shuttle.docking_controller_tag = "prison_shuttle"
+	shuttle.dock_target_station = "prison_dock_airlock"
+	shuttle.dock_target_offsite = "prison_outpost_dock"
+	shuttles["Prison"] = shuttle
+	process_shuttles += shuttle
+
 	// ERT Shuttle
 	var/datum/shuttle/ferry/multidock/specops/ERT = new()
 	ERT.location = 0
@@ -237,7 +247,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 		"Mining Asteroid" = locate(/area/syndicate_station/mining),
 		"Arrivals dock" = locate(/area/syndicate_station/arrivals_dock),
 		)
-	
+
 	MS.docking_controller_tag = "merc_shuttle"
 	MS.destination_dock_targets = list(
 		"Mercenary Base" = "merc_base",

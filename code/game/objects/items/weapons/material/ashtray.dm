@@ -53,8 +53,8 @@ var/global/list/ashtray_cache = list()
 		user.remove_from_mob(W)
 		W.loc = src
 
-		if (istype(W,/obj/item/clothing/mask/smokable/cigarette))
-			var/obj/item/clothing/mask/smokable/cigarette/cig = W
+		if (istype(W,/obj/item/clothing/mask/cigarette))
+			var/obj/item/clothing/mask/cigarette/cig = W
 			if (cig.lit == 1)
 				src.visible_message("[user] crushes [cig] in \the [src], putting it out.")
 				processing_objects.Remove(cig)

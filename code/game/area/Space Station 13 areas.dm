@@ -1927,6 +1927,66 @@ area/space/atmosalert()
 	name = "\improper Strange Station"
 	icon_state = "away"
 
+/area/awaymission/abandonedship
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship/command
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away1"
+
+/area/awaymission/abandonedship/northhalls
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away2"
+
+/area/awaymission/abandonedship/southhalls
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away2"
+
+/area/awaymission/abandonedship/engineroom
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship/engineering
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship/maitance
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship/medical
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away1"
+
+/area/awaymission/abandonedship/cryogenics
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away1"
+
+/area/awaymission/abandonedship/commonarea
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away2"
+
+/area/awaymission/abandonedship/secuirty
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away3"
+
+/area/awaymission/abandonedship/research
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away"
+
+/area/awaymission/abandonedship/containmentresearch
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away3"
+
+/area/awaymission/abandonedship/hanger
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away3"
+
+/area/awaymission/abandonedship/gatewayship
+	name = "\improper Abandoned Research Ship"
+	icon_state = "away3"
+
 /area/awaymission/wwmines
 	name = "\improper Wild West Mines"
 	icon_state = "away1"

@@ -17,9 +17,6 @@
 		if (!M.paralysis)
 			M << "<b><font color= red>You have been frozen by <a href='?priv_msg=\ref[usr.client]'>[key]</a></b></font>"
 			M.Paralyse(5000000000)
-			var/adminomaly = new/obj/effect/overlay/adminfreeze
-			spawn(100)
-				M.overlays += adminomaly
 			log_admin("\red [key_name_admin(usr)] has frozen [key_name(M)].", 1)
 			message_admins("\blue [key_name_admin(usr)] froze [key_name_admin(M)].", 1)
 			return
