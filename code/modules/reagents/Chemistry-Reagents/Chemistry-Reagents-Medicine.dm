@@ -7,13 +7,37 @@
 	reagent_state = LIQUID
 	color = "#00BFFF"
 	overdose = REAGENTS_OVERDOSE * 2
-	metabolism = REM * 0.5
+	metabolism = 0.65
 	scannable = 1
+	overdose = 45
+	shock_reduction = 10
 
 /datum/reagent/inaprovaline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien != IS_DIONA)
-		M.add_chemical_effect(CE_STABLE)
-		M.add_chemical_effect(CE_PAINKILLER, 25)
+		M.AdjustParalysis(-0.5)
+		M.AdjustStunned(-0.5)
+		M.AdjustWeakened(-1)
+
+/datum/reagent/ephedrine
+	name = "Ephedrine"
+	id = "ephedrine"
+	description = "Ephedrine is a powerful plant-derived stimulant."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	metabolism = 0.85
+	overdose = 30
+	shock_reduction = 30
+
+/datum/reagent/ephedrine/affect_blood(var/mob/living/M as mob)
+	if(!M) M = holder.my_atom
+	M.AdjustParalysis(-1.5)
+	M.AdjustStunned(-1.5)
+	M.AdjustWeakened(-2)
+
+/datum/reagent/ephedrine/overdose(var/mob/living/M as mob)
+	if(prob(33))
+		M.adjustToxLoss(1*REM)
+		M.losebreath++
 
 /datum/reagent/bicaridine
 	name = "Bicaridine"
