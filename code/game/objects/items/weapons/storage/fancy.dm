@@ -281,7 +281,7 @@
 	desc = "'s Little sticks of fun! I wouldnt trust these at all."
 	icon_state = "admun"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 5, "psilocybin" = 5, "condensedcapsaicin" = 5, "ephedrine" = 5)
+	default_reagents = list("nicotine" = 5, "psilocybin" = 10, "capsaicin" = 5, "ephedrine" = 5, "condensedcapsaicin" = 0.5)
 
 /////////
 //Cigar//
