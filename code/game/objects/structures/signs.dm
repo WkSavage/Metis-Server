@@ -75,6 +75,11 @@
 /obj/structure/sign/double/map/right
 	icon_state = "map-right"
 
+/obj/structure/sign/jamie
+	name = "\improper Mounted Gun"
+	desc = "There is a little plaque underneath it reads: To those bartenders that never saw the last call Rest in peace Jamie."
+	icon_state = "jamiegun"
+
 /obj/structure/sign/securearea
 	name = "\improper SECURE AREA"
 	desc = "A warning sign which reads 'SECURE AREA'."
