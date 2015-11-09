@@ -51,6 +51,31 @@
 	health = 80
 	ranged = 1
 
+/mob/living/simple_animal/hostile/hivebot/hivemind
+	name = "Strong Hivebot"
+	icon = 'icons/mob/hivebot.dmi'
+	icon_state = "hivemind"
+	icon_living = "hivemind"
+	icon_dead = "hivemind"
+	desc = " A squiddly-diddly Hivemind.. Huh, that beak kinda looks scary from a distance."
+	melee_damage_lower = 0.5
+	melee_damage_upper = 1
+	health = 15
+	ranged = 0
+
+/mob/living/simple_animal/hostile/hivemech
+	name = "Hivemech"
+	desc = "A hivemind's mech.. Squiddly-diddly in there looks like they're the one guiding the bots around for the most part."
+	icon = 'icons/mob/hivebot.dmi'
+	icon_state = "Hivemech"
+	icon_living = "Hivemech"
+	icon_dead = "Hivemech"
+	health = 140
+	maxHealth = 140
+	melee_damage_lower = 5
+	melee_damage_upper = 7
+	attacktext = "spiked"
+	speed = 1.75
 
 /mob/living/simple_animal/hostile/hivebot/death()
 	..()
