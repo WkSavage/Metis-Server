@@ -28,3 +28,27 @@
 /obj/item/weapon/material/sword/katana/suicide_act(mob/user)
 	viewers(user) << "<span class='danger'>[user] is slitting \his stomach open with the [src.name]! It looks like \he's trying to commit seppuku.</span>"
 	return(BRUTELOSS)
+
+/obj/item/weapon/material/sword/katana/New()
+	..()
+	if (prob(60))
+		src.pixel_y = rand(0, 4)
+	create_reagents(5)
+	return
+
+/obj/item/weapon/material/sword/katana/dork
+	name = "katana"
+	desc = "Woefully underpowered in D20. This one looks pretty sharp."
+	icon_state = "katana"
+	item_state = "katana"
+	slot_flags = SLOT_BELT | SLOT_BACK
+
+/obj/item/weapon/material/sword/katana/dork/suicide_act(mob/user)
+	viewers(user) << "<span class='danger'>[user] is slitting \his stomach open with the [src.name]! It looks like \he's trying to commit sudoku.</span>"
+	return(BRUTELOSS)
+
+/obj/item/weapon/material/sword/katana
+	default_material = "uranium"
+
+/obj/item/weapon/material/sword/katana/dork
+	default_material = "plastic"

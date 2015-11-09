@@ -22,3 +22,6 @@
 
 /obj/item/weapon/material/star/ninja
 	default_material = "uranium"
+
+/obj/item/weapon/material/star/dork
+	default_material = "plastic"
