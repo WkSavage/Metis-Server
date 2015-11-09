@@ -76,6 +76,26 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
 	siemens_coefficient = 1
 
+/obj/item/clothing/head/helmet/ntmarine
+	name = "tactical helmet"
+	desc = "An armored helmet capable of being fitted with a multitude of attachments."
+	icon_state = "NTmarine_generichelmet"
+	item_state = "helmet"
+	flags = HEADCOVERSEYES
+	armor = list(melee = 62, bullet = 50, laser = 50,energy = 35, bomb = 10, bio = 2, rad = 0)
+	flags_inv = HIDEEARS
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/head/helmet/ntmarineheavy
+	name = "tactical helmet"
+	desc = "An armored helmet capable of being fitted with a multitude of attachments."
+	icon_state = "NTmarine_heavyhelmet"
+	item_state = "helmet"
+	flags = HEADCOVERSEYES
+	armor = list(melee = 72, bullet = 55, laser = 52,energy = 39, bomb = 15, bio = 2, rad = 0)
+	flags_inv = HIDEEARS
+	siemens_coefficient = 0.7
+
 /obj/item/clothing/head/helmet/tactical
 	name = "tactical helmet"
 	desc = "An armored helmet capable of being fitted with a multitude of attachments."
@@ -86,7 +106,7 @@
 		"Tajara" = 'icons/mob/species/tajaran/helmet.dmi',
 		"Unathi" = 'icons/mob/species/unathi/helmet.dmi',
 		)
-	
+
 	armor = list(melee = 62, bullet = 50, laser = 50,energy = 35, bomb = 10, bio = 2, rad = 0)
 	flags_inv = HIDEEARS
 	siemens_coefficient = 0.7
