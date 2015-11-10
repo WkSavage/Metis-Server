@@ -1,3 +1,6 @@
+/datum/reagents
+	var/chem_temp = 300
+
 /datum/reagent
 	var/name = "Reagent"
 	var/id = "reagent"
@@ -21,6 +24,7 @@
 	var/color = "#000000"
 	var/color_weight = 1
 	var/shock_reduction = 0
+	var/chem_temp = 300
 
 /datum/reagent/proc/remove_self(var/amount) // Shortcut
 	holder.remove_reagent(id, amount)
