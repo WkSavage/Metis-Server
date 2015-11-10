@@ -175,6 +175,25 @@
 	else
 		holster.unholster(usr)
 
+//NT-Marine Armor
+/obj/item/clothing/suit/armor/vest/ntmarine
+	name = "nanotrasen marine standard issue armor"
+	desc = "A set of armor worn by members of the NanoTrasen Emergency Response Team."
+	icon_state = "NTmarine_genericarmor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 70, bullet = 60, laser = 60, energy = 40, bomb = 20, bio = 0, rad = 0)
+
+//NT-Marine Heavy Armor
+/obj/item/clothing/suit/armor/vest/ntmarineheavy
+	name = "nanotrasen marine standard issue armor"
+	desc = "A set of armor worn by members of the NanoTrasen Emergency Response Team."
+	icon_state = "NTmarine_heavyarmor"
+	armor = list(melee = 100, bullet = 80, laser = 80, energy = 55, bomb = 30, bio = 0, rad = 0)
+	w_class = 4//bulky item
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	slowdown = 3
+
 //Non-hardsuit ERT armor.
 /obj/item/clothing/suit/armor/vest/ert
 	name = "emergency response team armor"
