@@ -413,5 +413,6 @@
 	name = "pink hood"
 	desc = "You can hear the distant sounds of moms spaghetti."
 	icon_state = "pinkhood"
+	item_state = "pinkhood"
 	body_parts_covered = HEAD|FACE
 	flags = HEADCOVERSEYES|HEADCOVERSMOUTH|BLOCKHAIR
