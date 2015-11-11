@@ -513,7 +513,15 @@
 
 /obj/item/clothing/under/blazer
 	name = "blue blazer"
-	desc = "A bold but yet conservative outfit, red corduroys, navy blazer and a tie." 
+	desc = "A bold but yet conservative outfit, red corduroys, navy blazer and a tie."
 	icon_state = "blue_blazer"
 	item_state = "blue_blazer"
 	worn_state = "blue_blazer"
+
+/obj/item/clothing/under/rank/weeaboo
+	name = "pink bodysuit"
+	desc = "eyyyy boss! This suit gets you all the pussy!"
+	icon_state = "pinkguy"
+	item_state = "pinkguy_s"
+	worn_state = "pinkguy_s"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
