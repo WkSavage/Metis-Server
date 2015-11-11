@@ -5,11 +5,12 @@
 	var/list/required_reagents = list()
 	var/list/catalysts = list()
 	var/list/inhibitors = list()
-
+	var/min_temp = 0		//Minimum temperature required for the reaction to occur (heat to/above this). min_temp = 0 means no requirement
+	var/max_temp = 9999		//Maximum temperature allowed for the reaction to occur (cool to/below this).
 	var/result_amount = 0
 	var/mix_message = "The solution begins to bubble."
-
 	var/log_is_important = 0 // If this reaction should be considered important for logging. Important recipes message admins when mixed, non-important ones just log to file.
+
 /datum/chemical_reaction/proc/can_happen(var/datum/reagents/holder)
 	return 1
 
