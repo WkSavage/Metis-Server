@@ -522,6 +522,6 @@
 	name = "pink bodysuit"
 	desc = "eyyyy boss! This suit gets you all the pussy!"
 	icon_state = "pinkguy"
-	item_state = "pinkguy_s"
-	worn_state = "pinkguy_s"
+	item_state = "pinkguy"
+	worn_state = "pinkguy"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
