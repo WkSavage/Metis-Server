@@ -139,6 +139,11 @@
 		feed_sound(user)
 		return 1
 
+/obj/item/weapon/reagent_containers/fire_act()
+	reagents.chem_temp += 30
+	reagents.handle_reactions()
+	..()
+
 /obj/item/weapon/reagent_containers/proc/standard_pour_into(var/mob/user, var/atom/target) // This goes into afterattack and yes, it's atom-level
 	if(!target.is_open_container() || !target.reagents)
 		return 0
