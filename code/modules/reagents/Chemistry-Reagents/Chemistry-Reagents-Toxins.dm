@@ -445,11 +445,11 @@
 /datum/reagent/nicotine/affect_blood(var/mob/living/M as mob)
 	if(!M) M = holder.my_atom
 	var/smoke_message = pick("You can just feel your lungs dying!", "You feel relaxed.", "You feel calmed.", "You feel the lung cancer forming.", "You feel the money you wasted.", "You feel like a space cowboy.", "You feel rugged.")
-	if(prob(10))
+	if(prob(20))
 		M << "<span class='notice'>[smoke_message]</span>"
 	if(prob(50))
 		M.AdjustWeakened(-1)
-		M.make_jittery(-5)
+		M.make_jittery(-5*REM)
 
 /datum/reagent/nicotine/overdose(var/mob/living/M as mob)
 	if(prob(20))
