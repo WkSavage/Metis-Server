@@ -1546,6 +1546,7 @@
 #include "code\modules\reagents\reagent_containers.dm"
 #include "code\modules\reagents\reagent_dispenser.dm"
 #include "code\modules\reagents\Chemistry-Reagents\Chem-Builders.dm"
+#include "code\modules\reagents\Chemistry-Reagents\Chem-Drugs.dm"
 #include "code\modules\reagents\Chemistry-Reagents\Chemistry-Meds.dm"
 #include "code\modules\reagents\Chemistry-Reagents\Chemistry-Reagents-Core.dm"
 #include "code\modules\reagents\Chemistry-Reagents\Chemistry-Reagents-Dispenser.dm"

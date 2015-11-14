@@ -494,7 +494,7 @@
 /datum/reagent/stimpakultra/overdose(var/mob/living/carbon/M, var/removed)
 	M.make_jittery(10)
 	M.AdjustStunned(-6)
-	M.AdjustWeakened(-6*)
+	M.AdjustWeakened(-6)
 	M.AdjustParalysis(-6)
 	if(prob(66))
 		M.adjustOxyLoss(-1.5)
