@@ -42,6 +42,52 @@
 	P.overlays = list("paper_stamped_rd")
 	src.contents += P
 
+
+
+/obj/structure/noticeboard/shifts
+	name = "employee notice board"
+	desc = "A board for pinning important notices upon this one has some notices from the people on the other shifts."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "nboard05"
+	notices = 6
+
+/obj/structure/noticeboard/shifts/New()
+
+	var/obj/item/weapon/paper/P = new()
+	P.name = "Cover my shift"
+	P.info = "Hello, I'm Sam Tarsend and I'm looking for someone to cover my shift on Thursday, I'd like to spend some more time with my family<br> Thank you in advance, Sam."
+	P.stamped = list(/obj/item/weapon/stamp/rd)
+	P.overlays = list("paper_stamped_rd")
+	src.contents += P
+
+	P = new()
+	P.name = "Leave of absense"
+	P.info = "He He He<br> Sadly some big old meanie geneticist made me allergic to banana's and the rubber in my bike horn so I can't get to work intill the genetic treatment is done, I know you'll all be sad especially that red head in security, the one with the big honkers, aidos space cowboys <br>- Giggles"
+	src.contents += P
+
+	P = new()
+	P.name = "Deodorant"
+	P.info = "Just use it, I'm sick and tired of the mens locker room having such a strong funk NT want to bottle it and use it as a weapon!"
+	P.stamped = list(/obj/item/weapon/stamp/captain)
+	P.overlays = list("paper_stamped_captain")
+	src.contents += P
+
+	P = new()
+	P.name = "READ ME!"
+	P.info = "Only you can prevent work place acicdents<br> Last year our workplace accidents where up by 450% this is unacceptable, if you are working on a gas giant station please don't do what the NSS Zeus did and see if the fumes will give you a Buzz, they won't and they won't make the captain any less of a 'Hardass' "
+	src.contents += P
+
+	P = new()
+	P.name = "Coupons"
+	P.info = "Lynn from the requisition department has managed to get a coupon book for 'Big Al's Spess Pizza Pies' if you want some Hit her up, I think she's covering for Sam on Thursday"
+	src.contents += P
+
+	P = new()
+	P.name = "Birthday"
+	P.info = "We'll be throwing Frank from IA a suprise birthday party, if everyone could put in 10 credits so we can get him a gift that would be great"
+	src.contents += P
+
+
 //---- Bookcase
 
 /obj/structure/bookcase/manuals/xenoarchaeology
