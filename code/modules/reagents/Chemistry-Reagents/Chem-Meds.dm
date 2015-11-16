@@ -1,8 +1,4 @@
 
-
-
-
-
 /* General New Chem Medicine */
 
 //Pain Killers//  T1 | T2 | T3 | T4 | T5
@@ -380,7 +376,7 @@
 /datum/reagent/modafinil/overdose(var/mob/living/carbon/M, var/removed)
 	M.make_jittery(6)
 	M.AdjustStunned(-1.25)
-	M.AdjustWeakened(-)
+	M.AdjustWeakened(-3)
 	if(prob(10))
 		M.AdjustParalysis(1)
 

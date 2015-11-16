@@ -69,7 +69,7 @@
 
 /datum/reagent/toxin/cyanide/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	H.adjustOxyLoss(2.5)
+	M.adjustOxyLoss(2.5)
 	if(prob(70))
 		M << "<span class = 'danger'>You cannot breathe!</span>"
 		M.losebreath += 1

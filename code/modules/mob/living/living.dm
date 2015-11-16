@@ -411,7 +411,6 @@ default behaviour is:
 	SetWeakened(0)
 
 	// shut down ongoing problems
-	heart_attack = 0
 	radiation = 0
 	nutrition = 400
 	bodytemperature = T20C
