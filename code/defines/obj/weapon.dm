@@ -599,3 +599,16 @@
 	icon = 'icons/obj/stock_parts.dmi'
 	icon_state = "smes_coil"
 	origin_tech = "materials=19;programming=19;magnets=19;powerstorage=19;bluespace=19;combat=19;biotech=19;syndicate=19;phorontech=19;engineering=19"
+
+/obj/item/weapon/deodorant
+	name = "Jax Deodorant"
+	desc = "Makes Skrell flock to you!"
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "deodorant"
+	force = 0
+	throwforce = 1.0
+	throw_speed = 1
+	throw_range = 5
+	w_class = 2.0
+	attack_verb = list("sprayed", "bonked", "smashed")
+
