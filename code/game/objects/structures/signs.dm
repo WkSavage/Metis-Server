@@ -80,6 +80,16 @@
 	desc = "There is a little plaque underneath it reads: To those bartenders that never saw the last call Rest in peace Jamie."
 	icon_state = "jamiegun"
 
+/obj/structure/sign/male
+	name = "\improper Male Locker Rooms"
+	desc = "No girls allowed!"
+	icon_state = "male_change"
+
+/obj/structure/sign/female
+	name = "\improper Female Locker Rooms"
+	desc = "No boys allowed!"
+	icon_state = "female_change"
+
 /obj/structure/sign/securearea
 	name = "\improper SECURE AREA"
 	desc = "A warning sign which reads 'SECURE AREA'."
