@@ -91,6 +91,11 @@
 			if(target)
 				loadProgram(target)
 
+		else if("spacepod" in href_list)
+			target = locate(/area/holodeck/source_spacepod)
+			if(target)
+				loadProgram(target)
+
 		else if("turnoff" in href_list)
 			target = locate(/area/holodeck/source_plating)
 			if(target)
