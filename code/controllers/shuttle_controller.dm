@@ -194,7 +194,7 @@ var/global/datum/shuttle_controller/shuttle_controller
 	shuttle.docking_controller_tag = "prison_shuttle"
 	shuttle.dock_target_station = "prison_dock_airlock"
 	shuttle.dock_target_offsite = "prison_outpost_dock"
-	shuttles["Prison"] = shuttle
+	shuttles["prison"] = shuttle
 	process_shuttles += shuttle
 
 	// ERT Shuttle
@@ -224,8 +224,8 @@ var/global/datum/shuttle_controller/shuttle_controller
 		)
 
 	VS.announcer = "NDV Icarus"
-	VS.arrival_message = "Attention, Exodus, we just tracked a small target bypassing our defensive perimeter. Can't fire on it without hitting the station - you've got incoming visitors, like it or not."
-	VS.departure_message = "Your guests are pulling away, Exodus - moving too fast for us to draw a bead on them. Looks like they're heading out of the system at a rapid clip."
+	VS.arrival_message = "Attention, Metis, we just tracked a small target bypassing our defensive perimeter. Can't fire on it without hitting the station - you've got incoming visitors, like it or not."
+	VS.departure_message = "Your guests are pulling away, Metis - moving too fast for us to draw a bead on them. Looks like they're heading out of the system at a rapid clip."
 	VS.interim = locate(/area/skipjack_station/transit)
 
 	VS.warmup_time = 0
