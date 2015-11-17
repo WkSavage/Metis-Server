@@ -35,6 +35,7 @@ var/global/list/holodeck_programs = list(
 	"picnicarea" 		= new/datum/holodeck_program(/area/holodeck/source_picnicarea, list('sound/music/title2.ogg')),
 	"theatre" 			= new/datum/holodeck_program(/area/holodeck/source_theatre),
 	"plateau" 			= new/datum/holodeck_program(/area/holodeck/source_plateau),
+	"spacepod" 			= new/datum/holodeck_program(/area/holodeck/source_spacepod),
 	"meetinghall" 		= new/datum/holodeck_program(/area/holodeck/source_meetinghall),
 	"courtroom" 		= new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/traitor.ogg')),
 	"burntest" 			= new/datum/holodeck_program(/area/holodeck/source_burntest, list()),

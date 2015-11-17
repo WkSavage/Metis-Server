@@ -1052,6 +1052,9 @@ area/space/atmosalert()
 /area/holodeck/source_plateau
 	name = "\improper Holodeck - Plateau"
 
+/area/holodeck/source_spacepod
+	name = "\improper Holodeck - Space Pod"
+
 /area/holodeck/source_space
 	name = "\improper Holodeck - Space"
 	has_gravity = 0
