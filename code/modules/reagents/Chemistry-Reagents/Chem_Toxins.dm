@@ -341,12 +341,7 @@
 
 
 /datum/reagent/formaldehyde/on_mob_life(var/mob/living/M as mob)
-	if(!M) M = holder.my_atom
 	M.adjustToxLoss(1*REM)
-	if(prob(10))
-		M.reagents.add_reagent("histamine",rand(5,15))
-	..()
-	return
 
 /datum/reagent/neurotoxin2
 	name = "Neurotoxin"

@@ -96,7 +96,7 @@
 
 	New()
 		..()
-		reagents.add_reagent("stoxin", 60)
+		reagents.add_reagent("soporific", 60)
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/chloralhydrate

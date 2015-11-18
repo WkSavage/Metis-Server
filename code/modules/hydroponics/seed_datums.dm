@@ -395,7 +395,7 @@
 	seed_name = "liberty cap"
 	display_name = "liberty cap mushrooms"
 	mutants = null
-	chems = list("nutriment" = list(1), "stoxin" = list(3,3), "space_drugs" = list(1,25))
+	chems = list("nutriment" = list(1), "soporific" = list(3,3), "space_drugs" = list(1,25))
 
 /datum/seed/mushroom/hallucinogenic/strong/New()
 	..()
@@ -1008,7 +1008,7 @@
 	name = "jurlmah"
 	seed_name = "jurl'mah"
 	display_name = "jurl'mah reeds"
-	chems = list("serotrotium" = list(1,5),"nutriment" = list(1,5))
+	chems = list("hyperzine" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/jurlmah/New()
 	..()
@@ -1038,7 +1038,7 @@
 	name = "gelthi"
 	seed_name = "gelthi"
 	display_name = "gelthi plant"
-	chems = list("stoxin" = list(1,5),"capsaicin" = list(1,5),"nutriment" = list(1,5))
+	chems = list("soporific" = list(1,5),"capsaicin" = list(1,5),"nutriment" = list(1,5))
 
 /datum/seed/gelthi/New()
 	..()

@@ -158,6 +158,24 @@
 	if(prob(50))
 		M.adjustToxLoss(2.5)
 
+/datum/reagent/space_drugs
+	name = "Space drugs"
+	id = "space_drugs"
+	description = "An illegal chemical compound used as drug."
+	reagent_state = LIQUID
+	color = "#60A584"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE
+
+/datum/reagent/space_drugs/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_DIONA)
+		return
+	M.druggy = max(M.druggy, 20)
+	if(prob(10) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
+		step(M, pick(cardinal))
+	if(prob(7))
+		M.emote(pick("twitch", "drool", "moan", "giggle"))
+
 /datum/reagent/lsd
 	name = "Lysergic acid diethylamide"
 	id = "lsd"

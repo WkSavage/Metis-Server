@@ -137,8 +137,8 @@
 
 /datum/reagent/dylovene   //T1
 	name = "Dylovene"
-	id = "anti_toxin"
-	description = "Dylovene is a cheaep broad-spectrum antitoxin. It gets the job done if its all ya have!"
+	id = "dylovene"
+	description = "Dylovene is a cheap broad-spectrum antitoxin. It gets the job done if its all ya have!"
 	reagent_state = LIQUID
 	color = "#010d07"
 	scannable = 1
@@ -162,7 +162,7 @@
 /datum/reagent/neodextraminesolution //T3
 	name = "Neodextramine Solution"
 	id = "neodextraminesolution"
-	description = "A fast way to rid a dying paitent of spidervenom. Neodextramine is engineered to purge the body of toxins."
+	description = "A fast way to rid a dying paitent of venoms. Neodextramine is engineered to purge the body of toxins."
 	color = "#0d5c36"
 	metabolism = 0.7
 	overdose = 20

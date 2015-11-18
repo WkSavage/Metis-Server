@@ -260,7 +260,7 @@
 
 /datum/reagent/soporific
 	name = "Soporific"
-	id = "stoxin"
+	id = "soporific"
 	description = "An effective hypnotic used to treat insomnia."
 	reagent_state = LIQUID
 	color = "#009CA8"

@@ -581,7 +581,7 @@
 	New()
 		..()
 		reagents.add_reagent("nutriment", 12)
-		reagents.add_reagent("stoxin", 3)
+		reagents.add_reagent("soporific", 3)
 		bitesize = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/stuffing

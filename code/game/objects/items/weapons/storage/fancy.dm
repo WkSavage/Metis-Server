@@ -267,14 +267,14 @@
 	desc = "Holy smokes! Guaranteed 100% heresy free! Say goodbye to heretical lung cancer!"
 	icon_state = "holypacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 20)
+	default_reagents = list("nicotine" = 25)
 
 /obj/item/weapon/storage/fancy/cigarettes/lho_sticks
 	name ="\improper Lho Sticks"
 	desc = "Smooth Lho taste! The best in premium space cigarettes since 2401! Now with 25% more nicotine!"
 	icon_state = "lhosticks"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 20, "serotrotium" = 3)
+	default_reagents = list("nicotine" = 25, "hyperzine" = 3)
 
 /obj/item/weapon/storage/fancy/cigarettes/admum_stikz
 	name ="\improper AdmunStikz"
