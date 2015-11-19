@@ -610,3 +610,40 @@
 	result = "chloralhydrate"
 	required_reagents = list("chlorine" = 1, "alkysine" = 1, "carbolic_acid" = 4)
 	result_amount = 3
+
+/datum/chemical_reaction/dimethyltryptamine
+	name = "Dimethyltryptamine"
+	id = "dimethyltryptamine"
+	result = "dimethyltryptamine"
+	required_reagents = list("space_drugs" = 1, "alkysine" = 1, "xenon" = 4)
+	result_amount = 3
+
+/datum/chemical_reaction/cocaine
+	name = "Cocaine"
+	id = "cocaine"
+	result = "cocaine"
+	required_reagents = list("space_drugs" = 1, "alkysine" = 1, "acetic_acid" = 4)
+	result_amount = 3
+
+/datum/chemical_reaction/ecstasy
+	name = "Ecstasy"
+	id = "ecstasy"
+	result = "ecstasy"
+	required_reagents = list("space_drugs" = 1, "alkysine" = 1, "carbolic_acid" = 4)
+	result_amount = 3
+
+/datum/chemical_reaction/lsd
+	name = "Lysergic acid diethylamide"
+	id = "lsd"
+	result = "lsd"
+	required_reagents = list("space_drugs" = 1, "alkysine" = 1, "citric_acid" = 4)
+	result_amount = 3
+
+/datum/chemical_reaction/salvia
+	name = "Divinorum"
+	id = "salvia"
+	result = "salvia"
+	required_reagents = list("space_drugs" = 1, "alkysine" = 1, "phosphoric_acid" = 4)
+	result_amount = 3
+
+
