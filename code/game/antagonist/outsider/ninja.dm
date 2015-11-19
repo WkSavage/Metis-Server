@@ -1,3 +1,4 @@
+/*
 var/datum/antagonist/ninja/ninjas
 
 /datum/antagonist/ninja
@@ -171,3 +172,4 @@ var/datum/antagonist/ninja/ninjas
 		else
 			directive += "There are no special supplemental instructions at this time."
 	return directive
+*/
