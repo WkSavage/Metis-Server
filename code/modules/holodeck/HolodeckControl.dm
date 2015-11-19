@@ -25,7 +25,7 @@
 	"Beach" = "beach",	\
 	"Desert" = "desert",	\
 	"Plateau" = "plateau",	\
-	"Space Pod" = "spacepod",	\
+	/*"Space Pod" = "spacepod",	*/
 	"Space" = "space",	\
 	"Picnic Area" = "picnicarea",	\
 	"Snow Field" = "snowfield",	\
