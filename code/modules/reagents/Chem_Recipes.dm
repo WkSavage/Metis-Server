@@ -32,7 +32,7 @@
 /datum/chemical_reaction/ketoprofen //T2
 	name = "Ketoprofen"
 	id = "ketoprofen"
-	result = "ibuprofen"
+	result = "ketoprofen"
 	required_reagents = list("ibuprofen" = 1, "carbolic_acid" = 1)
 	result_amount = 2
 
@@ -47,7 +47,7 @@
 /datum/chemical_reaction/norsodine //T4
 	name = "Norsodine"
 	id = "norsodine"
-	result = "ibuprofen"
+	result = "norsodine"
 	required_reagents = list("ketoprofen" = 1, "oxycodone" = 1)
 	mix_message = "The mixture yields a pink liquid."
 	result_amount = 2
@@ -56,7 +56,7 @@
 /datum/chemical_reaction/oxymorphone //T5 Special (Hidden Recipe)
 	name = "Oxymorphone"
 	id = "oxymorphone"
-	result = "ibuprofen"
+	result = "oxymorphone"
 	required_reagents = list("sugar" = 5, "modafinil" = 1, "norsodine" = 1, "oxycodone" = 1)
 	mix_message = "The mixture yields a strong bubbling pink liquid."
 	result_amount = 3
@@ -90,7 +90,7 @@
 /datum/chemical_reaction/dermalopein //T4
 	name = "Dermalopein"
 	id = "dermalopein"
-	result = "neodextraminesolution"
+	result = "dermalopein"
 	required_reagents = list("neodextraminesolution" = 3, "dylovene" = 1, "acetic_acid" = 1)
 	result_amount = 2
 	max_temp = 120
@@ -594,3 +594,19 @@
 	s.start()
 	return
 
+///////////////
+//Chem Toxin Recipes:
+
+/datum/chemical_reaction/soporific
+	name = "Soporific"
+	id = "soporific"
+	result = "soporific"
+	required_reagents = list("chloralhydrate" = 1, "nitrogen" = 1, "water" = 4)
+	result_amount = 3
+
+/datum/chemical_reaction/chloralhydrate
+	name = "Chloral Hydrate"
+	id = "chloralhydrate"
+	result = "chloralhydrate"
+	required_reagents = list("chlorine" = 1, "alkysine" = 1, "carbolic_acid" = 4)
+	result_amount = 3

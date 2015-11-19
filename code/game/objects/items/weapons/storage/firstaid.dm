@@ -198,11 +198,11 @@
 		new /obj/item/weapon/reagent_containers/pill/antitox( src )
 		new /obj/item/weapon/reagent_containers/pill/antitox( src )
 
-/obj/item/weapon/storage/pill_bottle/bicaridine
-	name = "bottle of Bicaridine pills"
+/obj/item/weapon/storage/pill_bottle/pamelor
+	name = "bottle of Pamelor pills"
 	desc = "Contains pills used to stabilize the severely injured."
 
-/obj/item/weapon/storage/pill_bottle/bicaridine/New()
+/obj/item/weapon/storage/pill_bottle/pamelor/New()
     ..()
     new /obj/item/weapon/reagent_containers/pill/pamelor(src)
     new /obj/item/weapon/reagent_containers/pill/pamelor(src)
