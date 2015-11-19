@@ -410,8 +410,8 @@
 			"ethylredoxrazine",
 			"slimejelly",
 			"cyanide",
-			"mindbreaker",
-			"stoxin"
+			"lsd",
+			"soporific"
 			)
 
 		for(var/x=1;x<=additional_chems;x++)

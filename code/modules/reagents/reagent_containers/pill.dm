@@ -135,7 +135,7 @@
 	icon_state = "pill8"
 	New()
 		..()
-		reagents.add_reagent("stoxin", 15)
+		reagents.add_reagent("soporific", 15)
 
 /obj/item/weapon/reagent_containers/pill/kelotane
 	name = "Kelotane pill"
@@ -227,13 +227,21 @@
 		..()
 		reagents.add_reagent("inaprovaline", 30)
 
-/obj/item/weapon/reagent_containers/pill/bicaridine
-	name = "Bicaridine pill"
+/obj/item/weapon/reagent_containers/pill/epinephrine
+	name = "Epinephrine pill"
+	desc = "Used to stabilize patients."
+	icon_state = "pill20"
+	New()
+		..()
+		reagents.add_reagent("epinephrine", 25)
+
+/obj/item/weapon/reagent_containers/pill/pamelor
+	name = "Pamelor pill"
 	desc = "Used to treat physical injuries."
 	icon_state = "pill18"
 	New()
 		..()
-		reagents.add_reagent("bicaridine", 20)
+		reagents.add_reagent("pamelor", 20)
 
 /obj/item/weapon/reagent_containers/pill/happy
 	name = "Happy pill"

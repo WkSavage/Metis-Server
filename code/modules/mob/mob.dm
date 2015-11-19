@@ -994,6 +994,27 @@ mob/proc/yank_out_object()
 		AdjustParalysis(-1)
 	return paralysis
 
+/mob/proc/fakevomit(green=0) //for aesthetic vomits that need to be instant and do not stun. -Fox
+	if(stat==DEAD)
+		return
+	var/turf/location = loc
+	if (istype(location, /turf/simulated))
+		if(green)
+			src.visible_message("<span class='warning'>[src] vomits up some green goo!</span>","<span class='warning'>You vomit up some green goo!</span>")
+			new /obj/effect/decal/cleanable/vomit(location)
+		else
+			src.visible_message("<span class='warning'>[src] pukes all over \himself!</span>","<span class='warning'>You puke all over yourself!</span>")
+			location.add_vomit_floor(src, 1)
+		playsound(location, 'sound/effects/splat.ogg', 50, 1)
+
+/mob/proc/fakepoop() //for aesthetic craps. Whyyyyy -Fox
+	if(stat==DEAD)
+		return
+	var/turf/location = loc
+	if (istype(location, /turf/simulated))
+		src.visible_message("<span class='warning'>[src] has explosive diarrhea all over the floor!</span>","<span class='warning'>You have explosive diarrhea all over the floor!</span>")
+		playsound(location, 'sound/effects/splat.ogg', 50, 1)
+
 //Check for brain worms in head.
 /mob/proc/has_brain_worms()
 

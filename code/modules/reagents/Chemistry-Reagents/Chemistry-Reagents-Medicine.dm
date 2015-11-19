@@ -345,6 +345,7 @@
 	color = "#605048"
 	overdose = REAGENTS_OVERDOSE
 
+
 /datum/reagent/ethylredoxrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return

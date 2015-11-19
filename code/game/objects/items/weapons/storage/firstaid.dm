@@ -53,6 +53,26 @@
 		new /obj/item/weapon/reagent_containers/hypospray/autoinjector( src )
 		return
 
+/obj/item/weapon/storage/firstaid/emergency
+	icon_state = "firstaid"
+	name = "surgery kit"
+	desc = "Contains tools for surgery."
+	storage_slots = 9
+
+	New()
+		..()
+		if (empty) return
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/bruise_pack(src)
+		new /obj/item/stack/medical/ointment(src)
+		new /obj/item/stack/medical/ointment(src)
+		new /obj/item/weapon/reagent_containers/pill/epinephrine(src)
+		new /obj/item/weapon/reagent_containers/pill/epinephrine(src)
+		new /obj/item/weapon/reagent_containers/pill/antitox(src)
+		new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+		new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+		return
+
 /obj/item/weapon/storage/firstaid/toxin
 	name = "toxin first aid"
 	desc = "Used to treat when you have a high amoutn of toxins in your body."
@@ -119,7 +139,7 @@
 /obj/item/weapon/storage/firstaid/combat/New()
 	..()
 	if (empty) return
-	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
+	new /obj/item/weapon/storage/pill_bottle/pamelor(src)
 	new /obj/item/weapon/storage/pill_bottle/dermaline(src)
 	new /obj/item/weapon/storage/pill_bottle/dexalin_plus(src)
 	new /obj/item/weapon/storage/pill_bottle/dylovene(src)
@@ -178,19 +198,19 @@
 		new /obj/item/weapon/reagent_containers/pill/antitox( src )
 		new /obj/item/weapon/reagent_containers/pill/antitox( src )
 
-/obj/item/weapon/storage/pill_bottle/bicaridine
-	name = "bottle of Bicaridine pills"
+/obj/item/weapon/storage/pill_bottle/pamelor
+	name = "bottle of Pamelor pills"
 	desc = "Contains pills used to stabilize the severely injured."
 
-/obj/item/weapon/storage/pill_bottle/bicaridine/New()
+/obj/item/weapon/storage/pill_bottle/pamelor/New()
     ..()
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
-    new /obj/item/weapon/reagent_containers/pill/bicaridine(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
+    new /obj/item/weapon/reagent_containers/pill/pamelor(src)
 
 /obj/item/weapon/storage/pill_bottle/dexalin_plus
 	name = "bottle of Dexalin Plus pills"

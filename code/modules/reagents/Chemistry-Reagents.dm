@@ -75,8 +75,7 @@
 /datum/reagent/proc/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
 	return
 
-/datum/reagent/proc/overdose(var/mob/living/carbon/M, var/alien) // Overdose effect. Doesn't happen instantly.
-	M.adjustToxLoss(REM)
+/datum/reagent/proc/overdose(var/mob/living/carbon/M) // Overdose effect. Doesn't happen instantly.
 	return
 
 /datum/reagent/proc/initialize_data(var/newdata) // Called when the reagent is created.

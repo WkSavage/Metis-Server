@@ -1507,6 +1507,9 @@
 		if(stat == DEAD)
 			return PULSE_NONE	//that's it, you're dead, nothing can influence your pulse
 
+		if(heart_attack)
+			return PULSE_NONE
+
 		var/temp = PULSE_NORM
 
 		if(round(vessel.get_reagent_amount("blood")) <= BLOOD_VOLUME_BAD)	//how much blood do we have
@@ -1725,6 +1728,16 @@
 /mob/living/carbon/human/rejuvenate()
 	restore_blood()
 	..()
+
+/mob/living/carbon/human/proc/handle_heartattack()
+	if(!heart_attack)
+		return
+	else
+		losebreath += 5
+		adjustOxyLoss(10)
+		adjustBrainLoss(rand(4,10))
+		Paralyse(2)
+	return
 
 #undef HUMAN_MAX_OXYLOSS
 #undef HUMAN_CRIT_MAX_OXYLOSS

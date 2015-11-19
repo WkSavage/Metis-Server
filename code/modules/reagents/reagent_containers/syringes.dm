@@ -324,7 +324,7 @@
 	New()
 		..()
 		reagents.add_reagent("space_drugs",  5)
-		reagents.add_reagent("mindbreaker",  5)
+		reagents.add_reagent("lsd",  5)
 		reagents.add_reagent("cryptobiolin", 5)
 		mode = SYRINGE_INJECT
 		update_icon()
