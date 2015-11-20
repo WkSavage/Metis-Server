@@ -300,7 +300,7 @@
 	name = "Ethylredoxrazine"
 	id = "ethylredoxrazine"
 	result = "ethylredoxrazine"
-	required_reagents = list("oxygen" = 1, "anti_toxin" = 1, "carbon" = 1)
+	required_reagents = list("oxygen" = 1, "cedilanid" = 1, "carbon" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/leporazine
@@ -315,7 +315,7 @@
 	name = "Sterilizine"
 	id = "sterilizine"
 	result = "sterilizine"
-	required_reagents = list("ethanol" = 1, "anti_toxin" = 1, "chlorine" = 1)
+	required_reagents = list("ethanol" = 1, "cedilanid" = 1, "chlorine" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/spaceacillin
@@ -344,14 +344,14 @@
 	name = "imidazoline"
 	id = "imidazoline"
 	result = "imidazoline"
-	required_reagents = list("carbon" = 1, "hydrogen" = 1, "anti_toxin" = 1)
+	required_reagents = list("carbon" = 1, "hydrogen" = 1, "cedilanid" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/provolanaproxalidamine
 	name = "Provolanaproxalidamine"
 	id = "provolanaproxalidamine"
 	result = "provolanaproxalidamine"
-	required_reagents = list("carbon" = 1, "hydrogen" = 1, "anti_toxin" = 1)
+	required_reagents = list("carbon" = 1, "hydrogen" = 1, "cedilanid" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/cryoxadone

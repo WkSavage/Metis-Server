@@ -493,11 +493,11 @@ I said no!
 	result = /obj/item/weapon/reagent_containers/food/snacks/spacylibertyduff
 
 /datum/recipe/amanitajelly
-	reagents = list("water" = 5, "vodka" = 5, "amatoxin" = 5)
+	reagents = list("water" = 5, "vodka" = 5, "toxin" = 5)
 	result = /obj/item/weapon/reagent_containers/food/snacks/amanitajelly
 	make_food(var/obj/container as obj)
 		var/obj/item/weapon/reagent_containers/food/snacks/amanitajelly/being_cooked = ..(container)
-		being_cooked.reagents.del_reagent("amatoxin")
+		being_cooked.reagents.del_reagent("toxin")
 		return being_cooked
 
 /datum/recipe/meatballsoup
@@ -534,7 +534,7 @@ I said no!
 	result = /obj/item/weapon/reagent_containers/food/snacks/coldchili
 
 /datum/recipe/amanita_pie
-	reagents = list("amatoxin" = 5)
+	reagents = list("toxin" = 5)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/sliceable/flatdough)
 	result = /obj/item/weapon/reagent_containers/food/snacks/amanita_pie
 

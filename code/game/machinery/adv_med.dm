@@ -283,7 +283,7 @@
 		"dexalin_amount" = H.reagents.get_reagent_amount("dexalin"),
 		"stoxin_amount" = H.reagents.get_reagent_amount("soporific"),
 		"bicaridine_amount" = H.reagents.get_reagent_amount("bicaridine"),
-		"dermaline_amount" = H.reagents.get_reagent_amount("dermaline"),
+		"kelotane_amount" = H.reagents.get_reagent_amount("kelotane"),
 		"blood_amount" = H.vessel.get_reagent_amount("blood"),
 		"disabilities" = H.sdisabilities,
 		"tg_diseases_list" = H.viruses.Copy(),
@@ -327,7 +327,7 @@
 
 	dat += text("Inaprovaline: [] units<BR>", occ["inaprovaline_amount"])
 	dat += text("Soporific: [] units<BR>", occ["soporific_amount"])
-	dat += text("[]\tDermaline: [] units</FONT><BR>", (occ["dermaline_amount"] < 30 ? "<font color='black'>" : "<font color='red'>"), occ["dermaline_amount"])
+	dat += text("[]\tKelotane: [] units</FONT><BR>", (occ["kelotane_amount"] < 30 ? "<font color='black'>" : "<font color='red'>"), occ["kelotane_amount"])
 	dat += text("[]\tBicaridine: [] units<BR>", (occ["bicaridine_amount"] < 30 ? "<font color='black'>" : "<font color='red'>"), occ["bicaridine_amount"])
 	dat += text("[]\tDexalin: [] units<BR>", (occ["dexalin_amount"] < 30 ? "<font color='black'>" : "<font color='red'>"), occ["dexalin_amount"])
 

@@ -99,8 +99,8 @@
 // ===========
 /datum/medical_effect/bad_stomach
 	name = "Bad Stomach"
-	triggers = list("kelotane" = 30, "dermaline" = 15)
-	cures = list("anti_toxin")
+	triggers = list("kelotane" = 30)
+	cures = list("cedilanid")
 	cure_message = "Your stomach feels a little better now..."
 
 /datum/medical_effect/bad_stomach/on_life(mob/living/carbon/human/H, strength)
@@ -116,7 +116,7 @@
 // ======
 /datum/medical_effect/cramps
 	name = "Cramps"
-	triggers = list("anti_toxin" = 30, "tramadol" = 15)
+	triggers = list("cedilanid" = 30, "tramadol" = 15)
 	cures = list("inaprovaline")
 	cure_message = "The cramps let up..."
 

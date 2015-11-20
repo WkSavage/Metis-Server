@@ -15,8 +15,7 @@
 	var/beaker = null
 	var/recharged = 0
 	var/hackedcheck = 0
-	var/list/dispensable_reagents = list("carbolic_acid","acetic_acid","citric_acid","oxalic_acid","phosphoric_acid","calcium_hydroxide",
-	"lithium_hydroxide","zinc_hydroxide","xenon","methanol","iodine")
+	var/list/dispensable_reagents = list("iodine", "methanol", "xenon", "carbolic_acid", "acetic_acid", "citric_acid", "oxalic_acid", "phosphoric_acid", "calcium_hydroxide", "lithium_hydroxide", "zinc_hydroxide")
 	var/hack_message = "You disable the safety safeguards, enabling the \"Mad Scientist\" mode."
 	var/unhack_message = "You re-enable the safety safeguards, enabling the \"NT Standard\" mode."
 	var/list/broken_requirements = list()
@@ -35,7 +34,6 @@
 		use_power(1500) // This thing uses up alot of power (this is still low as shit for creating reagents from thin air)
 		nanomanager.update_uis(src) // update all UIs attached to src
 
-/obj/machinery/chem_dispenseralpha/power_change()
 	..()
 	nanomanager.update_uis(src) // update all UIs attached to src
 

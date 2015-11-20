@@ -252,6 +252,15 @@
 	..()
 	return
 
+/datum/reagent/acid/polyacid
+	name = "Polytrinic acid"
+	id = "pacid"
+	description = "Polytrinic acid is a an extremely corrosive chemical substance."
+	reagent_state = LIQUID
+	color = "#8E18A9"
+	power = 10
+	meltdose = 4
+
 ////////////////
 
 /* Transformations */

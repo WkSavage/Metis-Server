@@ -305,7 +305,7 @@
 	desc = "Contains anti-toxins."
 	New()
 		..()
-		reagents.add_reagent("anti_toxin", 15)
+		reagents.add_reagent("cedilanid", 15)
 		mode = SYRINGE_INJECT
 		update_icon()
 
