@@ -74,7 +74,7 @@
 		var/list/descriptors = list()
 		if(reagents.has_reagent("sugar") || reagents.has_reagent("cherryjelly") || reagents.has_reagent("honey") || reagents.has_reagent("berryjuice"))
 			descriptors |= "sweet"
-		if(reagents.has_reagent("anti_toxin"))
+		if(reagents.has_reagent("cedilanid"))
 			descriptors |= "astringent"
 		if(reagents.has_reagent("frostoil"))
 			descriptors |= "numbing"
@@ -88,7 +88,7 @@
 			descriptors |= "sweet-sour"
 		if(reagents.has_reagent("radium") || reagents.has_reagent("uranium"))
 			descriptors |= "radioactive"
-		if(reagents.has_reagent("amatoxin") || reagents.has_reagent("toxin"))
+		if(reagents.has_reagent("toxin") || reagents.has_reagent("toxin"))
 			descriptors |= "poisonous"
 		if(reagents.has_reagent("psilocybin") || reagents.has_reagent("space_drugs"))
 			descriptors |= "hallucinogenic"

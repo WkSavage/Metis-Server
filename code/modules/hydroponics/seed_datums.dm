@@ -410,7 +410,7 @@
 	seed_name = "fly amanita"
 	display_name = "fly amanita mushrooms"
 	mutants = list("destroyingangel","plastic")
-	chems = list("nutriment" = list(1), "amatoxin" = list(3,3), "psilocybin" = list(1,25))
+	chems = list("nutriment" = list(1), "toxin" = list(3,3), "psilocybin" = list(1,25))
 
 /datum/seed/mushroom/poison/New()
 	..()
@@ -427,7 +427,7 @@
 	seed_name = "destroying angel"
 	display_name = "destroying angel mushrooms"
 	mutants = null
-	chems = list("nutriment" = list(1,50), "amatoxin" = list(13,3), "psilocybin" = list(1,25))
+	chems = list("nutriment" = list(1,50), "toxin" = list(13,3), "psilocybin" = list(1,25))
 
 /datum/seed/mushroom/poison/death/New()
 	..()
@@ -904,7 +904,7 @@
 	name = "kudzu"
 	seed_name = "kudzu"
 	display_name = "kudzu vines"
-	chems = list("nutriment" = list(1,50), "anti_toxin" = list(1,25))
+	chems = list("nutriment" = list(1,50), "cedilanid" = list(1,25))
 
 /datum/seed/kudzu/New()
 	..()
@@ -1068,7 +1068,7 @@
 	name = "surik"
 	seed_name = "surik"
 	display_name = "surik vine"
-	chems = list("impedrezene" = list(1,3),"synaptizine" = list(1,2),"nutriment" = list(1,5))
+	chems = list("impedrezene" = list(1,3),"nutriment" = list(1,5))
 
 /datum/seed/surik/New()
 	..()

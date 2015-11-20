@@ -213,7 +213,7 @@
 	desc = "An obscure brand of cigarettes."
 	icon_state = "syndiepacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 15, "inaprovaline" = 10, "tricordrazine" = 5)
+	default_reagents = list("nicotine" = 15, "inaprovaline" = 10, "provolanaproxalidamine" = 5)
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_uplift
 	name = "\improper Uplift Smooth packet"
@@ -233,28 +233,28 @@
 	desc = "Smoked by the truly robust."
 	icon_state = "robustgpacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 15, "gold" = 5, "tricordrazine" = 2.5)
+	default_reagents = list("nicotine" = 15, "gold" = 5, "provolanaproxalidamine" = 2.5)
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_carp
 	name = "\improper Carp Classic packet"
 	desc = "Since 2313."
 	icon_state = "carppacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 18)
+	default_reagents = list("nicotine" = 25)
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_midori
 	name = "\improper Midori Tabako packet"
 	desc = "You can't understand the runes, but the packet smells funny."
 	icon_state = "midoripacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 15, "dexalin" = 5)
+	default_reagents = list("nicotine" = 20)
 
 /obj/item/weapon/storage/fancy/cigarettes/cigpack_shadyjims
 	name ="\improper Shady Jim's Super Slims"
 	desc = "Is your weight slowing you down? Having trouble running away from gravitational singularities? Can't stop stuffing your mouth? Smoke Shady Jim's Super Slims and watch all that fat burn away. Guaranteed results!"
 	icon_state = "shadyjimpacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 15, "lipolicide" = 5)
+	default_reagents = list("nicotine" = 20, "lipolicide" = 10)
 
 /obj/item/weapon/storage/fancy/cigarettes/kanser_sticks
 	name ="\improper Kanser Sticks"
@@ -262,26 +262,27 @@
 	icon_state = "kancersticks"
 	item_state = "cigpacket"
 	default_reagents = list("nicotine" = 30)
+
 /obj/item/weapon/storage/fancy/cigarettes/holy_smokes
 	name ="\improper Holy Smokes"
 	desc = "Holy smokes! Guaranteed 100% heresy free! Say goodbye to heretical lung cancer!"
 	icon_state = "holypacket"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 25)
+	default_reagents = list("nicotine" = 25, "holywater" = 5)
 
 /obj/item/weapon/storage/fancy/cigarettes/lho_sticks
 	name ="\improper Lho Sticks"
 	desc = "Smooth Lho taste! The best in premium space cigarettes since 2401! Now with 25% more nicotine!"
 	icon_state = "lhosticks"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 25, "hyperzine" = 3)
+	default_reagents = list("nicotine" = 25, "hyperzine" = 5)
 
 /obj/item/weapon/storage/fancy/cigarettes/admum_stikz
 	name ="\improper AdmunStikz"
 	desc = "'s Little sticks of fun! I wouldnt trust these at all."
 	icon_state = "admun"
 	item_state = "cigpacket"
-	default_reagents = list("nicotine" = 5, "psilocybin" = 10, "capsaicin" = 5, "ephedrine" = 5, "condensedcapsaicin" = 0.5)
+	default_reagents = list("salvia" = 15, "capsaicin" = 10, "condensedcapsaicin" = 0.5)
 
 /////////
 //Cigar//
@@ -345,7 +346,7 @@
 	icon = 'icons/obj/cigarettes.dmi'
 	can_hold = list(/obj/item/clothing/mask/cigarette/cigar/cohiba)
 	icon_type = "cigar2off"
-	default_reagents = list("nicotine" = 25)
+	default_reagents = list("nicotine" = 30)
 
 /obj/item/weapon/storage/fancy/cigar/havana
 	name = "Premium Hohiba Cigar Case"

@@ -51,7 +51,7 @@ datum/reagent/iodine
 
 /datum/reagent/phosphoric_acid
 	name = "Phosphoric Acid"
-	id = "oxalic_acid"
+	id = "phosphoric_acid"
 	description = "This is a useful building block in organic chemistry."
 	reagent_state = LIQUID
 	color = "#525050"
@@ -72,7 +72,7 @@ datum/reagent/iodine
 
 /datum/reagent/zinc_hydroxide
 	name = "Zinc Hydroxide"
-	id = "lithium_hydroxide"
+	id = "zinc_hydroxide"
 	description = "This is a useful building block in organic chemistry."
 	reagent_state = LIQUID
 	color = "#525050"

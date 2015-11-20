@@ -103,7 +103,7 @@
 	icon_state = "pill17"
 	New()
 		..()
-		reagents.add_reagent("anti_toxin", 25)
+		reagents.add_reagent("cedilanid", 25)
 
 /obj/item/weapon/reagent_containers/pill/tox
 	name = "Toxins pill"
@@ -111,7 +111,7 @@
 	icon_state = "pill5"
 	New()
 		..()
-		reagents.add_reagent("toxin", 50)
+		reagents.add_reagent("toxin", 60)
 
 /obj/item/weapon/reagent_containers/pill/cyanide
 	name = "Cyanide pill"
@@ -119,7 +119,7 @@
 	icon_state = "pill5"
 	New()
 		..()
-		reagents.add_reagent("cyanide", 50)
+		reagents.add_reagent("cyanide", 60)
 
 /obj/item/weapon/reagent_containers/pill/adminordrazine
 	name = "Adminordrazine pill"
@@ -146,20 +146,20 @@
 		reagents.add_reagent("kelotane", 15)
 
 /obj/item/weapon/reagent_containers/pill/paracetamol
-	name = "Paracetamol pill"
-	desc = "Tylenol! A painkiller for the ages. Chewables!"
+	name = "Ibuprofen pill"
+	desc = "Ibuprofen! A painkiller for the ages. Chewables!"
 	icon_state = "pill8"
 	New()
 		..()
-		reagents.add_reagent("paracetamol", 15)
+		reagents.add_reagent("ibuprofen", 25)
 
 /obj/item/weapon/reagent_containers/pill/tramadol
-	name = "Tramadol pill"
+	name = "Ketoprofen pill"
 	desc = "A simple painkiller."
 	icon_state = "pill8"
 	New()
 		..()
-		reagents.add_reagent("tramadol", 15)
+		reagents.add_reagent("ketoprofen", 20)
 
 
 /obj/item/weapon/reagent_containers/pill/methylphenidate
@@ -188,36 +188,28 @@
 		reagents.add_reagent("inaprovaline", 30)
 
 /obj/item/weapon/reagent_containers/pill/dexalin
-	name = "Dexalin pill"
+	name = "Osmotrol pill"
 	desc = "Used to treat oxygen deprivation."
 	icon_state = "pill16"
 	New()
 		..()
-		reagents.add_reagent("dexalin", 15)
+		reagents.add_reagent("osmotrol", 15)
 
 /obj/item/weapon/reagent_containers/pill/dexalin_plus
-	name = "Dexalin Plus pill"
+	name = "Hexadrol pill"
 	desc = "Used to treat extreme oxygen deprivation."
 	icon_state = "pill8"
 	New()
 		..()
-		reagents.add_reagent("dexalinp", 15)
-
-/obj/item/weapon/reagent_containers/pill/dermaline
-	name = "Dermaline pill"
-	desc = "Used to treat burn wounds."
-	icon_state = "pill12"
-	New()
-		..()
-		reagents.add_reagent("dermaline", 15)
+		reagents.add_reagent("hexadrol", 15)
 
 /obj/item/weapon/reagent_containers/pill/dylovene
-	name = "Dylovene pill"
+	name = "Cedilanid pill"
 	desc = "A broad-spectrum anti-toxin."
 	icon_state = "pill13"
 	New()
 		..()
-		reagents.add_reagent("anti_toxin", 15)
+		reagents.add_reagent("cedilanid", 15)
 
 /obj/item/weapon/reagent_containers/pill/inaprovaline
 	name = "Inaprovaline pill"
@@ -258,8 +250,7 @@
 	icon_state = "pill18"
 	New()
 		..()
-		reagents.add_reagent("impedrezene", 10)
-		reagents.add_reagent("synaptizine", 5)
+		reagents.add_reagent("lsd", 10)
 		reagents.add_reagent("hyperzine", 5)
 
 /obj/item/weapon/reagent_containers/pill/spaceacillin

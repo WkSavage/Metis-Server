@@ -692,7 +692,7 @@
 	name = "\improper Sin-pocket"
 	desc = "The food of choice for the veteran. Do <B>NOT</B> overconsume."
 	filling_color = "#6D6D00"
-	heated_reagents = list("doctorsdelight" = 5, "hyperzine" = 0.75, "synaptizine" = 0.25)
+	heated_reagents = list("doctorsdelight" = 5, "provolanaproxalidamine" = 5)
 	var/has_been_heated = 0
 
 /obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket/attack_self(mob/user)
@@ -717,7 +717,7 @@
 		reagents.add_reagent("protein", 2)
 
 	var/warm = 0
-	var/list/heated_reagents = list("tricordrazine" = 5)
+	var/list/heated_reagents = list("provolanaproxalidamine" = 5)
 	proc/heat()
 		warm = 1
 		for(var/reagent in heated_reagents)
@@ -1011,7 +1011,7 @@
 	New()
 		..()
 		reagents.add_reagent("nutriment", 5)
-		reagents.add_reagent("amatoxin", 3)
+		reagents.add_reagent("toxin", 3)
 		reagents.add_reagent("psilocybin", 1)
 		bitesize = 3
 
@@ -1308,7 +1308,7 @@
 	New()
 		..()
 		reagents.add_reagent("nutriment", 6)
-		reagents.add_reagent("amatoxin", 6)
+		reagents.add_reagent("toxin", 6)
 		reagents.add_reagent("psilocybin", 3)
 		bitesize = 3
 

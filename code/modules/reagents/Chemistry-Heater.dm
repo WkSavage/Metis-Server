@@ -67,33 +67,25 @@
 			stat |= NOPOWER
 	nanomanager.update_uis(src)
 
-/obj/machinery/chem_heater/attackby(var/obj/item/I as obj, var/mob/user as mob)
+/obj/machinery/chem_heater/attackby(var/obj/item/weapon/reagent_containers/B as obj, var/mob/user as mob)
 	if(isrobot(user))
+		return 1
+	if(src.beaker)
+		user << "Something is already loaded into the machine."
 		return
-
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
-		if(beaker)
-			user << "<span class='notice'>A beaker is already loaded into the machine.</span>"
+	if(istype(B, /obj/item/weapon/reagent_containers/glass) || istype(B, /obj/item/weapon/reagent_containers/food))
+		if(istype(B,/obj/item/weapon/reagent_containers/food))
+			user << "<span class='notice'>This machine only accepts beakers</span>"
 			return
-
-		if(user.drop_item())
-			beaker = I
-			I.forceMove(src)
-			user << "<span class='notice'>You add the beaker to the machine!</span>"
-			icon_state = "mixer1b"
-			nanomanager.update_uis(src)
-
-	if(default_deconstruction_screwdriver(user, "mixer0b", "mixer0b", I))
+		src.beaker =  B
+		user.drop_item()
+		B.loc = src
+		user << "You set [B] on the machine."
+		nanomanager.update_uis(src) // update all UIs attached to src
 		return
 
 //	if(exchange_parts(user, I))
 //		return
-
-	if(panel_open)
-		if(istype(I, /obj/item/weapon/crowbar))
-			eject_beaker()
-			default_deconstruction_crowbar(I)
-			return 1
 
 /obj/machinery/chem_heater/attack_hand(var/mob/user as mob)
 	ui_interact(user)

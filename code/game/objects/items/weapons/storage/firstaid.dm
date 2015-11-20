@@ -140,7 +140,7 @@
 	..()
 	if (empty) return
 	new /obj/item/weapon/storage/pill_bottle/pamelor(src)
-	new /obj/item/weapon/storage/pill_bottle/dermaline(src)
+	new /obj/item/weapon/storage/pill_bottle/kelotane(src)
 	new /obj/item/weapon/storage/pill_bottle/dexalin_plus(src)
 	new /obj/item/weapon/storage/pill_bottle/dylovene(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
@@ -226,19 +226,19 @@
     new /obj/item/weapon/reagent_containers/pill/dexalin_plus(src)
     new /obj/item/weapon/reagent_containers/pill/dexalin_plus(src)
 
-/obj/item/weapon/storage/pill_bottle/dermaline
-	name = "bottle of Dermaline pills"
+/obj/item/weapon/storage/pill_bottle/kelotane
+	name = "bottle of Kelotane pills"
 	desc = "Contains pills used to treat burn wounds."
 
 /obj/item/weapon/storage/pill_bottle/dermaline/New()
     ..()
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
-    new /obj/item/weapon/reagent_containers/pill/dermaline(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
+    new /obj/item/weapon/reagent_containers/pill/kelotane(src)
 
 /obj/item/weapon/storage/pill_bottle/dylovene
 	name = "bottle of Dylovene pills"

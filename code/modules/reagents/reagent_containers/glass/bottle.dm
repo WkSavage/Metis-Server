@@ -111,14 +111,14 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/antitoxin
-	name = "dylovene bottle"
-	desc = "A small bottle of dylovene. Counters poisons, and repairs damage. A wonder drug."
+	name = "cedilanid bottle"
+	desc = "A small bottle of cedilanid. Counters poisons, and repairs damage. A wonder drug."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 
 	New()
 		..()
-		reagents.add_reagent("anti_toxin", 60)
+		reagents.add_reagent("cedilanid", 60)
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/mutagen
