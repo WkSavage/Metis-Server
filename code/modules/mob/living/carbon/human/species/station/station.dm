@@ -144,9 +144,9 @@
 	show_ssd = "ayy lmaos into the void"
 	language = "Secta"
 	total_health = 90
-	primitive_form = "Neaera"
+	primitive_form = "Sectoid"
 	unarmed_types = list(/datum/unarmed_attack/punch)
-	blurb = "fukin sectoids get 'dat ayyyy lamo shit out of here fukin miss on a 87% my ass"
+	blurb = "A small and frail race, they have Psionic link with all other Greys" /*"fukin sectoids get 'dat ayyyy lamo shit out of here fukin miss on a 87% my ass" */
 
 	flags = CAN_JOIN | IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR
 
@@ -313,8 +313,8 @@
 	burn_mod = 1.6
 	darksight = 8
 	blurb = "An insectoid species, Kidan come from the star system known as Pleiades-Taurus, which translates to 'Star of the Seven Sisters'.<br/><br/>Kidan are slightly behind humans in terms of technology, and live under the Empresses, a group of powerful females within their society which control the entire Kidan empire much like a bee-queen might control her hive. Kidan are carnivores on the whole and, after being crushed in a war, are forced to cooperate with other species, though some think they may come for revenge after the deaths of all their Empresses of the time."
-	
-	flags = CAN_JOIN | IS_WHITELISTED | HAS_UNDERWEAR | HAS_LIPS 
-	
+
+	flags = CAN_JOIN | IS_WHITELISTED | HAS_UNDERWEAR | HAS_LIPS
+
 	blood_color = "#328332"
-	flesh_color = "#8C4600" 
+	flesh_color = "#8C4600"
