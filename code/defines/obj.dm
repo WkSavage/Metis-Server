@@ -301,6 +301,15 @@ var/global/ManifestJSON
 	anchored = 1
 	unacidable = 1//temporary until I decide whether the borg can be removed. -veyveyr
 
+/obj/structure/benchpress
+	name = "Bench Press"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "benchpress"
+	desc = "For when you want to get swole."
+	density = 1
+	anchored = 1
+	unacidable = 1//temporary until I decide whether the borg can be removed. -veyveyr
+
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 
 /obj/item/weapon/beach_ball

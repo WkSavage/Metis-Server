@@ -114,6 +114,13 @@
 	item_state = "ntballoon"
 	w_class = 4.0
 
+/obj/item/toy/basketball
+	icon = 'icons/obj/basketball.dmi'
+	icon_state = "basketball"
+	name = "basketball"
+	item_state = "basketball"
+	desc = "Slam, Bam, Thank you ma'am Get on the floor and jam."
+
 /*
  * Fake telebeacon
  */

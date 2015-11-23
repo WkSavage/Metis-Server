@@ -160,7 +160,7 @@
 	department = "Security"
 	department_flag = ENGSEC
 	faction = "Station"
-	total_positions = 3
+	total_positions = 5
 	spawn_positions = 4
 	supervisors = "the wardern"
 	selection_color = "#FF7722"
