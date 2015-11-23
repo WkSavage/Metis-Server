@@ -16,7 +16,7 @@
 
 /datum/language/grey
 	name = "Secta"
-	desc = "flibby flobby psionic shiz."
+	desc = "A psionic mind link."
 	speech_verb = "murmurs"
 	ask_verb = "drones"
 	exclaim_verb = "babbles"
@@ -28,7 +28,7 @@
 /datum/language/grey/get_random_name()
 	var/new_name = "[pick(list("Roswell","Roanoke","Voynich","Rosetta","Prometheus","Tunguska","Tachyon","Ziphius","Dover","Gollop","Zeta","Reticuli","Vree","Strieber","Daniken","Solway","Levelland","Allagash","Majestic","Rendlesham","Petrozavodsk","Valentich","Zamora","Crypto","Teasdale"))]"
 	return new_name
-	
+
 /datum/language/kidan
 	name = "Chittin"
 	desc = "The Kidan language."
