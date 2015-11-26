@@ -99,7 +99,7 @@
 	flesh_color = "#AFA59E"
 	base_color = "#333333"
 
-	heat_discomfort_level = 292
+	heat_discomfort_level = 300
 	heat_discomfort_strings = list(
 		"Your fur prickles in the heat.",
 		"You feel uncomfortably warm.",
