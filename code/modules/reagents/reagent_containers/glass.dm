@@ -209,7 +209,7 @@
 /obj/item/weapon/reagent_containers/glass/beaker/cryoxadone
 	New()
 		..()
-		reagents.add_reagent("cryoxadone", 30)
+		reagents.add_reagent("cryoxadone", 60)
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/beaker/sulphuric

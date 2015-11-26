@@ -16,6 +16,7 @@
 	var/recharged = 0
 	var/hackedcheck = 0
 	var/list/dispensable_reagents = list("iodine", "methanol", "xenon", "carbolic_acid", "acetic_acid", "citric_acid", "oxalic_acid", "phosphoric_acid", "calcium_hydroxide", "lithium_hydroxide", "zinc_hydroxide")
+	var/list/hacked_reagents = list("toxin")
 	var/hack_message = "You disable the safety safeguards, enabling the \"Mad Scientist\" mode."
 	var/unhack_message = "You re-enable the safety safeguards, enabling the \"NT Standard\" mode."
 	var/list/broken_requirements = list()
@@ -167,6 +168,21 @@
 		user << "You set [B] on the machine."
 		nanomanager.update_uis(src) // update all UIs attached to src
 		return
+
+/obj/machinery/chem_dispenseralpha/attackby(var/obj/item/weapon/B as obj, var/mob/user as mob, params)
+	..()
+	if(istype(B, /obj/item/device/multitool))
+		if(hackedcheck == 0)
+			user << hack_message
+			dispensable_reagents += hacked_reagents
+			hackedcheck = 1
+			return
+
+		else
+			user << unhack_message
+			dispensable_reagents -= hacked_reagents
+			hackedcheck = 0
+			return
 
 /obj/machinery/chem_dispenseralpha/attack_ai(mob/user as mob)
 	return src.attack_hand(user)

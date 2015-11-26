@@ -16,6 +16,7 @@
 			return
 		if (!M.paralysis)
 			M << "<b><font color= red>You have been frozen by <a href='?priv_msg=\ref[usr.client]'>[key]</a></b></font>"
+			M.visible_message("<span class = 'danger'>[M] has been frozen by an Admin!</span>")
 			M.Paralyse(5000000000)
 			log_admin("\red [key_name_admin(usr)] has frozen [key_name(M)].", 1)
 			message_admins("\blue [key_name_admin(usr)] froze [key_name_admin(M)].", 1)

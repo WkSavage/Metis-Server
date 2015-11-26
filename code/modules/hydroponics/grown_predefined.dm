@@ -20,7 +20,6 @@
 	else
 		..()
 
-
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus
 	name = "ambrosia deus branch"
 	desc = "Eating this makes you feel immortal!"

@@ -20,7 +20,88 @@
 	if(strength)
 		M.adjustToxLoss(strength * TOXMOD)
 
-/////////////////////////////////////////////////////////////////////////////////////
+// Basic - Toxins //
+
+/datum/reagent/toxin/plasticide
+	name = "Plasticide"
+	id = "plasticide"
+	description = "Liquid plastic, do not eat."
+	reagent_state = LIQUID
+	color = "#CF3600"
+	strength = 5
+
+/datum/reagent/toxin/amatoxin
+	name = "Amatoxin"
+	id = "amatoxin"
+	description = "A powerful poison derived from certain species of mushroom."
+	reagent_state = LIQUID
+	color = "#792300"
+	strength = 6
+
+/datum/reagent/toxin/carpotoxin
+	name = "Carpotoxin"
+	id = "carpotoxin"
+	description = "A deadly neurotoxin produced by the dreaded space carp."
+	reagent_state = LIQUID
+	color = "#003333"
+	strength = 10
+
+/datum/reagent/toxin/spidervenom
+	name = "Spider Venom"
+	id = "spidervenom"
+	description = "A deadly neurotoxin produced by the dreaded space carp."
+	reagent_state = LIQUID
+	color = "#003333"
+	strength = 10
+
+/datum/reagent/lipolicide
+	name = "Lipolicide"
+	id = "lipolicide"
+	description = "A compound found in many seedy dollar stores in the form of a weight-loss tonic."
+	reagent_state = SOLID
+	color = "#D1DED1"
+
+/datum/reagent/lipolicide/affect_blood(var/mob/living/M as mob)
+	if(!M) M = holder.my_atom
+	if(!holder.has_reagent("nutriment"))
+		M.adjustToxLoss(1)
+	M.nutrition -= 10 * REM
+	M.overeatduration = 0
+	if(M.nutrition < 0)//Prevent from going into negatives.
+		M.nutrition = 0
+	..()
+	return
+
+/datum/reagent/formaldehyde
+	name = "Formaldehyde"
+	id = "formaldehyde"
+	description = "Formaldehyde is a common industrial chemical and is used to preserve corpses and medical samples. It is highly toxic and irritating."
+	reagent_state = LIQUID
+	color = "#DED6D0"
+
+/datum/reagent/itching_powder
+	name = "Itching Powder"
+	id = "itching_powder"
+	description = "An abrasive powder beloved by cruel pranksters."
+	reagent_state = LIQUID
+	color = "#B0B0B0"
+	metabolism = 0.3
+
+/datum/reagent/itching_powder/on_mob_life(var/mob/living/M as mob)
+	if(!M) M = holder.my_atom
+	if(prob(rand(5,50)))
+		M << "You scratch at your head."
+		M.adjustBruteLoss(0.2*REM)
+	if(prob(rand(5,50)))
+		M << "You scratch at your leg."
+		M.adjustBruteLoss(0.2*REM)
+	if(prob(rand(5,50)))
+		M << "You scratch at your arm."
+		M.adjustBruteLoss(0.2*REM)
+	..()
+	return
+
+// Phoron //
 
 /datum/reagent/toxin/phoron
 	name = "Phoron"
@@ -43,6 +124,8 @@
 	T.assume_gas("volatile_fuel", volume, T20C)
 	remove_self(volume)
 
+// Advanced - Toxins //
+
 /datum/reagent/toxin/cyanide //Fast and Lethal
 	name = "Cyanide"
 	id = "cyanide"
@@ -64,7 +147,115 @@
 	if(prob(20))
 		M.adjustOxyLoss(2.5)
 
-//Plant Shit//
+/datum/reagent/toxin/potassium_chloride
+	name = "Potassium Chloride"
+	id = "potassium_chloride"
+	description = "A delicious salt that stops the heart when injected into cardiac muscle."
+	reagent_state = SOLID
+	color = "#FFFFFF"
+	strength = 0
+	overdose = REAGENTS_OVERDOSE
+
+/datum/reagent/toxin/potassium_chloride/overdose(var/mob/living/carbon/M, var/alien)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.stat != 1)
+			if(H.losebreath >= 10)
+				H.losebreath = max(10, H.losebreath - 10)
+			H.adjustOxyLoss(2)
+			H.Weaken(10)
+
+/datum/reagent/toxin/potassium_chlorophoride
+	name = "Potassium Chlorophoride"
+	id = "potassium_chlorophoride"
+	description = "A specific chemical based on Potassium Chloride to stop the heart for surgery. Not safe to eat!"
+	reagent_state = SOLID
+	color = "#FFFFFF"
+	strength = 10
+	overdose = 20
+
+/datum/reagent/toxin/potassium_chlorophoride/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.stat != 1)
+			if(H.losebreath >= 10)
+				H.losebreath = max(10, M.losebreath-10)
+			H.adjustOxyLoss(2)
+			H.Weaken(10)
+
+/datum/reagent/neurotoxin2
+	name = "Neurotoxin"
+	id = "neurotoxin2"
+	description = "A dangerous toxin that attacks the nervous system."
+	reagent_state = LIQUID
+	color = "#60A584"
+	metabolism = 1
+
+/datum/reagent/neurotoxin2/on_mob_life(var/mob/living/M as mob)
+	if(dose <= 4)
+		M.reagents.add_reagent("neurotoxin2", 1.0)
+	if(dose >= 5)
+		if(prob(5))
+			M.emote("drool")
+		if(M.getBrainLoss() < 60)
+			M.adjustBrainLoss(1*REM)
+		M.adjustToxLoss(1*REM)
+	if(dose >= 9)
+		M.drowsyness = max(M.drowsyness, 10)
+	if(dose >= 13)
+		M.Paralyse(8)
+	switch(dose)
+		if(5 to 45)
+			M.confused = max(M.confused, 15)
+	..()
+
+/datum/reagent/lexorin
+	name = "Lexorin"
+	id = "lexorin"
+	description = "Lexorin temporarily stops respiration. Causes tissue damage."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	overdose = REAGENTS_OVERDOSE
+
+/datum/reagent/lexorin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_DIONA)
+		return
+	M.take_organ_damage(3 * removed, 0)
+	if(M.losebreath < 15)
+		M.losebreath++
+
+// Unstable - Mutagen //
+
+/datum/reagent/mutagen
+	name = "Unstable mutagen"
+	id = "mutagen"
+	description = "Might cause unpredictable mutations. Keep away from children."
+	reagent_state = LIQUID
+	color = "#13BC5E"
+
+/datum/reagent/mutagen/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+	if(prob(33))
+		affect_blood(M, alien, removed)
+
+/datum/reagent/mutagen/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	if(prob(67))
+		affect_blood(M, alien, removed)
+
+/datum/reagent/mutagen/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(M.dna)
+		if(prob(removed * 0.1)) // Approx. one mutation per 10 injected/20 ingested/30 touching units
+			randmuti(M)
+			if(prob(98))
+				randmutb(M)
+			else
+				randmutg(M)
+			domutcheck(M, null)
+			M.UpdateAppearance()
+	M.apply_effect(10 * removed, IRRADIATE, 0)
+
+// Plant - Toxins //
 
 /datum/reagent/toxin/fertilizer //Reagents used for plant fertilizers.
 	name = "fertilizer"
@@ -120,7 +311,7 @@
 	if(alien == IS_DIONA)
 		M.adjustToxLoss(50 * removed)
 
-//////Sleep Toxins/////////
+// Sleep - Toxins //
 
 /datum/reagent/soporific
 	name = "Soporific"
@@ -232,25 +423,32 @@
 	M.adjustOxyLoss(1*TOXREM)
 	M.silent = max(M.silent, 5)
 
-////////////////
-
-/datum/reagent/lipolicide
-	name = "Lipolicide"
-	id = "lipolicide"
-	description = "A compound found in many seedy dollar stores in the form of a weight-loss tonic."
+/datum/reagent/toxin/zombiepowder
+	name = "Zombie Powder"
+	id = "zombiepowder"
+	description = "A strong neurotoxin that puts the subject into a death-like state."
 	reagent_state = SOLID
-	color = "#D1DED1"
+	color = "#669900"
+	metabolism = REM
+	strength = 3
 
-/datum/reagent/lipolicide/affect_blood(var/mob/living/M as mob)
-	if(!M) M = holder.my_atom
-	if(!holder.has_reagent("nutriment"))
-		M.adjustToxLoss(1)
-	M.nutrition -= 10 * REM
-	M.overeatduration = 0
-	if(M.nutrition < 0)//Prevent from going into negatives.
-		M.nutrition = 0
+/datum/reagent/toxin/zombiepowder/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	return
+	if(alien == IS_DIONA)
+		return
+	M.status_flags |= FAKEDEATH
+	M.adjustOxyLoss(3 * removed)
+	M.Weaken(10)
+	M.silent = max(M.silent, 10)
+	M.tod = worldtime2text()
+
+/datum/reagent/toxin/zombiepowder/Destroy()
+	if(holder && holder.my_atom && ismob(holder.my_atom))
+		var/mob/M = holder.my_atom
+		M.status_flags &= ~FAKEDEATH
+	..()
+
+// Poly - Acid //
 
 /datum/reagent/acid/polyacid
 	name = "Polytrinic acid"
@@ -261,9 +459,37 @@
 	power = 10
 	meltdose = 4
 
-////////////////
+// Special - Transform //
 
-/* Transformations */
+/datum/reagent/nanites
+	name = "Nanomachines"
+	id = "nanites"
+	description = "Microscopic construction robots."
+	reagent_state = LIQUID
+	color = "#535E66"
+
+/datum/reagent/nanites/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+	if(prob(10))
+		M.contract_disease(new /datum/disease/robotic_transformation(0), 1) //What
+
+/datum/reagent/nanites/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	M.contract_disease(new /datum/disease/robotic_transformation(0), 1)
+
+/datum/reagent/xenomicrobes
+	name = "Xenomicrobes"
+	id = "xenomicrobes"
+	description = "Microbes with an entirely alien cellular structure."
+	reagent_state = LIQUID
+	color = "#535E66"
+
+/datum/reagent/xenomicrobes/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+	if(prob(10))
+		M.contract_disease(new /datum/disease/xeno_transformation(0), 1)
+
+/datum/reagent/xenomicrobes/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	M.contract_disease(new /datum/disease/xeno_transformation(0), 1)
+
+// Slime - Toxin //
 
 /datum/reagent/slimetoxin
 	name = "Mutation Toxin"
@@ -311,139 +537,6 @@
 		new_mob.key = M.key
 	qdel(M)
 
-/datum/reagent/nanites
-	name = "Nanomachines"
-	id = "nanites"
-	description = "Microscopic construction robots."
-	reagent_state = LIQUID
-	color = "#535E66"
-
-/datum/reagent/nanites/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
-	if(prob(10))
-		M.contract_disease(new /datum/disease/robotic_transformation(0), 1) //What
-
-/datum/reagent/nanites/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.contract_disease(new /datum/disease/robotic_transformation(0), 1)
-
-/datum/reagent/xenomicrobes
-	name = "Xenomicrobes"
-	id = "xenomicrobes"
-	description = "Microbes with an entirely alien cellular structure."
-	reagent_state = LIQUID
-	color = "#535E66"
-
-/datum/reagent/xenomicrobes/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
-	if(prob(10))
-		M.contract_disease(new /datum/disease/xeno_transformation(0), 1)
-
-/datum/reagent/xenomicrobes/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.contract_disease(new /datum/disease/xeno_transformation(0), 1)
-
-///////////////////
-
-/datum/reagent/formaldehyde
-	name = "Formaldehyde"
-	id = "formaldehyde"
-	description = "Formaldehyde is a common industrial chemical and is used to preserve corpses and medical samples. It is highly toxic and irritating."
-	reagent_state = LIQUID
-	color = "#DED6D0"
-
-
-/datum/reagent/formaldehyde/on_mob_life(var/mob/living/M as mob)
-	M.adjustToxLoss(1*REM)
-
-/datum/reagent/neurotoxin2
-	name = "Neurotoxin"
-	id = "neurotoxin2"
-	description = "A dangerous toxin that attacks the nervous system."
-	reagent_state = LIQUID
-	color = "#60A584"
-	metabolism = 1
-
-/datum/reagent/neurotoxin2/on_mob_life(var/mob/living/M as mob)
-	if(dose <= 4)
-		M.reagents.add_reagent("neurotoxin2", 1.0)
-	if(dose >= 5)
-		if(prob(5))
-			M.emote("drool")
-		if(M.getBrainLoss() < 60)
-			M.adjustBrainLoss(1*REM)
-		M.adjustToxLoss(1*REM)
-	if(dose >= 9)
-		M.drowsyness = max(M.drowsyness, 10)
-	if(dose >= 13)
-		M.Paralyse(8)
-	switch(dose)
-		if(5 to 45)
-			M.confused = max(M.confused, 15)
-	..()
-
-/datum/reagent/itching_powder
-	name = "Itching Powder"
-	id = "itching_powder"
-	description = "An abrasive powder beloved by cruel pranksters."
-	reagent_state = LIQUID
-	color = "#B0B0B0"
-	metabolism = 0.3
-
-/datum/reagent/itching_powder/on_mob_life(var/mob/living/M as mob)
-	if(!M) M = holder.my_atom
-	if(prob(rand(5,50)))
-		M << "You scratch at your head."
-		M.adjustBruteLoss(0.2*REM)
-	if(prob(rand(5,50)))
-		M << "You scratch at your leg."
-		M.adjustBruteLoss(0.2*REM)
-	if(prob(rand(5,50)))
-		M << "You scratch at your arm."
-		M.adjustBruteLoss(0.2*REM)
-	if(prob(6))
-		M.reagents.add_reagent("histamine",rand(1,3))
-	..()
-	return
-
-/datum/reagent/lexorin
-	name = "Lexorin"
-	id = "lexorin"
-	description = "Lexorin temporarily stops respiration. Causes tissue damage."
-	reagent_state = LIQUID
-	color = "#C8A5DC"
-	overdose = REAGENTS_OVERDOSE
-
-/datum/reagent/lexorin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(alien == IS_DIONA)
-		return
-	M.take_organ_damage(3 * removed, 0)
-	if(M.losebreath < 15)
-		M.losebreath++
-
-/datum/reagent/mutagen
-	name = "Unstable mutagen"
-	id = "mutagen"
-	description = "Might cause unpredictable mutations. Keep away from children."
-	reagent_state = LIQUID
-	color = "#13BC5E"
-
-/datum/reagent/mutagen/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
-	if(prob(33))
-		affect_blood(M, alien, removed)
-
-/datum/reagent/mutagen/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
-	if(prob(67))
-		affect_blood(M, alien, removed)
-
-/datum/reagent/mutagen/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(M.dna)
-		if(prob(removed * 0.1)) // Approx. one mutation per 10 injected/20 ingested/30 touching units
-			randmuti(M)
-			if(prob(98))
-				randmutb(M)
-			else
-				randmutg(M)
-			domutcheck(M, null)
-			M.UpdateAppearance()
-	M.apply_effect(10 * removed, IRRADIATE, 0)
-
 /datum/reagent/slimejelly
 	name = "Slime Jelly"
 	id = "slimejelly"
@@ -459,28 +552,3 @@
 		M.adjustToxLoss(rand(100, 300) * removed)
 	else if(prob(40))
 		M.heal_organ_damage(25 * removed, 0)
-
-/datum/reagent/toxin/zombiepowder
-	name = "Zombie Powder"
-	id = "zombiepowder"
-	description = "A strong neurotoxin that puts the subject into a death-like state."
-	reagent_state = SOLID
-	color = "#669900"
-	metabolism = REM
-	strength = 3
-
-/datum/reagent/toxin/zombiepowder/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	..()
-	if(alien == IS_DIONA)
-		return
-	M.status_flags |= FAKEDEATH
-	M.adjustOxyLoss(3 * removed)
-	M.Weaken(10)
-	M.silent = max(M.silent, 10)
-	M.tod = worldtime2text()
-
-/datum/reagent/toxin/zombiepowder/Destroy()
-	if(holder && holder.my_atom && ismob(holder.my_atom))
-		var/mob/M = holder.my_atom
-		M.status_flags &= ~FAKEDEATH
-	..()

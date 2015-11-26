@@ -171,7 +171,6 @@ LIGHTERS ARE IN LIGHTERS.DM
 	processing_objects.Remove(src)
 	qdel(src)
 
-
 /obj/item/clothing/mask/cigarette/joint
 	name = "joint"
 	desc = "A roll of ambrosium vulgaris wrapped in a thin paper. Dude."
@@ -348,6 +347,18 @@ LIGHTERS ARE IN LIGHTERS.DM
 	icon_off = "cobpipeoff"
 	smoketime = 800
 	chem_volume = 40
+
+///////////
+//ROLLING//
+///////////
+
+obj/item/weapon/rollingpaper
+	name = "rolling paper"
+	desc = "A thin piece of paper used to make fine smokeables."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "cig_paper"
+	w_class = 1
+
 
 ///////////
 //ROLLING//
