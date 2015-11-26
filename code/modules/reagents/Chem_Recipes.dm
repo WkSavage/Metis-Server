@@ -32,13 +32,13 @@
 	id = "ketoprofen"
 	result = "ketoprofen"
 	required_reagents = list("ibuprofen" = 1, "carbolic_acid" = 1, "water" = 1)
-	result_amount = 2
+	result_amount = 3
 
 /datum/chemical_reaction/oxycodone //T3
 	name = "Oxycodone"
 	id = "oxycodone"
 	result = "oxycodone"
-	required_reagents = list("ketoprofen" = 2, "ethanol" = 1, "acetic_acid" = 1, "lithium" = 1)
+	required_reagents = list("ketoprofen" = 2, "acetic_acid" = 1, "lithium" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/norsodine //T4
@@ -55,9 +55,9 @@
 	name = "Morphine"
 	id = "morphine"
 	result = "morphine"
-	required_reagents = list("sugar" = 1, "modafinil" = 1, "norsodine" = 1, "oxycodone" = 1)
+	required_reagents = list("sugar" = 1, "norsodine" = 1, "oxycodone" = 1)
 	mix_message = "The mixture yields a strong bubbling pink liquid."
-	result_amount = 3
+	result_amount = 1
 	catalysts = list("react_c" = 1)
 	log_is_important = 1
 
@@ -84,14 +84,14 @@
 	name = "Cedilanid"
 	id = "cedilanid"
 	result = "cedilanid"
-	required_reagents = list("dylovene" = 1, "lithium_hydroxide" = 1, "silicon" = 1, "oxygen" = 1)
+	required_reagents = list("dylovene" = 1, "silicon" = 1, "oxygen" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/neodextraminesolution //T3
 	name = "Neodextramine Solution"
 	id = "neodextraminesolution"
 	result = "neodextraminesolution"
-	required_reagents = list("cedilanid" = 2, "lithium_hydroxide" = 1, "oxalic_acid" = 1, "sugar" = 1)
+	required_reagents = list("cedilanid" = 2, "lithium_hydroxide" = 1, "oxalic_acid" = 1)
 	catalysts = list("react_c" = 1)
 	result_amount = 3
 
@@ -116,14 +116,14 @@
 	name = "Pamelor"
 	id = "pamelor"
 	result = "pamelor"
-	required_reagents = list("ibuprofen" = 1, "demerol" = 1, "calcium_hydroxide" = 1)
+	required_reagents = list("ibuprofen" = 1, "demerol" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/amytal //T3
 	name = "Amytal"
 	id = "amytal"
 	result = "amytal"
-	required_reagents = list("pamelor" = 2, "citric_acid" = 1,  "xenon" = 2, "citric_acid" = 1)
+	required_reagents = list("pamelor" = 2, "citric_acid" = 1,  "xenon" = 2)
 	result_amount = 2
 
 /datum/chemical_reaction/hqem //T4
@@ -147,7 +147,7 @@
 	name = "Hyperzine"
 	id = "hyperzine"
 	result = "hyperzine"
-	required_reagents = list("xenon" = 1, "sugar" = 1, "phosphorus" = 1, "carbolic_acid" = 1)
+	required_reagents = list("sugar" = 1, "phosphorus" = 1, "carbolic_acid" = 1)
 	result_amount = 4
 
 /datum/chemical_reaction/inaprovaline  //T1
@@ -161,7 +161,7 @@
 	name = "Modafinil"
 	id = "modafinil"
 	result = "modafinil"
-	required_reagents = list("inaprovaline" = 1, "phosphorus" = 1, "lithium_hydroxide" = 1)
+	required_reagents = list("inaprovaline" = 1, "phosphorus" = 1)
 	result_amount = 4
 
 /datum/chemical_reaction/epinephrine  //T3
