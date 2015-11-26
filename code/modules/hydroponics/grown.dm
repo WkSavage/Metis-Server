@@ -236,19 +236,19 @@
 			if(seed.kitchen_tag == "ambrosia" || seed.kitchen_tag == "ambrosiadeus" || seed.kitchen_tag == "tobacco" || seed.kitchen_tag == "stobacco")
 				user.unEquip(W)
 				if(seed.kitchen_tag == "ambrosia")
-					var/obj/item/clothing/mask/cigarette/joint/J = new /obj/item/clothing/mask/cigarette/joint(user.loc)
+					var/obj/item/clothing/mask/cigarette/joint/J = new/obj/item/clothing/mask/cigarette/joint(user.loc)
 					J.chem_volume = src.reagents.total_volume
 					src.reagents.trans_to(J, J.chem_volume)
 					qdel(W)
 					user.put_in_active_hand(J)
 				else if(seed.kitchen_tag == "ambrosiadeus")
-					var/obj/item/clothing/mask/cigarette/joint/deus/J = new /obj/item/clothing/mask/cigarette/joint/deus(user.loc)
+					var/obj/item/clothing/mask/cigarette/joint/deus/J = new/obj/item/clothing/mask/cigarette/joint/deus(user.loc)
 					J.chem_volume = src.reagents.total_volume
 					src.reagents.trans_to(J, J.chem_volume)
 					qdel(W)
 					user.put_in_active_hand(J)
 				else if(seed.kitchen_tag == "tobacco" || seed.kitchen_tag == "stobacco")
-					var/obj/item/clothing/mask/cigarette/handroll/J = new /obj/item/clothing/mask/cigarette/handroll(user.loc)
+					var/obj/item/clothing/mask/cigarette/handroll/J = new/obj/item/clothing/mask/cigarette/handroll(user.loc)
 					J.chem_volume = src.reagents.total_volume
 					src.reagents.trans_to(J, J.chem_volume)
 					qdel(W)

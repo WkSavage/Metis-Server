@@ -28,7 +28,6 @@
 /datum/reagent/ketoprofen/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.adjustBruteLoss(-0.03*REM)
 
-
 /datum/reagent/oxycodone //T3
 	name = "Oxycodone"
 	id = "oxycodone"
@@ -86,18 +85,17 @@
 		M.make_dizzy(4)
 		M.make_jittery(5)
 
-/datum/reagent/oxymorphone //T5 Special (Hidden Recipe)
-	name = "Oxymorphone"
-	id = "oxymorphone"
-	description = "The strongest painkiller known to man. An overdose on this one is quite the trip."
+/datum/reagent/morphine //T5 Special (Hidden Recipe)
+	name = "Morphine"
+	id = "morphine"
+	description = "The second strongest painkiller known to man. An overdose on this one is quite the trip."
 	reagent_state = LIQUID
 	color = "#EA5BC9"
-	overdose = 10
-	scannable = 1
+	overdose = 15
 	metabolism = 0.05
 	shock_reduction = 150
 
-/datum/reagent/oxymorphone/affect_blood(var/mob/living/carbon/M, var/removed)
+/datum/reagent/morphine/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.AdjustParalysis(-5)
 	M.AdjustStunned(-5)
 	M.AdjustWeakened(-5)
@@ -107,31 +105,80 @@
 				M.emote(pick("twitch", "giggle"))
 			if(prob(5))
 				M.emote("yawn")
-		if(5 to 6)
+		if(5 to 9)
 			M.drowsyness = max(M.drowsyness, 5)
 			M.druggy = max(M.druggy, 5)
-		if(7 to 9)
+		if(10 to 14)
 			M.hallucination = max(M.hallucination, 10)
 			M.drowsyness = max(M.drowsyness, 10)
 			M.druggy = max(M.druggy, 10)
 			if(prob(10))
 				M.emote(pick("twitch", "giggle"))
-		if(10 to INFINITY)
+		if(15 to INFINITY)
 			M.drowsyness = max(M.drowsyness, 15)
 			M.Paralyse(6)
 			if(prob(10))
 				M.emote(pick("twitch", "giggle"))
+
+/datum/reagent/morphine/overdose(var/mob/living/M as mob)
+	..()
+	var/obj/item/I = M.get_active_hand()
+	if(I)
+		M.drop_item()
+	M.eye_blurry = max(M.eye_blurry, 10)
+	M.hallucination = max(M.hallucination, 30)
+	M.Paralyse(10)
+	if(prob(33))
+		M.make_dizzy(4)
+		M.make_jittery(5)
+
+/datum/reagent/oxymorphine //T5 Special (Hidden Recipe)
+	name = "Oxymorphine"
+	id = "oxymorphine"
+	description = "The strongest painkiller known to man. An overdose on this one is quite the trip."
+	reagent_state = LIQUID
+	color = "#EA5BC9"
+	overdose = 10
+	metabolism = 0.05
+	shock_reduction = 250
+
+/datum/reagent/oxymorphone/affect_blood(var/mob/living/carbon/M, var/removed)
+	M.AdjustParalysis(-10)
+	M.AdjustStunned(-10)
+	M.AdjustWeakened(-10)
+	switch(dose)
+		if(0 to 7)
+			if(prob(10))
+				M.emote(pick("twitch", "giggle"))
+			if(prob(5))
+				M.emote("yawn")
+		if(5 to 6)
+			M.drowsyness = max(M.drowsyness, 10)
+			M.druggy = max(M.druggy, 10)
+		if(7 to 9)
+			M.hallucination = max(M.hallucination, 30)
+			M.drowsyness = max(M.drowsyness, 15)
+			M.druggy = max(M.druggy, 30)
+			if(prob(10))
+				M.emote(pick("twitch", "giggle"))
+		if(10 to INFINITY)
+			M.drowsyness = max(M.drowsyness, 30)
+			M.Paralyse(10)
 
 /datum/reagent/oxymorphone/overdose(var/mob/living/M as mob)
 	..()
 	var/obj/item/I = M.get_active_hand()
 	if(I)
 		M.drop_item()
-	M.eye_blurry = max(M.eye_blurry, 10)
-	M.Paralyse(10)
+	M.AdjustParalysis(-15)
+	M.AdjustStunned(-15)
+	M.AdjustWeakened(-15)
+	M.drowsyness = max(M.drowsyness, 35)
+	M.eye_blurry = max(M.eye_blurry, 20)
+	M.hallucination = max(M.hallucination, 50)
+	M.Paralyse(15)
 	if(prob(33))
-		M.make_dizzy(4)
-		M.make_jittery(5)
+		M.make_dizzy(6)
 
 //Anti Toxin T1 | T2 | T3 | T4 //
 
@@ -141,10 +188,11 @@
 	description = "Dylovene is a cheap broad-spectrum antitoxin. It gets the job done if its all ya have!"
 	reagent_state = LIQUID
 	color = "#010d07"
+	metabolism = 0.15
 	scannable = 1
 
 /datum/reagent/dylovene/affect_blood(var/mob/living/carbon/M, var/removed)
-	M.adjustToxLoss(-0.75*REM)
+	M.adjustToxLoss(-0.45*REM)
 
 /datum/reagent/cedilanid   //T2
 	name = "Cedilanid"
@@ -155,16 +203,16 @@
 	scannable = 1
 
 /datum/reagent/cedilanid/affect_blood(var/mob/living/carbon/M, var/removed)
-	M.adjustToxLoss(-1.5*REM)
+	M.adjustToxLoss(-1.75*REM)
 	if(M.drowsyness > 5)
-		M.drowsyness = max(M.drowsyness, -2)
+		M.drowsyness = max(M.drowsyness, -2.5)
 
 /datum/reagent/neodextraminesolution //T3
 	name = "Neodextramine Solution"
 	id = "neodextraminesolution"
 	description = "A fast way to rid a dying paitent of venoms. Neodextramine is engineered to purge the body of toxins."
 	color = "#0d5c36"
-	metabolism = 0.7
+	metabolism = 0.75
 	overdose = 20
 
 /datum/reagent/neodextraminesolution/on_mob_life(var/mob/living/M as mob)
@@ -184,14 +232,15 @@
 	if(prob(33))
 		M.fakevomit()
 	if(M.health < 50)
-		M.adjustToxLoss(-3*REM)
+		M.adjustToxLoss(-6*REM)
 	switch(dose)
 		if(20 to 29)
-			M.adjustToxLoss(1.5*REM)
+			M.adjustToxLoss(2*REM)
 		if(30 to INFINITY)
-			M.adjustToxLoss(3*REM)
-			M.make_jittery(5)
-			M.Paralyse(10)
+			M.adjustToxLoss(4*REM)
+			if(prob(5))
+				M.make_jittery(1000)
+				M.Paralyse(10)
 
 /datum/reagent/dermalopein //T4
 	name = "Dermalopein"
@@ -215,19 +264,18 @@
 		M.fakevomit()
 
 /datum/reagent/dermalopein/overdose(var/mob/living/carbon/M, var/removed)
-	if(M.health > 50)
-		M.adjustToxLoss(2*REM)
+	if(M.health < 50)
+		M.adjustToxLoss(-6*REM)
 	if(M.health > 25)
-		M.adjustToxLoss(1*REM)
-	if(prob(50))
-		M.fakevomit()
+		M.adjustToxLoss(4*REM)
 	switch(dose)
 		if(20 to 29)
-			M.adjustToxLoss(1.5*REM)
+			M.adjustToxLoss(2.5*REM)
 		if(30 to INFINITY)
-			M.adjustToxLoss(3*REM)
-			M.make_jittery(5)
-			M.Paralyse(10)
+			M.adjustToxLoss(5*REM)
+			if(prob(10))
+				M.make_jittery(1000)
+				M.Paralyse(15)
 
 //Brute Damage T1 | T2 | T3 | T4 //
 
@@ -240,7 +288,7 @@
 	scannable = 1
 
 /datum/reagent/demerol/affect_blood(var/mob/living/carbon/M, var/removed)
-		M.adjustBruteLoss(-0.75*REM)
+		M.adjustBruteLoss(-0.5*REM)
 
 /datum/reagent/pamelor //T2
 	name = "Pamelor"
@@ -252,12 +300,12 @@
 	overdose = 40
 
 /datum/reagent/pamelor/affect_blood(var/mob/living/carbon/M, var/removed)
-	M.adjustBruteLoss(-1.75*REM)
+	M.adjustBruteLoss(-1.5*REM)
 	M.AdjustWeakened(-0.5*REM)
 
 /datum/reagent/pamelor/overdose(var/mob/living/carbon/M, var/removed)
 	M.AdjustWeakened(0.5)
-	if(prob(33))
+	if(prob(10))
 		M.fakevomit()
 
 /datum/reagent/amytal //T3
@@ -268,7 +316,7 @@
 	color = "#740f0f"
 	scannable = 1
 	overdose = 30
-	shock_reduction = 10
+	shock_reduction = 15
 
 /datum/reagent/amytal/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.adjustBruteLoss(-3*REM)
@@ -276,17 +324,17 @@
 	M.make_dizzy(1)
 
 /datum/reagent/amytal/overdose(var/mob/living/carbon/M, var/removed)
-	M.AdjustWeakened(6)
+	M.AdjustWeakened(-2)
 	M.make_jittery(6)
-	if(prob(33))
+	if(prob(1))
 		M.fakepoop()
 	if(prob(20))
 		M.adjustBruteLoss(1.2*REM)
-		M.reagents.remove_reagent("blood", 5)
+		M.reagents.remove_reagent("blood", 2.5)
 	if(prob(30))
 		M.adjustBruteLoss(-4*REM)
 	if(prob(20))
-		M.SetWeakened(0)
+		M.AdjustWeakened(10)
 
 /datum/reagent/hqem //T4
 	name = "Hyvroxilated Quint-Ethyl Metacetamin"
@@ -298,21 +346,63 @@
 	shock_reduction = 30
 
 /datum/reagent/hqem/affect_blood(var/mob/living/carbon/M, var/removed)
-	M.adjustBruteLoss(-5*REM)
+	M.adjustBruteLoss(-6*REM)
 	M.AdjustWeakened(-2*REM)
-	if(prob(50))
-		M.adjustBruteLoss(-4*REM)
-	if(prob(10))
-		M.fakepoop()
+	if(prob(33))
+		M.AdjustParalysis(-1)
+	if(prob(33))
+		M.AdjustStunned(-7)
+	if(prob(5))
+		M.AdjustParalysis(10)
+	if(prob(5))
+		M.AdjustStunned(10)
 
 /datum/reagent/hqem/overdose(var/mob/living/carbon/M, var/removed)
 	M.AdjustWeakened(6)
 	M.make_jittery(10)
-	if(prob(40))
-		M.fakepoop()
 	if(prob(30))
-		M.adjustBruteLoss(1.7*REM)
-		M.reagents.remove_reagent("blood", 2)
+		M.adjustBruteLoss(2.2*REM)
+		M.reagents.remove_reagent("blood", 5)
+	if(prob(60))
+		M.adjustBruteLoss(-4*REM)
+	if(prob(20))
+		M.SetWeakened(0)
+	if(prob(10))
+		M.AdjustParalysis(-2)
+		M.AdjustStunned(-2)
+
+/datum/reagent/aqem //T5
+	name = "Alprazaline Quint-Ethyl Metacetamin"
+	id = "aqem"
+	description = "This drug is usally used in combination with facial reconstruction surgery. Very effective at healing level 1 brute trama."
+	reagent_state = LIQUID
+	color = "#8b2d2d"
+	overdose = 20
+	shock_reduction = 30
+
+/datum/reagent/aqem/affect_blood(var/mob/living/carbon/M, var/removed)
+	M.adjustBruteLoss(-9*REM)
+	M.AdjustWeakened(-2*REM)
+	if(prob(33))
+		M.AdjustParalysis(-5)
+	if(prob(33))
+		M.AdjustStunned(-5)
+	if(prob(5))
+		M.AdjustParalysis(15)
+	if(prob(5))
+		M.AdjustStunned(15)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		for(var/obj/item/organ/I in H.internal_organs)
+			if((I.damage > 10) && (I.robotic != 2)) //Peridaxon heals only non-robotic organs
+				I.damage = max(I.damage - 2.5*REM)
+
+/datum/reagent/aqem/overdose(var/mob/living/carbon/M, var/removed)
+	M.AdjustWeakened(6)
+	M.make_jittery(10)
+	if(prob(30))
+		M.adjustBruteLoss(2.2*REM)
+		M.reagents.remove_reagent("blood", 5)
 	if(prob(60))
 		M.adjustBruteLoss(-4*REM)
 	if(prob(20))
@@ -328,57 +418,61 @@
 	id = "hyperzine"
 	description = "Hyperzine is a long lasting stimulant. Proivdes lasting energy."
 	color = "#479892"
-	metabolism = 0.085
-	overdose = 45
+	metabolism = 0.05
+	overdose = 60
 
 /datum/reagent/hyperzine/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.AdjustStunned(-0.25)
-	M.AdjustWeakened(-0.65)
+	M.AdjustWeakened(-0.5)
 
 /datum/reagent/hyperzine/overdose(var/mob/living/carbon/M, var/removed)
-	M.make_jittery(5)
+	M.make_jittery(1.5)
 	M.AdjustStunned(-0.5)
-	M.AdjustWeakened(-0.95)
+	M.AdjustWeakened(-0.75)
 
 /datum/reagent/inaprovaline  //T1
 	name = "Inaprovaline"
 	id = "inaprovaline"
 	description = "Inaprovaline is a faster acting stimulant. Provides a burst of energy!"
 	color = "#3EAEA5"
-	metabolism = 0.5
-	overdose = 30
+	metabolism = 0.45
+	overdose = 45
 
 /datum/reagent/inaprovaline/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.AdjustStunned(-1)
 	M.AdjustWeakened(-1)
 
 /datum/reagent/inaprovaline/overdose(var/mob/living/carbon/M, var/removed)
-	M.make_jittery(6)
-	M.AdjustStunned(-1.25)
-	M.AdjustWeakened(-3)
+	M.make_jittery(3)
+	M.AdjustStunned(-2)
+	M.AdjustWeakened(-2)
 	if(prob(10))
-		M.AdjustParalysis(1)
+		M.AdjustParalysis(-1)
+	if(prob(10))
+		M.adjustToxLoss(1*REM)
 
 /datum/reagent/modafinil  //T2
 	name = "Modafinil"
 	id = "modafinil"
 	description = "Modafinil is a more powerful stimulant, helping reduce paralysis in paitents."
 	color = "#05a598"
-	metabolism = 0.5
+	metabolism = 0.45
 	overdose = 30
 
 /datum/reagent/modafinil/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.AdjustParalysis(-0.25)
-	M.AdjustStunned(-1)
+	M.AdjustParalysis(-0.5)
+	M.AdjustStunned(-2)
 	M.AdjustWeakened(-2)
 
 /datum/reagent/modafinil/overdose(var/mob/living/carbon/M, var/removed)
-	M.make_jittery(6)
-	M.AdjustStunned(-1.25)
+	M.make_jittery(5)
+	M.AdjustStunned(-3)
 	M.AdjustWeakened(-3)
-	if(prob(10))
-		M.AdjustParalysis(1)
+	if(prob(33))
+		M.AdjustParalysis(-2)
+	if(prob(33))
+		M.adjustToxLoss(1*REM)
 
 /datum/reagent/epinephrine  //T3
 	name = "Epinephrine"
@@ -387,24 +481,26 @@
 	color = "#43cec3"
 	metabolism = 0.3
 	overdose = 30
+	shock_reduction = 20
 
 /datum/reagent/epinephrine/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.make_jittery(2)
-	M.AdjustParalysis(-1)
-	M.AdjustStunned(-2)
-	M.AdjustWeakened(-3)
+	M.make_jittery(2.5)
+	M.AdjustParalysis(-2)
+	M.AdjustStunned(-4)
+	M.AdjustWeakened(-4)
 
 /datum/reagent/epinephrine/overdose(var/mob/living/carbon/M, var/removed)
 	M.make_jittery(10)
+	M.AdjustParalysis(-3)
 	M.AdjustStunned(-5)
 	M.AdjustWeakened(-5)
-	if(prob(25))
-		M.adjustToxLoss(1)
-	if(prob(15))
-		M.AdjustParalysis(5)
-	if(prob(15))
-		M.AdjustParalysis(-5)
+	if(prob(33))
+		M.adjustToxLoss(2.5*REM)
+	if(prob(33))
+		M.AdjustParalysis(9)
+	if(prob(33))
+		M.AdjustParalysis(-6)
 
 /datum/reagent/dextroamphetamine  //T4
 	name = "Dextroamphetamine"
@@ -412,29 +508,32 @@
 	description = "A powerful stimulant commonly used to promote the movement of limbs. Did I mention is was powerful?"
 	color = "#33e3d5"
 	metabolism = 0.2
-	overdose = 30
+	overdose = 25
+	shock_reduction = 30
 
 /datum/reagent/dextroamphetamine/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.make_jittery(4)
-	M.AdjustParalysis(-2)
-	M.AdjustStunned(-4)
-	M.AdjustWeakened(-6)
-	M.adjustOxyLoss(-1)
+	M.make_jittery(10)
+	M.AdjustParalysis(-6)
+	M.AdjustStunned(-9)
+	M.AdjustWeakened(-9)
+	M.adjustOxyLoss(-2.5*REM)
 	M.drowsyness = 0
 
 /datum/reagent/dextroamphetamine/overdose(var/mob/living/carbon/M, var/removed)
-	M.make_jittery(10)
-	M.adjustOxyLoss(-2.5)
-	M.AdjustStunned(-5)
-	M.AdjustWeakened(-5)
+	M.make_jittery(30)
+	M.AdjustParalysis(-10)
+	M.AdjustStunned(-12)
+	M.AdjustWeakened(-12)
+	M.adjustOxyLoss(-5*REM)
 	M.sleeping = 0
-	if(prob(50))
-		M.adjustToxLoss(1)
-	if(prob(15))
-		M.AdjustParalysis(5)
-	if(prob(15))
-		M.AdjustParalysis(-5)
+	if(prob(66))
+		M.adjustToxLoss(5*REM)
+	if(prob(33))
+		M.AdjustParalysis(-15)
+	if(prob(5))
+		M.make_jittery(1000)
+		M.AdjustParalysis(15)
 
 /datum/reagent/stimpak  //T5 Special
 	name = "FastActing StimPak"
@@ -443,27 +542,28 @@
 	color = "#41df9b"
 	metabolism = 1.0
 	overdose = 15
+	shock_reduction = 40
 
 /datum/reagent/stimpak/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.AdjustParalysis(-5)
-	M.AdjustStunned(-10)
-	M.AdjustWeakened(-10)
-	M.adjustOxyLoss(-2)
-	M.drowsyness = 0
-	M.sleeping = 0
-	M.adjustToxLoss(0.5)
-
-/datum/reagent/stimpak/overdose(var/mob/living/carbon/M, var/removed)
-	M.make_jittery(10)
+	M.AdjustParalysis(-10)
 	M.AdjustStunned(-15)
 	M.AdjustWeakened(-15)
-	M.AdjustParalysis(-10)
+	M.adjustOxyLoss(-5*REM)
+	M.drowsyness = 0
+	M.sleeping = 0
+	M.adjustToxLoss(0.5*REM)
+
+/datum/reagent/stimpak/overdose(var/mob/living/carbon/M, var/removed)
+	M.make_jittery(30)
+	M.AdjustParalysis(-15)
+	M.AdjustStunned(-20)
+	M.AdjustWeakened(-20)
 	if(prob(66))
-		M.adjustOxyLoss(-2.5*REM)
+		M.adjustOxyLoss(-7.5*REM)
 		M << "<span class='notice'>You feel your lungs open wide!</span>"
 	if(prob(66))
-		M.adjustToxLoss(0.5*REM)
+		M.adjustToxLoss(0.75*REM)
 		M.radiation += 20
 
 /datum/reagent/stimpakultra  //T5 Special Long Lasting.
@@ -471,32 +571,33 @@
 	id = "stimpakultra"
 	description = "A mixture of long lasting stimulants! Caution: Overdose may cause irradiation."
 	color = "#41DF9B"
-	metabolism = 0.075
+	metabolism = 0.01
 	overdose = 7
+	shock_reduction = 40
 
 /datum/reagent/stimpakultra/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.AdjustParalysis(-2.5)
-	M.AdjustStunned(-3)
-	M.AdjustWeakened(-3)
-	M.adjustOxyLoss(-0.25)
+	M.AdjustParalysis(-6)
+	M.AdjustStunned(-6)
+	M.AdjustWeakened(-6)
+	M.adjustOxyLoss(-2*REM)
 	M.drowsyness = 0
 	M.sleeping = 0
-	if(prob(40))
-		M.make_jittery(2)
+	if(prob(66))
+		M.make_jittery(15)
 	if(prob(33))
 		M.fakevomit()
 
 /datum/reagent/stimpakultra/overdose(var/mob/living/carbon/M, var/removed)
-	M.make_jittery(10)
-	M.AdjustStunned(-6)
-	M.AdjustWeakened(-6)
-	M.AdjustParalysis(-6)
+	M.make_jittery(40)
+	M.AdjustStunned(-10)
+	M.AdjustWeakened(-10)
+	M.AdjustParalysis(-10)
 	if(prob(66))
-		M.adjustOxyLoss(-1.5)
+		M.adjustOxyLoss(-5*REM)
 		M << "<span class='notice'>You feel your lungs open wide!</span>"
 	if(prob(66))
-		M.adjustToxLoss(0.35)
+		M.adjustToxLoss(0.75*REM)
 		M.radiation += 20
 
 // Brain Damage // T1 | T2 | T3
@@ -511,7 +612,7 @@
 	scannable = 1
 
 /datum/reagent/alkysine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.adjustBrainLoss(-5*REM)
+	M.adjustBrainLoss(-6*REM)
 
 /datum/reagent/hydromel
 	name = "Hydromel"
@@ -524,9 +625,9 @@
 	overdose = 30
 
 /datum/reagent/hydromel/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.adjustBrainLoss(-10*REM)
+	M.adjustBrainLoss(-12*REM)
 
-/datum/reagent/stimpak/overdose(var/mob/living/carbon/M, var/removed)
+/datum/reagent/hydromel/overdose(var/mob/living/carbon/M, var/removed)
 		M.radiation += 3
 
 /datum/reagent/crystodigin
@@ -537,22 +638,21 @@
 	color = "#1f0bf4"
 	metabolism = 0.2
 	scannable = 1
-	overdose = 30
+	overdose = 20
 
 /datum/reagent/crystodigin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.adjustBrainLoss(-15*REM)
-	M.adjustOxyLoss(-1*REM)
+	M.adjustBrainLoss(-20*REM)
 
 /datum/reagent/crystodigin/overdose(var/mob/living/carbon/M, var/removed)
 	M.radiation += 10
 	if(prob(5))
-		M.adjustBrainLoss(20*REM)
+		M.adjustBrainLoss(30*REM)
 		M << "<span class='notice'>You seem to have forgeten what you were doing!</span>"
 	if(prob(5))
-		M.adjustBrainLoss(-20*REM)
+		M.adjustBrainLoss(-30*REM)
 		M << "<span class='notice'>You seem smarter for some reason!</span>"
-	if(prob(25))
-		M.adjustOxyLoss(-3*REM)
+	if(prob(33))
+		M.adjustOxyLoss(2.5*REM)
 
 // Oxygen Damage // T1 | T2 | T3 | T4
 
@@ -564,14 +664,14 @@
 	color = "#a0bcc9"
 	metabolism = 0.2
 	scannable = 1
-	overdose = 45
+	overdose = 60
 
 /datum/reagent/osmotrol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.adjustOxyLoss(-1*REM)
 
 /datum/reagent/osmotrol/overdose(var/mob/living/carbon/M, var/removed)
-	M.adjustOxyLoss(-1.5)
-	M.adjustToxLoss(1*REM)
+	M.adjustOxyLoss(-2*REM)
+	M.adjustToxLoss(0.5*REM)
 
 /datum/reagent/isoprovalyn //T2
 	name = "Isoprovalyn"
@@ -579,19 +679,18 @@
 	description = "Improves on Osmotrol, Has a faster reaction time preventing further damage."
 	reagent_state = LIQUID
 	color = "#8caebf"
-	metabolism = 0.3
+	metabolism = 0.2
 	scannable = 1
-	overdose = 30
+	overdose = 45
 
 /datum/reagent/isoprovalyn/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(M.losebreath >= 4)
-		M.losebreath -= 4
-	M.adjustOxyLoss(-3)
-	M.AdjustWeakened(-1*REM)
+	if(M.losebreath >= 8)
+		M.losebreath -= 2
+	M.adjustOxyLoss(-3*REM)
 
 /datum/reagent/isoprovalyn/overdose(var/mob/living/carbon/M, var/removed)
-	M.adjustOxyLoss(-4*REM)
-	M.adjustToxLoss(1.5*REM)
+	M.adjustOxyLoss(-5*REM)
+	M.adjustToxLoss(1.25*REM)
 
 /datum/reagent/hexadrol //T3
 	name = "Hexadrol"
@@ -601,11 +700,11 @@
 	color = "#659ab4"
 	metabolism = 0.3
 	scannable = 1
-	overdose = 22
+	overdose = 25
 
 /datum/reagent/hexadrol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M << "<span class='notice'>You feel your lungs open wide!</span>"
-	M.adjustOxyLoss(-7)
+	M.adjustOxyLoss(-8*REM)
 	if(M.losebreath >= 4)
 		M.losebreath -= 4
 	if(prob(5))
@@ -615,7 +714,7 @@
 
 /datum/reagent/hexadrol/overdose(var/mob/living/carbon/M, var/removed)
 	M.silent = max(M.silent, 1)
-	M.adjustOxyLoss(-14)
+	M.adjustOxyLoss(-12*REM)
 	M.adjustToxLoss(2*REM)
 	if(prob(10))
 		M << "<span class='notice'>You feel your lungs fill with air!</span>"
@@ -632,23 +731,23 @@
 	overdose = 15
 
 /datum/reagent/oxycocet_osmo/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(M.losebreath >= 4)
-		M.losebreath -= 4
+	if(M.losebreath >= 2)
+		M.losebreath -= 3
 	M << "<span class='notice'>You feel your lungs open wide!</span>"
-	M.adjustOxyLoss(-15)
+	M.adjustOxyLoss(-20*REM)
 	if(prob(5))
 		M << "<span class='notice'>You feel your lungs open wide!</span>"
-	M.AdjustWeakened(-1.5*REM)
-	M.AdjustStunned(-0.5*REM)
+	M.AdjustWeakened(-2*REM)
+	M.AdjustStunned(-2*REM)
 
 /datum/reagent/oxycocet_osmo/overdose(var/mob/living/carbon/M, var/removed)
 	M.silent = max(M.silent, 5)
-	M.adjustOxyLoss(-25)
+	M.adjustOxyLoss(-25*REM)
 	M.adjustToxLoss(2*REM)
 	if(prob(10))
 		M << "<span class='notice'>You feel your lungs fill with air!</span>"
 	if(prob(25))
-		M.AdjustParalysis(1*REM)
+		M.AdjustParalysis(2*REM)
 
 /datum/reagent/oxycodan_hexadro //T5 Special
 	name = "Oxycodan Hexadro"
@@ -663,18 +762,18 @@
 	if(M.losebreath >= 4)
 		M.losebreath -= 4
 	M << "<span class='notice'>You feel an air bubble form in your lungs!</span>"
-	M.adjustOxyLoss(-25)
-	M.AdjustWeakened(-2*REM)
-	M.AdjustStunned(-0.5*REM)
+	M.adjustOxyLoss(-35*REM)
+	M.AdjustWeakened(-4*REM)
+	M.AdjustStunned(-4*REM)
 	M.silent = max(M.silent, 5)
 
 /datum/reagent/oxycodan_hexadro/overdose(var/mob/living/carbon/M, var/alien/A, var/removed)
 	M.silent = max(M.silent, 7)
-	M.adjustOxyLoss(-30)
+	M.adjustOxyLoss(-45*REM)
 	M.adjustToxLoss(3*REM)
 	M << "<span class='notice'>Your lungs start to burn!</span>"
 	if(prob(25))
-		M.AdjustParalysis(1*REM)
+		M.AdjustParalysis(5*REM)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/lungs/E = H.internal_organs_by_name["lungs"]
@@ -693,10 +792,10 @@
 	overdose = 40
 
 /datum/reagent/kelotane/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.adjustFireLoss(0.75*REM)
+	M.adjustFireLoss(-1.5*REM)
 
 /datum/reagent/kelotane/overdose(var/mob/living/carbon/M, var/alien/A, var/removed)
-	M.adjustToxLoss(-0.25*REM)
+	M.adjustToxLoss(-0.5*REM)
 
 /datum/reagent/asinolyathin //T2
 	name = "Asinolyathin"
@@ -708,8 +807,8 @@
 	overdose = 30
 
 /datum/reagent/asinolyathin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.adjustFireLoss(-2*REM)
-	M.AdjustStunned(-0.5*REM)
+	M.adjustFireLoss(-3*REM)
+	M.AdjustStunned(-1*REM)
 
 /datum/reagent/asinolyathin/overdose(var/mob/living/carbon/M, var/alien/A, var/removed)
 	M.adjustToxLoss(1*REM)
@@ -724,11 +823,11 @@
 	overdose = 20
 
 /datum/reagent/dramacline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.adjustFireLoss(-4.5*REM)
-	M.AdjustStunned(-1*REM)
+	M.adjustFireLoss(-6*REM)
+	M.AdjustStunned(-2*REM)
 
 /datum/reagent/dramacline/overdose(var/mob/living/carbon/M, var/alien/A, var/removed)
-	M.adjustToxLoss(2*REM)
+	M.adjustToxLoss(2.5*REM)
 
 //Anti-Rads// T1 | T2 | T3
 #define RADMESSAGE_DELAY 2*60*10
@@ -743,7 +842,7 @@
 	overdose = 30
 
 /datum/reagent/hyronalin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(prob(66))
+	if(prob(80))
 		M.radiation--
 	if(world.time > data + RADMESSAGE_DELAY)
 		data = world.time
@@ -805,7 +904,7 @@
 	reagent_state = LIQUID
 	color = "#05e509"
 	metabolism = 0.35
-	overdose = 11
+	overdose = 10
 
 /datum/reagent/radaway/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.radiation--
@@ -823,6 +922,7 @@
 				M << "<span class='warning'>You feel a throbbing pain in your head!</span>"
 			if(9 to INFINITY)
 				M << "<span class='warning'>You feel an excrutiating pain in your head!</span>"
+				M.adjustBruteLoss(1*REM)
 
 /datum/reagent/radaway/overdose(var/mob/living/carbon/M, var/alien/A, var/removed)
 	M.adjustToxLoss(3*REM)
@@ -932,7 +1032,7 @@
 
 /datum/reagent/ryetalyn/affect_blood(var/mob/living/carbon/M, var/removed)
 	M.adjustToxLoss(2*REM)
-	M.bodytemperature = max(400, M.bodytemperature++)
+	M.bodytemperature = max(500, M.bodytemperature++)
 
 /datum/reagent/peridaxon
 	name = "Peridaxon"
@@ -946,13 +1046,12 @@
 /datum/reagent/peridaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-
 		for(var/obj/item/organ/I in H.internal_organs)
 			if((I.damage > 0) && (I.robotic != 2)) //Peridaxon heals only non-robotic organs
 				I.damage = max(I.damage - removed, 0)
 
 /datum/reagent/ryetalyn/affect_blood(var/mob/living/carbon/M, var/removed)
-	M.adjustToxLoss(2*REM)
+	M.adjustToxLoss(2.5*REM)
 
 /datum/reagent/imidazoline
 	name = "Imidazoline"
@@ -1018,10 +1117,10 @@
 
 /datum/reagent/cryoxadone/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(M.bodytemperature < 170)
-		M.adjustCloneLoss(-10 * removed)
-		M.adjustOxyLoss(-10 * removed)
-		M.heal_organ_damage(10 * removed, 10 * removed)
-		M.adjustToxLoss(-10 * removed)
+		M.adjustCloneLoss(-15 * removed)
+		M.adjustOxyLoss(-15 * removed)
+		M.heal_organ_damage(15 * removed, 15 * removed)
+		M.adjustToxLoss(-15 * removed)
 
 /datum/reagent/clonexadone
 	name = "Clonexadone"
@@ -1034,10 +1133,10 @@
 
 /datum/reagent/clonexadone/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(M.bodytemperature < 170)
-		M.adjustCloneLoss(-30 * removed)
-		M.adjustOxyLoss(-30 * removed)
-		M.heal_organ_damage(30 * removed, 30 * removed)
-		M.adjustToxLoss(-30 * removed)
+		M.adjustCloneLoss(-40 * removed)
+		M.adjustOxyLoss(-40 * removed)
+		M.heal_organ_damage(40 * removed, 40 * removed)
+		M.adjustToxLoss(-40 * removed)
 
 // Anti-Dope Depressents //
 
@@ -1106,4 +1205,3 @@
 			else
 				M << "<span class='warning'>Your mind breaks apart...</span>"
 				M.hallucination += 200
-

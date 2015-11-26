@@ -176,10 +176,10 @@
 				var/trans
 				if(ismob(target))
 					var/contained = reagentlist()
-					trans = reagents.trans_to_mob(target, amount_per_transfer_from_this, CHEM_BLOOD)
+					trans = reagents.trans_to_mob(target, 5, CHEM_BLOOD)
 					admin_inject_log(user, target, src, contained, trans)
 				else
-					trans = reagents.trans_to(target, amount_per_transfer_from_this)
+					trans = reagents.trans_to(target, 5)
 				user << "<span class='notice'>You inject [trans] units of the solution. The syringe now contains [src.reagents.total_volume] units.</span>"
 				if (reagents.total_volume <= 0 && mode == SYRINGE_INJECT)
 					mode = SYRINGE_DRAW
