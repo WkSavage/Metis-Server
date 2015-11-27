@@ -1545,7 +1545,6 @@
 #include "code\modules\reagents\Chemistry-Metabolism.dm"
 #include "code\modules\reagents\Chemistry-Readme.dm"
 #include "code\modules\reagents\Chemistry-Reagents.dm"
-#include "code\modules\reagents\Food-Recipes.dm"
 #include "code\modules\reagents\reagent_containers.dm"
 #include "code\modules\reagents\reagent_dispenser.dm"
 #include "code\modules\reagents\Chemistry-Reagents\Chem-Builders.dm"
