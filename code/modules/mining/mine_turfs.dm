@@ -519,14 +519,3 @@
 				attackby(R.module_state_3,R)
 			else
 				return
-
-/turf/simulated/mineral/ice
-	name = "Ice"
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "ice"
-	oxygen = 0
-	nitrogen = 0
-	opacity = 1
-	density = 1
-	blocks_air = 1
-	temperature = T0C

@@ -13,16 +13,16 @@
 	material = "uranium"
 
 /obj/item/weapon/ore/iron
-	name = "hematite"
+	name = "iron"
 	icon_state = "ore_iron"
 	origin_tech = "materials=1"
-	material = "hematite"
+	material = "iron"
 
 /obj/item/weapon/ore/coal
-	name = "raw carbon"
+	name = "coal"
 	icon_state = "ore_coal"
 	origin_tech = "materials=1"
-	material = "carbon"
+	material = "coal"
 
 /obj/item/weapon/ore/glass
 	name = "impure silicates"
