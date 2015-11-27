@@ -34,7 +34,7 @@
 
 
 /datum/reagent/react_c
-	name = "Catalytic Reagent H1N2P1"
+	name = "Catalytic Reagent N1H2P1"
 	id = "react_c"
 	description = "This is a useful building block in organic chemistry."
 	reagent_state = LIQUID

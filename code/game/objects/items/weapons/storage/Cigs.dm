@@ -359,18 +359,6 @@ obj/item/weapon/rollingpaper
 	icon_state = "cig_paper"
 	w_class = 1
 
-
-///////////
-//ROLLING//
-///////////
-obj/item/weapon/rollingpaper
-	name = "rolling paper"
-	desc = "A thin piece of paper used to make fine smokeables."
-	icon = 'icons/obj/cigarettes.dmi'
-	icon_state = "cig_paper"
-	w_class = 1
-
-
 obj/item/weapon/rollingpaperpack
 	name = "rolling paper pack"
 	desc = "A pack of Nanotrasen brand rolling papers."

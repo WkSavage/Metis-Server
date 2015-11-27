@@ -1,224 +1,153 @@
-/obj/vehicle/segway
-	name = "segway"
-	desc = "Woop-woop 'dats the sound of 'da police."
+//old style PIMP-CART
+/obj/structure/stool/bed/chair/janicart
+	name = "janicart"
+	desc = "A brave janitor cyborg gave its life to produce such an amazing combination of speed and utility."
+	icon = 'icons/obj/vehicles.dmi'
+	icon_state = "pussywagon"
+	anchored = 0
+	density = 1
+	var/obj/item/weapon/storage/bag/trash/mybag = null
+	var/callme = "pimpin' ride"	//how do people refer to it?
+	var/move_delay = 0
+	var/floorbuffer = 0
+	var/keytype = /obj/item/key/janitor
+
+/obj/structure/stool/bed/chair/janicart/New()
+	handle_rotation()
+
+/obj/structure/stool/bed/chair/janicart/Move(a, b, flag)
+	..()
+	if(floorbuffer)
+		var/turf/tile = loc
+		if(isturf(tile))
+			tile.clean_blood()
+
+/obj/structure/stool/bed/chair/janicart/examine(mob/user)
+	..()
+	if(floorbuffer)
+		user << "It has been upgraded with a floor buffer."
+
+
+/obj/structure/stool/bed/chair/janicart/attackby(obj/item/I, mob/user, params)
+	if(istype(I, keytype))
+		user << "Hold [I] in one of your hands while you drive this [callme]."
+	else if(istype(I, /obj/item/weapon/storage/bag/trash))
+		if(keytype == /obj/item/key/janitor)
+			if(!user.drop_item())
+				return
+			user << "<span class='notice'>You hook the trashbag onto the [callme].</span>"
+			I.loc = src
+			mybag = I
+//	else if(istype(I, /obj/item/janiupgrade))
+//		if(keytype == /obj/item/key/janitor)
+//			floorbuffer = 1
+//			qdel(I)
+//			user << "<span class='notice'>You upgrade the [callme] with the floor buffer.</span>"
+//	update_icon()
+
+/obj/structure/stool/bed/chair/janicart/update_icon()
+	overlays.Cut()
+	if(mybag)
+		overlays += "cart_garbage"
+	if(floorbuffer)
+		overlays += "cart_buffer"
+
+/obj/structure/stool/bed/chair/janicart/attack_hand(mob/user)
+	if(mybag)
+		mybag.loc = get_turf(user)
+		user.put_in_hands(mybag)
+		mybag = null
+		update_icon()
+	else
+		..()
+
+/obj/structure/stool/bed/chair/janicart/relaymove(mob/user, direction)
+	if(user.stat || user.stunned || user.weakened || user.paralysis)
+		unbuckle_mob()
+	if(istype(user.l_hand, keytype) || istype(user.r_hand, keytype))
+		if(Move() || !has_gravity(src.loc) || move_delay || !isturf(loc))
+			return
+		step(src, direction)
+		update_mob()
+		handle_rotation()
+		move_delay = 1
+		spawn(2)
+			move_delay = 0
+	else
+		user << "<span class='notice'>You'll need the keys in one of your hands to drive this [callme].</span>"
+
+/obj/structure/stool/bed/chair/janicart/user_buckle_mob(var/atom/movable/C)
+	if(!istype(C, /mob/living/carbon/human))
+		buckled_mob = 1
+
+	return ..()
+
+/obj/structure/stool/bed/chair/janicart/unbuckle_mob()
+	if(buckled_mob)
+		user_unbuckle_mob()
+	..()
+
+/obj/structure/stool/bed/chair/janicart/handle_rotation()
+	if((dir == SOUTH) || (dir == WEST) || (dir == EAST))
+		layer = FLY_LAYER
+	else
+		layer = OBJ_LAYER
+
+	if(buckled_mob)
+		if(buckled_mob.loc != loc)
+			buckled_mob.buckled = null //Temporary, so Move() succeeds.
+			buckled_mob.buckled = src //Restoring
+
+	update_mob()
+
+
+/obj/structure/stool/bed/chair/janicart/proc/update_mob()
+	if(buckled_mob)
+		buckled_mob.dir = dir
+		switch(dir)
+			if(SOUTH)
+				buckled_mob.pixel_x = 0
+				buckled_mob.pixel_y = 7
+			if(WEST)
+				buckled_mob.pixel_x = 12
+				buckled_mob.pixel_y = 7
+			if(NORTH)
+				buckled_mob.pixel_x = 0
+				buckled_mob.pixel_y = 4
+			if(EAST)
+				buckled_mob.pixel_x = -12
+				buckled_mob.pixel_y = 7
+
+/obj/item/key
+	name = "key"
+	desc = "A small grey key."
+	icon = 'icons/obj/vehicles.dmi'
+	icon_state = "keys"
+	w_class = 1
+
+/obj/item/key/janitor
+	desc = "A keyring with a small steel key, and a pink fob reading \"Pussy Wagon\"."
+	icon_state = "keys"
+
+/obj/item/key/security
+	desc = "A keyring with a small steel key, and a rubber stun baton accessory."
+	icon_state = "keys"
+
+//obj/item/janiupgrade
+//	name = "floor buffer upgrade"
+//	desc = "An upgrade for mobile janicarts."
+//	icon = 'icons/obj/vehicles.dmi'
+//	icon_state = "upgrade"
+
+/obj/structure/stool/bed/chair/janicart/secway
+	name = "secway"
+	desc = "A brave security cyborg gave its life to help you look like a complete tool."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "segway"
-	on = 0
-	powered = 1
-	locked = 0
-	atom/movable/load
+	callme = "segway"
+	keytype = /obj/item/key/security
 
-	load_item_visible = 1
-	load_offset_x = 0
-	mob_offset_y = 7
-
-
-
-
-/obj/vehicle/segway/New()
-	..()
-	cell = new /obj/item/weapon/cell/high
-
-/obj/vehicle/segway/Move()
-	if(on && cell.charge < charge_use)
-		turn_off()
-		update_stats()
-
-		return 0
-
-	return ..()
-
-
-/obj/vehicle/segway/attackby(obj/item/weapon/W as obj, mob/user as mob)
-
-/obj/vehicle/segway/update_icon()
-	if(open)
-		icon_state = initial(icon_state) + "_open"
-	else
-		icon_state = initial(icon_state)
-
-/obj/vehicle/segway/insert_cell(var/obj/item/weapon/cell/C, var/mob/living/carbon/human/H)
-	return
-
-/obj/vehicle/segway/insert_cell(var/obj/item/weapon/cell/C, var/mob/living/carbon/human/H)
-	..()
-	update_stats()
-
-/obj/vehicle/segway/remove_cell(var/mob/living/carbon/human/H)
-	..()
-	update_stats()
-
-/obj/vehicle/segway/Bump(atom/Obstacle)
-	var/obj/machinery/door/D = Obstacle
-	var/mob/living/carbon/human/H = load
-	if(istype(D) && istype(H))
-		D.Bumped(H)		//a little hacky, but hey, it works, and respects access rights
-
-	..()
-
-/obj/vehicle/segway/Bump(atom/Obstacle)
-		return //so people can't knock others over by pushing a trolley around
-
-/obj/vehicle/segway/relaymove(mob/user, direction)
-	if(user != load)
-		return 0
-	else
-		return ..()
-
-/obj/vehicle/segway/examine()
-	..()
-
-	if(!istype(usr, /mob/living/carbon/human))
-		return
-
-	if(get_dist(usr,src) <= 1)
-		usr << "The charge meter reads [cell? round(cell.percent(), 0.01) : 0]%"
-
-/obj/vehicle/segway/verb/start_engine()
-	set name = "Start engine"
-	set category = "Object"
-	set src in view(1)
-
-	if(!istype(usr, /mob/living/carbon/human))
-		return
-
-	if(on)
-		usr << "The engine is already running."
-		return
-
-	turn_on()
-	if (on)
-		usr << "You start [src]'s engine."
-	else
-		if(cell.charge < charge_use)
-			usr << "[src] is out of power."
-		else
-			usr << "[src]'s engine won't start."
-
-/obj/vehicle/segway/verb/stop_engine()
-	set name = "Stop engine"
-	set category = "Object"
-	set src in view(1)
-
-	if(!istype(usr, /mob/living/carbon/human))
-		return
-
-	if(!on)
-		usr << "The engine is already stopped."
-		return
-
-	turn_off()
-	if (!on)
-		usr << "You stop [src]'s engine."
-
-/obj/vehicle/segway/load(var/atom/movable/C)
-	if(!istype(C, /mob/living/carbon/human))
-		return 0
-
-
-	if(load)
-		return 1
-
-/obj/vehicle/segway/load(var/atom/movable/C)
-	if(!istype(C, /mob/living/carbon/human))
-		return 0
-
-/obj/vehicle/segway/load(var/atom/movable/C)
-	//This loads objects onto the vehicle so they can still be interacted with.
-	//Define allowed items for loading in specific vehicle definitions.
-	if(!isturf(C.loc)) //To prevent loading things from someone's inventory, which wouldn't get handled properly.
-		return 0
-	if(load || C.anchored)
-		return 0
-
-	// if a create/closet, close before loading
-	var/obj/structure/closet/crate = C
-	if(istype(crate))
-		crate.close()
-
-	C.forceMove(loc)
-	C.set_dir(dir)
-	C.anchored = 1
-
-	load = C
-
-	if(load_item_visible)
-		C.pixel_x += load_offset_x
-		if(ismob(C))
-			C.pixel_y += mob_offset_y
-		else
-			C.pixel_y += load_offset_y
-		C.layer = layer + 0.1		//so it sits above the vehicle
-
-	if(ismob(C))
-		buckle_mob(C)
-
-	return 1
-
-
-/obj/vehicle/segway/unload(var/mob/user, var/direction)
-	if(!load)
-		return
-
-	var/turf/dest = null
-
-	//find a turf to unload to
-	if(direction)	//if direction specified, unload in that direction
-		dest = get_step(src, direction)
-	else if(user)	//if a user has unloaded the vehicle, unload at their feet
-		dest = get_turf(user)
-
-	if(!dest)
-		dest = get_step_to(src, get_step(src, turn(dir, 90))) //try unloading to the side of the vehicle first if neither of the above are present
-
-	//if these all result in the same turf as the vehicle or nullspace, pick a new turf with open space
-	if(!dest || dest == get_turf(src))
-		var/list/options = new()
-		for(var/test_dir in alldirs)
-			var/new_dir = get_step_to(src, get_step(src, test_dir))
-			if(new_dir && load.Adjacent(new_dir))
-				options += new_dir
-		if(options.len)
-			dest = pick(options)
-		else
-			dest = get_turf(src)	//otherwise just dump it on the same turf as the vehicle
-
-	if(!isturf(dest))	//if there still is nowhere to unload, cancel out since the vehicle is probably in nullspace
-		return 0
-
-	load.forceMove(dest)
-	load.set_dir(get_dir(loc, dest))
-	load.anchored = 0		//we can only load non-anchored items, so it makes sense to set this to false
-	load.pixel_x = initial(load.pixel_x)
-	load.pixel_y = initial(load.pixel_y)
-	load.layer = initial(load.layer)
-
-	if(ismob(load))
-		unbuckle_mob(load)
-
-	load = null
-
-	return 1
-
-
-//-------------------------------------------------------
-// Stat update procs
-//-------------------------------------------------------
-/obj/vehicle/segway/update_stats()
-	return
-
-/obj/vehicle/segway/attack_generic(var/mob/user, var/damage, var/attack_message)
-	if(!damage)
-		return
-	visible_message("<span class='danger'>[user] [attack_message] the [src]!</span>")
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name]</font>")
-	user.do_attack_animation(src)
-	src.health -= damage
-	if(prob(10))
-		new /obj/effect/decal/cleanable/blood/oil(src.loc)
-	spawn(1) healthcheck()
-	return 1
-
-
-	return ..()
-
+/obj/structure/stool/bed/chair/janicart/secway/update_mob()
+	if(buckled_mob)
+		buckled_mob.dir = dir
+		buckled_mob.pixel_y = 4

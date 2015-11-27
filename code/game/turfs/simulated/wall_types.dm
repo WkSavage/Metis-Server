@@ -3,6 +3,18 @@
 /turf/simulated/wall/r_wall/New(var/newloc)
 	..(newloc, "plasteel","plasteel") //3strong
 
+/turf/simulated/wall/fancy
+	icon = 'icons/turf/walls.dmi'
+	icon_state = "iron0"
+
+/turf/simulated/wall/fancy/r_wall
+	icon = 'icons/turf/walls.dmi'
+	icon_state = "rwall0"
+
+/turf/simulated/wall/fancy/r_wall/New(var/newloc)
+	..(newloc, "plasteel","plasteel") //3strong
+
+
 /turf/simulated/wall/cult
 	icon_state = "cult"
 /turf/simulated/wall/cult/New(var/newloc)

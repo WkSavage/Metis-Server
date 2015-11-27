@@ -867,9 +867,9 @@
 					/obj/item/seeds/sunflowerseed = 3,/obj/item/seeds/tomatoseed = 3,/obj/item/seeds/towermycelium = 3,/obj/item/seeds/wheatseed = 3,/obj/item/seeds/appleseed = 3,
 					/obj/item/seeds/poppyseed = 3,/obj/item/seeds/sugarcaneseed = 3,/obj/item/seeds/ambrosiavulgarisseed = 3,/obj/item/seeds/peanutseed = 3,/obj/item/seeds/whitebeetseed = 3,/obj/item/seeds/watermelonseed = 3,/obj/item/seeds/limeseed = 3,
 					/obj/item/seeds/lemonseed = 3,/obj/item/seeds/orangeseed = 3,/obj/item/seeds/grassseed = 3,/obj/item/seeds/cocoapodseed = 3,/obj/item/seeds/plumpmycelium = 2,
-					/obj/item/seeds/cabbageseed = 3,/obj/item/seeds/grapeseed = 3,/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/cherryseed = 3,/obj/item/seeds/plastiseed = 3,/obj/item/seeds/riceseed = 3)
+					/obj/item/seeds/cabbageseed = 3,/obj/item/seeds/grapeseed = 3,/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/cherryseed = 3,/obj/item/seeds/plastiseed = 3,/obj/item/seeds/riceseed = 3, /obj/item/seeds/ambrosiavulgarisseed = 3)
 	contraband = list(/obj/item/seeds/amanitamycelium = 2,/obj/item/seeds/glowshroom = 2,/obj/item/seeds/libertymycelium = 2,/obj/item/seeds/mtearseed = 2,
-					  /obj/item/seeds/nettleseed = 2,/obj/item/seeds/reishimycelium = 2,/obj/item/seeds/reishimycelium = 2,/obj/item/seeds/shandseed = 2,)
+					  /obj/item/seeds/nettleseed = 2,/obj/item/seeds/reishimycelium = 2,/obj/item/seeds/reishimycelium = 2,/obj/item/seeds/shandseed = 2, /obj/item/seeds/ambrosiadeusseed = 2)
 	premium = list(/obj/item/toy/waterflower = 1)
 
 /**
@@ -1063,3 +1063,13 @@
 	prices = list (/obj/item/clothing/shoes/blue = 10, /obj/item/clothing/shoes/red = 10,
 	 /obj/item/clothing/shoes/yellow = 10, /obj/item/clothing/shoes/green = 10, /obj/item/clothing/shoes/orange = 10,
 	 /obj/item/clothing/shoes/purple = 10, /obj/item/clothing/shoes/red = 10, /obj/item/clothing/shoes/leather = 10)
+
+
+
+/obj/machinery/vending/rollingpaper
+	name = "SmoothRoll"
+	desc = "A premium rolling paper dispenser."
+	product_ads = "Just roll it up and take a hit!"
+	icon_state = "rollingpaper"
+	products = list(/obj/item/weapon/rollingpaper = 10, /obj/item/weapon/rollingpaperpack = 10)
+	contraband = list(/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris = 10, /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiadeus = 10)
