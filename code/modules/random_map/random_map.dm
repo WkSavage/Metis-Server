@@ -1,4 +1,4 @@
-#define ORE_COUNT 5000
+#define ORE_COUNT 3500
 /*
 	This module is used to generate the debris fields/distribution maps/procedural stations.
 */
@@ -155,7 +155,7 @@ var/global/list/random_maps = list()
 		if(!(within_bounds(check_cell)) || map[check_cell] != 2)
 			continue
 		if(prob(25))
-			map[check_cell] = 4
+			map[check_cell] = 3
 		else
 			map[check_cell] = 3
 		ore_count--
