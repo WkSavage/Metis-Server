@@ -1,4 +1,4 @@
-#define ORE_COUNT 1000
+#define ORE_COUNT 5000
 /*
 	This module is used to generate the debris fields/distribution maps/procedural stations.
 */
@@ -139,12 +139,10 @@ var/global/list/random_maps = list()
 		return
 	switch(map[current_cell])
 		if(1)
-			T.ChangeTurf(/turf/simulated/floor/plating/airless/asteroid)
-		if(2)
 			T.ChangeTurf(/turf/simulated/mineral)
-		if(3)
+		if(2)
 			T.ChangeTurf(/turf/simulated/mineral/random)
-		if(4)
+		if(3)
 			T.ChangeTurf(/turf/simulated/mineral/random/high_chance)
 
 /datum/random_map/proc/cleanup()

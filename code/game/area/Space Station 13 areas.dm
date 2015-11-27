@@ -2072,6 +2072,11 @@ area/space/atmosalert()
 	icon_state = "away"
 	requires_power = 0
 
+/area/awaymission/frigidlands
+	name = "\improper Frigid Lands"
+	icon_state = "away"
+	requires_power = 0
+
 /area/awaymission/beach
 	name = "Beach"
 	icon_state = "null"
