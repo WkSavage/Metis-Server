@@ -57,11 +57,28 @@
 	else
 		src.layer = OBJ_LAYER
 
+/obj/structure/stool/bed/chair/proc/handle_layer()
+	if(dir == NORTH)
+		src.layer = FLY_LAYER
+	else
+		src.layer = OBJ_LAYER
+
 /obj/structure/bed/chair/set_dir()
 	..()
 	update_layer()
 	if(buckled_mob)
 		buckled_mob.set_dir(dir)
+
+/obj/structure/stool/bed/chair/proc/handle_rotation(direction)
+	if(buckled_mob)
+		buckled_mob.buckled = null //Temporary, so Move() succeeds.
+		if(!direction || !buckled_mob.Move(get_step(src, direction), direction))
+			buckled_mob.buckled = src
+			dir = buckled_mob.dir
+			return 0
+		buckled_mob.buckled = src //Restoring
+	handle_layer()
+	return 1
 
 /obj/structure/bed/chair/verb/rotate()
 	set name = "Rotate Chair"
