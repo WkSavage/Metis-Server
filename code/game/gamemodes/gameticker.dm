@@ -39,6 +39,9 @@ var/global/datum/controller/gameticker/ticker
 	'sound/music/halloween/halloween.ogg',\
 	'sound/music/halloween/ghosts.ogg'*/
 	'sound/music/title2.ogg',\
+	'sound/music/goodbyemoonmen.ogg',\
+	'sound/music/whitecity.ogg',\
+	'sound/music/shininglights.ogg',\
 	'sound/music/title1.ogg')
 	do
 		pregame_timeleft = 180

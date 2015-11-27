@@ -308,7 +308,16 @@ var/global/ManifestJSON
 	desc = "For when you want to get swole."
 	density = 1
 	anchored = 1
-	unacidable = 1//temporary until I decide whether the borg can be removed. -veyveyr
+	unacidable = 1
+
+/obj/structure/spiderdisplay
+	name = "Commemorative Spider Display"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "spiderdisplay"
+	desc = "A commemorative display to remeber those who fell in the great spider infestation of 2552, It seems a little tasteless."
+	density = 1
+	anchored = 1
+	unacidable = 1
 
 /obj/item/mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 

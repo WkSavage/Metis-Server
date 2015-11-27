@@ -57,7 +57,7 @@
 
 /datum/species/vox/equip_survival_gear(var/mob/living/carbon/human/H)
 	H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(H), slot_wear_mask)
-	H.equip_to_slot_or_del(new /obj/item/weapon/tank/emergency_nitrogen(H), slot_r_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen(H), slot_r_hand)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_in_backpack)
 	H.internals.icon_state = "internal1"
 
@@ -87,7 +87,7 @@
 		"brain" =    /obj/item/organ/pariah_brain,
 		"eyes" =     /obj/item/organ/eyes
 		)
-	flags = CAN_JOIN | NO_SCAN | HAS_EYE_COLOR
+	flags = IS_RESTRICTED | NO_SCAN | HAS_EYE_COLOR
 
 // No combat skills for you.
 /datum/species/vox/pariah/can_shred(var/mob/living/carbon/human/H, var/ignore_intent)
