@@ -72,9 +72,9 @@
 	hazard_low_pressure =  (HAZARD_LOW_PRESSURE-10)
 	total_health = 80
 
-	cold_level_1 = 130
-	cold_level_2 = 100
-	cold_level_3 = 60
+	cold_level_1 = 999
+	cold_level_2 = 999
+	cold_level_3 = 999
 
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick,  /datum/unarmed_attack/claws, /datum/unarmed_attack/bite)
 
