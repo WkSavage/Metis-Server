@@ -13,7 +13,7 @@
 	icon_state = "bioprinter"
 
 	var/prints_prosthetics
-	var/stored_matter = 200
+	var/stored_matter = 750
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/list/products = list(
 		"heart" =   list(/obj/item/organ/heart,  50),
@@ -80,5 +80,5 @@
 		user << "<span class='info'>\The [src] processes \the [W]. Levels of stored matter now: [stored_matter]</span>"
 		qdel(W)
 		return
-	
+
 	return..()
