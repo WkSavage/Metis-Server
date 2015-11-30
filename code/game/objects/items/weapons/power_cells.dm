@@ -77,6 +77,14 @@
 	..()
 	charge = 0
 
+/obj/item/weapon/cell/dead
+	name = "high-capacity power cell"
+	origin_tech = "powerstorage=2"
+	icon_state = "hcell"
+	maxcharge = 10000
+	charge = 0
+	matter = list(DEFAULT_WALL_MATERIAL = 700, "glass" = 60)
+
 /obj/item/weapon/cell/super
 	name = "super-capacity power cell"
 	origin_tech = "powerstorage=5"
@@ -107,7 +115,7 @@
 	origin_tech =  null
 	maxcharge = 30000 //determines how badly mobs get shocked
 	matter = list(DEFAULT_WALL_MATERIAL = 700, "glass" = 80)
-	
+
 	check_charge()
 		return 1
 	use()

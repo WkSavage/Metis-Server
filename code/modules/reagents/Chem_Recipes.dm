@@ -201,7 +201,7 @@
 	name = "Alkysine"
 	id = "alkysine"
 	result = "alkysine"
-	required_reagents = list("dylovene" = 1, "carbolic_acid" = 1, "silicon" = 1, "oxygen" = 1)
+	required_reagents = list("dylovene" = 1, "silicon" = 1, "phosphoric_acid" = 1)
 	result_amount = 4
 
 /datum/chemical_reaction/hydromel
@@ -333,7 +333,7 @@
 	name = "Spaceacillin"
 	id = "spaceacillin"
 	result = "spaceacillin"
-	required_reagents = list("alkysine" = 1, "dylovene" = 1)
+	required_reagents = list("hyronalin" = 1, "dylovene" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/ryetalyn

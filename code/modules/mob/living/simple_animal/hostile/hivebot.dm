@@ -37,6 +37,14 @@
 	icon_dead = "rangebot"
 	ranged = 1
 
+/mob/living/simple_animal/hostile/hivebot/britbot
+	name = "Hivebot"
+	desc = "A smallish robot, this one is quite stylish!"
+	icon = 'icons/mob/hivebot.dmi'
+	icon_state = "britbot"
+	icon_living = "britbot"
+	icon_dead = "britbot"
+
 /mob/living/simple_animal/hostile/hivebot/rapid
 	ranged = 1
 	rapid = 1
@@ -52,7 +60,7 @@
 	ranged = 1
 
 /mob/living/simple_animal/hostile/hivebot/hivemind
-	name = "Strong Hivebot"
+	name = "Hivemind"
 	icon = 'icons/mob/hivebot.dmi'
 	icon_state = "hivemind"
 	icon_living = "hivemind"

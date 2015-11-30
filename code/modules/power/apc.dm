@@ -43,6 +43,9 @@
 /obj/machinery/power/apc/high
 	cell_type = /obj/item/weapon/cell/high
 
+/obj/machinery/power/apc/high/dead
+	cell_type = /obj/item/weapon/cell/dead
+
 /obj/machinery/power/apc/super
 	cell_type = /obj/item/weapon/cell/super
 

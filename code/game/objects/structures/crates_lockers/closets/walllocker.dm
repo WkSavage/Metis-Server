@@ -55,3 +55,48 @@
 /obj/structure/closet/walllocker/emerglocker/east
 	pixel_x = 32
 	dir = EAST
+
+// Its the emergency locker for the vox ;)
+
+/obj/structure/closet/walllocker/emerglockern20
+	name = "emergency nitrogen locker"
+	desc = "A wall mounted locker with emergency supplies."
+	var/list/spawnitems = list(/obj/item/weapon/tank/emergency_nitrogen,/obj/item/clothing/mask/breath)
+	var/amount = 2 // spawns each items X times.
+	icon_state = "emerg-n20"
+
+/obj/structure/closet/walllocker/emerglockern20/toggle(mob/user as mob)
+	src.attack_hand(user)
+	return
+
+/obj/structure/closet/walllocker/emerglockern20/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	return
+
+/obj/structure/closet/walllocker/emerglockern20/attack_hand(mob/user as mob)
+	if (istype(user, /mob/living/silicon/ai))	//Added by Strumpetplaya - AI shouldn't be able to
+		return									//activate emergency lockers.  This fixes that.  (Does this make sense, the AI can't call attack_hand, can it? --Mloc)
+	if(!amount)
+		usr << "<spawn class='notice'>It's empty.."
+		return
+	if(amount)
+		usr << "<spawn class='notice'>You take out some items from \the [src]."
+		for(var/path in spawnitems)
+			new path(src.loc)
+		amount--
+	return
+
+/obj/structure/closet/walllocker/emerglockern20/north
+	pixel_y = 32
+	dir = SOUTH
+
+/obj/structure/closet/walllocker/emerglockern20/south
+	pixel_y = -32
+	dir = NORTH
+
+/obj/structure/closet/walllocker/emerglockern20/west
+	pixel_x = -32
+	dir = WEST
+
+/obj/structure/closet/walllocker/emerglockern20/east
+	pixel_x = 32
+	dir = EAST
