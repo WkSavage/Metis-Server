@@ -92,11 +92,6 @@
 			return
 
 	attackby(obj/item/weapon/W as obj, mob/user as mob, var/obj/item/I)
-		if(is_hot(I))
-			if(src.reagents)
-				src.reagents.chem_temp += 15
-				user << "<span class='notice'>You heat [src] with [I].</span>"
-				src.reagents.handle_reactions()
 		if(istype(W, /obj/item/weapon/pen) || istype(W, /obj/item/device/flashlight/pen))
 			var/tmp_label = sanitizeSafe(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
 			if(length(tmp_label) > 10)
