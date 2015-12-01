@@ -270,7 +270,7 @@
 	name = "Asinolyathin"
 	id = "asinolyathin"
 	result = "asinolyathin"
-	required_reagents = list("kelotane" = 1, "xenon" = 1, "acetic_acid" = 1)
+	required_reagents = list("kelotane" = 1, "silicon" = 1, "acetic_acid" = 1)
 	result_amount = 2
 
  /datum/chemical_reaction/dramacline //T3
